@@ -31,7 +31,7 @@ class CloudSyncService {
   };
 
   private listeners: ((status: SyncStatus) => void)[] = [];
-  private syncInterval: NodeJS.Timeout | null = null;
+  private syncInterval: number | null = null;
   private pendingChanges: GameState | null = null;
   private isOnline = navigator.onLine;
 

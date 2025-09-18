@@ -1,0 +1,499 @@
+{"id":"math_conjuntos_numricos_1","name":"Conjuntos numéricos","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"math_frepresentao_de_conjuntos_subconjuntos_u_2","name":"F/Representação de conjuntos, subconjuntos, união ...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"math_fnmeros_naturais_e_inteiros_operaes_fund_3","name":"F/Números naturais e inteiros: operações fundament...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"math_fnmeros_primos_fatorao_nmero_de_divisore_4","name":"F/Números primos, fatoração, número de divisores, ...","tier":3,"weight":1,"cycles":1,"tags":[]}
+{"id":"math_fnmeros_reais_racionais_e_irracionais_op_5","name":"F/Números reais (racionais e irracionais): operaçõ...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"math_representao_decimal_6","name":"representação decimal","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"math_fsequncias_numricas_progresses_aritmtica_7","name":"F/Sequências numéricas, progressões aritmética e g...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"math_f_2_f_c_o_n_c_e_i_t_o_s_d_e_p_o_r_c_e_n__8","name":"F / 2 ª F C o n c e i t o s d e p o r c e n t a g ...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"math_sequncias_numricas_9","name":"sequências numéricas.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"math_funes_e_grficos_10","name":"Funções e gráficos","tier":1,"weight":1,"cycles":1,"tags":["algebra","graph"]}
+{"id":"math_fa_funo_linear_ou_afim_y_ax_b_e_seu_grfi_11","name":"F/A função linear ou afim y = ax + b e seu gráfico","tier":2,"weight":1,"cycles":1,"tags":["algebra","graph"]}
+{"id":"math_fa_funo_quadrtica_y_ax_12","name":"F/A função quadrática y = ax","tier":2,"weight":1,"cycles":1,"tags":["algebra"]}
+{"id":"math_bx_c_e_seu_grfico_13","name":"bx + c e seu gráfico","tier":1,"weight":1,"cycles":1,"tags":["algebra","graph"]}
+{"id":"math_fas_funes_y_kx_y_x_y_x_seus_domnios_e_gr_14","name":"F/As funções y = k/x, y = x, y = |x| , seus domíni...","tier":1,"weight":1,"cycles":1,"tags":["algebra","graph"]}
+{"id":"math_ffunes_trigonomtricas_e_seus_grficos_arc_15","name":"F/Funções trigonométricas e seus gráficos; arcos n...","tier":1,"weight":1,"cycles":1,"tags":["algebra","graph"]}
+{"id":"math_fequaes_e_inequaes_envolvendo_funes_16","name":"F/Equações e inequações envolvendo funções.","tier":3,"weight":1,"cycles":1,"tags":[]}
+{"id":"math_fsoma_produto_e_composio_de_funes_17","name":"F/Soma, produto e composição de funções.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"math_ftransformaes_no_grfico_de_funes_transla_18","name":"F/Transformações no gráfico de funções: translação...","tier":3,"weight":1,"cycles":1,"tags":["algebra","graph"]}
+{"id":"math_f_as_funes_y_x1n_nz_n_2_e_seus_domnios_19","name":"F As funções y = x1/n (n∈Z, n > 2) e seus domínios","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"math_f_as_funes_racionais_y_pxqx_onde_pxqx_so_20","name":"F As funções racionais y = p(x)/q(x) , onde px,q(x...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"math_cbicos_e_seus_domnios_21","name":"cúbicos, e seus domínios","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"math_f_funes_inversas_22","name":"F Funções inversas.","tier":3,"weight":1,"cycles":1,"tags":[]}
+{"id":"math_polinmios_com_coeficientes_reais_23","name":"Polinômios com coeficientes reais","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"math_foperaes_com_polinmios_24","name":"F/Operações com polinômios.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"math_cidade_universitria_zeferino_vaz_25","name":"Cidade Universitária \"Zeferino Vaz\"","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"math_caixa_postal_6194_26","name":"Caixa Postal 6194","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"math_baro_geraldo_campinas_sp_27","name":"Barão Geraldo Campinas SP","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"math_frazes_reais_e_complexas_de_equaes_polin_28","name":"F/Raízes reais e complexas de equações polinomiais...","tier":2,"weight":1,"cycles":1,"tags":[]}
+{"id":"math_f_fatorao_e_multiplicidade_de_razes_teor_29","name":"F Fatoração e multiplicidade de raízes, teorema fu...","tier":3,"weight":1,"cycles":1,"tags":[]}
+{"id":"math_contagem_e_probabilidade_30","name":"Contagem e probabilidade","tier":2,"weight":1,"cycles":1,"tags":["data"]}
+{"id":"math_fprincpio_da_casa_dos_pombos_31","name":"F/Princípio da casa dos pombos","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"math_fprincpios_de_contagem_incluso_excluso_e_32","name":"F/Princípios de contagem: inclusão exclusão e mult...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"math_farranjos_combinaes_e_permutaes_33","name":"F/Arranjos, combinações e permutações","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"math_fespao_amostral_e_o_conceito_de_probabil_34","name":"F/Espaço amostral e o conceito de probabilidade","tier":2,"weight":1,"cycles":1,"tags":["data"]}
+{"id":"math_fprobabilidade_da_unio_e_da_interseo_de__35","name":"F/Probabilidade da união e da interseção de evento...","tier":2,"weight":1,"cycles":1,"tags":["data"]}
+{"id":"math_f_probabilidade_condicional_36","name":"F Probabilidade condicional.","tier":3,"weight":1,"cycles":1,"tags":["data"]}
+{"id":"math_sistemas_lineares_37","name":"Sistemas lineares","tier":2,"weight":1,"cycles":1,"tags":[]}
+{"id":"math_fresoluo_e_discusso_de_sistemas_lineares_38","name":"F/Resolução e discussão de sistemas lineares.","tier":2,"weight":1,"cycles":1,"tags":[]}
+{"id":"math_frepresentao_algbrica_e_grfica_de_um_sis_39","name":"F/Representação algébrica e gráfica de um sistema ...","tier":2,"weight":1,"cycles":1,"tags":[]}
+{"id":"math_finterpretao_geomtrica_de_um_sistema_de__40","name":"F/Interpretação geométrica de um sistema de equaçõ...","tier":2,"weight":1,"cycles":1,"tags":[]}
+{"id":"math_soluoes_41","name":"solução(ões).","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"math_frepresentao_matricial_de_sistemas_linea_42","name":"F/Representação matricial de sistemas lineares.","tier":2,"weight":1,"cycles":1,"tags":[]}
+{"id":"math_fmatrizes_e_suas_operaes_bsicas_adio_mul_43","name":"F/Matrizes e suas operações básicas (adição, multi...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"math_f_inversa_e_determinante_de_matrizes_qua_44","name":"F Inversa e determinante de matrizes quadradas.","tier":3,"weight":1,"cycles":1,"tags":[]}
+{"id":"math_geometria_plana_45","name":"Geometria plana","tier":2,"weight":1,"cycles":1,"tags":["geometry"]}
+{"id":"math_fcongruncia_de_figuras_geomtricas_46","name":"F/Congruência de figuras geométricas","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"math_fcongruncia_de_tringulos_47","name":"F/Congruência de triângulos","tier":1,"weight":1,"cycles":1,"tags":["geometry"]}
+{"id":"math_fparalelas_e_transversais_teorema_de_tal_48","name":"F/Paralelas e transversais, teorema de Tales","tier":3,"weight":1,"cycles":1,"tags":[]}
+{"id":"math_fsemelhana_de_tringulos_49","name":"F/Semelhança de triângulos","tier":1,"weight":1,"cycles":1,"tags":["geometry"]}
+{"id":"math_ftringulos_retngulos_teorema_de_pitgoras_50","name":"F/Triângulos retângulos, teorema de Pitágoras","tier":3,"weight":1,"cycles":1,"tags":["geometry"]}
+{"id":"math_frelaes_mtricas_nos_tringulos_51","name":"F/Relações métricas nos triângulos","tier":1,"weight":1,"cycles":1,"tags":["geometry"]}
+{"id":"math_fquadrilteros_notveis_52","name":"F/Quadriláteros notáveis","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"math_fpolgonos_regulares_circunferncias_e_crc_53","name":"F/Polígonos regulares, circunferências e círculos,...","tier":1,"weight":1,"cycles":1,"tags":["geometry"]}
+{"id":"math_f_inscrio_e_circunscrio_54","name":"F Inscrição e circunscrição.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"math_geometria_espacial_55","name":"Geometria espacial","tier":2,"weight":1,"cycles":1,"tags":["geometry"]}
+{"id":"math_f_paralelismo_e_perpendicularidade_entre_56","name":"F Paralelismo e perpendicularidade entre retas e p...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"math_f_poliedros_prismas_e_pirmides_reas_e_vo_57","name":"F Poliedros, prismas e pirâmides, áreas e volumes,...","tier":1,"weight":1,"cycles":1,"tags":["geometry"]}
+{"id":"math_f_cilindros_cones_e_esferas_reas_e_volum_58","name":"F Cilindros, cones e esferas, áreas e volumes, tro...","tier":1,"weight":1,"cycles":1,"tags":["geometry"]}
+{"id":"math_trigonometria_59","name":"Trigonometria","tier":2,"weight":1,"cycles":1,"tags":[]}
+{"id":"math_fmedidas_de_ngulos_graus_e_radianos_60","name":"F/Medidas de ângulos, graus e radianos","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"math_fidentidades_trigonomtricas_fundamentais_61","name":"F/Identidades trigonométricas fundamentais","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"math_fequaes_trigonomtricas_62","name":"F/Equações trigonométricas","tier":2,"weight":1,"cycles":1,"tags":[]}
+{"id":"math_flei_dos_senos_e_lei_dos_cossenos_63","name":"F/Lei dos senos e lei dos cossenos.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"math_f_transformaes_trigonomtricas_64","name":"F Transformações trigonométricas","tier":3,"weight":1,"cycles":1,"tags":[]}
+{"id":"math_f_inequaes_trigonomtricas_65","name":"F Inequações trigonométricas","tier":3,"weight":1,"cycles":1,"tags":[]}
+{"id":"math_geometria_analtica_66","name":"Geometria analítica","tier":2,"weight":1,"cycles":1,"tags":["geometry"]}
+{"id":"math_cidade_universitria_zeferino_vaz_67","name":"Cidade Universitária \"Zeferino Vaz\"","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"math_caixa_postal_6194_68","name":"Caixa Postal 6194","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"math_baro_geraldo_campinas_sp_69","name":"Barão Geraldo Campinas SP","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"math_fcoordenadas_no_plano_70","name":"F/Coordenadas no plano","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"math_fdistncia_entre_dois_pontos_do_plano_71","name":"F/Distância entre dois pontos do plano","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"math_fequao_da_reta_no_plano_72","name":"F/Equação da reta no plano","tier":1,"weight":1,"cycles":1,"tags":["algebra"]}
+{"id":"math_fposies_relativas_entre_retas_entre_crcu_73","name":"F/Posições relativas entre retas, entre círculos e...","tier":1,"weight":1,"cycles":1,"tags":["geometry"]}
+{"id":"math_fdistncia_de_um_ponto_a_uma_reta_do_plan_74","name":"F/Distância de um ponto a uma reta do plano.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"math_f_condies_para_alinhamento_de_trs_pontos_75","name":"F Condições para alinhamento de três pontos no pla...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"math_logaritmos_e_expone_nciais_76","name":"Logaritmos e expone nciais","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"math_fpotncias_definio_e_propriedades_77","name":"F/Potências: definição e propriedades","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"math_fa_funo_exponencial_e_seu_grfico_78","name":"F/A função exponencial e seu gráfico","tier":2,"weight":1,"cycles":1,"tags":["algebra","graph"]}
+{"id":"math_f_logaritmos_definio_e_propriedades_79","name":"F Logaritmos: definição e propriedades","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"math_f_a_funo_logartmica_e_seus_grficos_80","name":"F A função logarítmica e seus gráficos","tier":2,"weight":1,"cycles":1,"tags":["algebra","graph"]}
+{"id":"math_f_equaes_e_inequaes_logartmica_s_e_expon_81","name":"F Equações e inequações logarítmica s e exponencia...","tier":3,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_resolver_problemas_geogrficos_mobilizand_82","name":"Resolver problemas geográficos mobilizando conceit...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_conhecimento_espao_territrio_regio_lugar_83","name":"conhecimento: espaço, território, região, lugar, e...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_aprimorar_o_raciocnio_geogrfico_desenvol_84","name":"Aprimorar o raciocínio geográfico desenvolvendo o ...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_princpios_geogrficos_analogia_conexo_dif_85","name":"princípios geográficos (analogia, conexão, diferen...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_localizao_e_ordem_para_compreender_aspec_86","name":"localização e ordem) para compreender aspectos da ...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_compreender_a_espacializao_dos_fenmenos__87","name":"Compreender a espacialização dos fenômenos a parti...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_grficos_tabelas_cartogramas_e_mapas_ou_s_88","name":"gráficos, tabelas, cartogramas e mapas, ou seja, q...","tier":1,"weight":1,"cycles":1,"tags":["cartography","human"]}
+{"id":"geo_instrumentos_de_que_a_geografia_dispe_pa_89","name":"instrumentos de que a Geografia dispõe para compre...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_descrever_analisar_e_relacionar_processo_90","name":"Descrever, analisar e relacionar processos espacia...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_territrios_nacionais_regio_lugar_e_cotid_91","name":"territórios nacionais, região, lugar e cotidiano.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_conhecer_a_dinmica_dos_territrios_nacion_92","name":"Conhecer a dinâmica dos territórios nacionais por ...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_envolvendo_aspectos_fsico_naturais_urban_93","name":"envolvendo aspectos físico naturais, urbano region...","tier":1,"weight":1,"cycles":1,"tags":["human"]}
+{"id":"geo_geopolticos_e_polticos_recursos_naturais_94","name":"geopolíticos e políticos, recursos naturais e ener...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_elaborar_respostas_escritas_que_envolvam_95","name":"Elaborar respostas escritas que envolvam descrição...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_nas_informaes_e_conhecimentos_listados_n_96","name":"nas informações e conhecimentos listados no conteú...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_sociologia_97","name":"Sociologia.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_i_os_conceitos_fundamentais_98","name":"I – Os conceitos fundamentais","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_fespao_geogrfico_territrio_paisagem_meio_99","name":"F/Espaço geográfico, território, paisagem, meio, r...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_fas_redes_tcnicas_as_escalas_as_fronteir_100","name":"F/As redes técnicas; as escalas; as fronteiras; so...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_socioespacial_101","name":"socioespacial.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_ii_linguagem_cartogrfica_e_a_aplicao_das_102","name":"II – Linguagem cartográfica e a aplicação das geot...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_fundamentos_de_orientao_na_superfcie_ter_103","name":"Fundamentos de orientação na superfície terrestre","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_f_meios_de_orientao_na_superfcie_terrest_104","name":"F Meios de orientação na superfície Terrestre.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_cidade_universitria_zeferino_vaz_105","name":"Cidade Universitária \"Zeferino Vaz\"","tier":1,"weight":1,"cycles":1,"tags":["human"]}
+{"id":"geo_caixa_postal_6194_106","name":"Caixa Postal 6194","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_baro_geraldo_campinas_sp_107","name":"Barão Geraldo Campinas SP","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_f_as_coordenadas_geogrficas_e_seus_princ_108","name":"F As coordenadas geográficas e seus princípios de ...","tier":1,"weight":1,"cycles":1,"tags":["cartography"]}
+{"id":"geo_fos_movimentos_da_rbita_terrestre_as_est_109","name":"F/Os movimentos da órbita terrestre, as estações d...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_cartografia_como_uma_linguagem_na_geogra_110","name":"Cartografia como uma linguagem na Geografia","tier":1,"weight":1,"cycles":1,"tags":["cartography"]}
+{"id":"geo_f_princpios_da_cartografia_sistemtica_el_111","name":"F Princípios da Cartografia Sistemática: elementos...","tier":1,"weight":1,"cycles":1,"tags":["cartography"]}
+{"id":"geo_fas_projees_cartogrficas_112","name":"F/As projeções cartográficas.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_fmapas_e_cartas_temticas_113","name":"F/Mapas e Cartas Temáticas.","tier":1,"weight":1,"cycles":1,"tags":["cartography"]}
+{"id":"geo_fescala_cartogrfica_e_escala_geogrfica_d_114","name":"F/Escala cartográfica e escala geográfica dos fenô...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_iii_os_componentes_fsico_naturais_consti_115","name":"III – Os componentes físico naturais constituintes...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_escala_global_116","name":"escala global","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_mecanismos_da_interao_litosfera_x_hidros_117","name":"Mecanismos da interação Litosfera x Hidrosfera x A...","tier":1,"weight":1,"cycles":1,"tags":["climate"]}
+{"id":"geo_f_as_teorias_da_deriva_continental_expan_118","name":"F As teorias da Deriva Continental, Expansão do As...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_fprocessos_endgenos_e_exgenos_da_configu_119","name":"F/Processos endógenos e exógenos da configuração d...","tier":1,"weight":1,"cycles":1,"tags":["geology"]}
+{"id":"geo_fformas_de_relevo_processos_e_mecanismos_120","name":"F/Formas de relevo: processos e mecanismos de gêne...","tier":1,"weight":1,"cycles":1,"tags":["geology"]}
+{"id":"geo_f_compartimentos_do_relevo_brasileiro_e__121","name":"F Compartimentos do relevo brasileiro e sulamerica...","tier":1,"weight":1,"cycles":1,"tags":["geology"]}
+{"id":"geo_f_solos_formao_diferenciao_e_degradao_da_122","name":"F Solos: formação, diferenciação e degradação das ...","tier":1,"weight":1,"cycles":1,"tags":["geology"]}
+{"id":"geo_fdinmicas_atmosfricas_a_zo_nalidade_clim_123","name":"F/Dinâmicas atmosféricas, a zo nalidade climática ...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_felementos_do_clima_temperatura_umidade__124","name":"F/Elementos do clima (temperatura, umidade e press...","tier":1,"weight":1,"cycles":1,"tags":["climate"]}
+{"id":"geo_climticas_em_mltiplas_escalas_125","name":"climáticas em múltiplas escalas.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_f_os_climas_do_brasil_e_do_continente_su_126","name":"F Os climas do Brasil e do continente sulamericano...","tier":1,"weight":1,"cycles":1,"tags":["climate"]}
+{"id":"geo_fo_ciclo_hidrolgico_a_dinmica_da_gua_e_a_127","name":"F/O ciclo hidrológico, a dinâmica da água e as bac...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_f_as_regies_hidrogrficas_do_brasil_e_a_g_128","name":"F As regiões hidrográficas do Brasil e a gestão de...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_fos_oceanos_e_mares_dinmicas_processos_e_129","name":"F/Os oceanos e mares: dinâmicas, processos e inter...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_terrestres_a_regulao_e_a_gesto_130","name":"terrestres; a regulação e a gestão.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_f_a_criosfera_e_as_mudanas_ambientais_gl_131","name":"F A criosfera e as mudanças ambientais globais.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_a_biosfera_e_a_questo_ambiental_no_siste_132","name":"A Biosfera e a questão ambiental no sistema terres...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_fos_biomas_e_os_domnios_naturais_em_dife_133","name":"F/Os biomas e os domínios naturais em diferentes e...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_f_as_unidades_de_conservao_e_os_hotspots_134","name":"F As Unidades de Conservação e os hotspots de biod...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_f_anlise_integrada_dos_componentes_natur_135","name":"F Análise integrada dos componentes naturais: os d...","tier":2,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_frecursos_naturais_mecanismos_de_apropri_136","name":"F/Recursos naturais: mecanismos de apropriação, ex...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_friscos_e_desastres_ambientais_e_seus_im_137","name":"F/Riscos e desastres ambientais e seus impactos so...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_fa_interferncia_do_homem_na_dinmica_dos__138","name":"F/A interferência do homem na dinâmica dos process...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_climticas_139","name":"climáticas.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_f_a_insero_do_brasil_no_dilogo_internaci_140","name":"F A inserção do Brasil no diálogo internacional so...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_f2f_planejamento_e_gesto_ambiental_141","name":"F/2ªF – Planejamento e gestão ambiental.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_iv_regionalizao_do_espao_mundial_142","name":"IV – Regionalização do espaço mundial","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_a_organizao_poltico_territorial_em_escal_143","name":"A organização político territorial em escala mundi...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_fas_escalas_de_anlise_geogrficas_e_sua_a_144","name":"F/As escalas de análise geográficas e sua articula...","tier":2,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_fglobalizao_e_regionalizao_mundial_frica_145","name":"F/Globalização e regionalização mundial (África, A...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_fgeopoltica_e_geoeconomia_mundial_poder__146","name":"F/Geopolítica e geoeconomia mundial: poder estatal...","tier":1,"weight":1,"cycles":1,"tags":["economy"]}
+{"id":"geo_cidade_universitria_zeferino_vaz_147","name":"Cidade Universitária \"Zeferino Vaz\"","tier":1,"weight":1,"cycles":1,"tags":["human"]}
+{"id":"geo_caixa_postal_6194_148","name":"Caixa Postal 6194","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_baro_geraldo_campinas_sp_149","name":"Barão Geraldo Campinas SP","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_fconflitos_territoriais_tnicos_militares_150","name":"F/Conflitos territoriais, étnicos, militares, ambi...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_forganizaes_multilaterais_regionais_e_a__151","name":"F/Organizações multilaterais, regionais e a ONGs i...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_f_diferentes_matrizes_energticas_e_a_dis_152","name":"F Diferentes matrizes energéticas e a disputa por ...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_dimenses_demogrficas_urbanas_produtivas__153","name":"Dimensões demográficas, urbanas, produtivas e soci...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_fa_populao_no_mundo_conceitos_e_evoluo_d_154","name":"F/A população no mundo: conceitos e evolução demog...","tier":1,"weight":1,"cycles":1,"tags":["human"]}
+{"id":"geo_deslocamentos_populacionais_e_estrutura__155","name":"deslocamentos populacionais e estrutura populacion...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_fa_urbanizao_mundial_as_cidades_globais__156","name":"F/A urbanização mundial, as cidades globais e as m...","tier":1,"weight":1,"cycles":1,"tags":["human"]}
+{"id":"geo_nas_cidades_e_estruturao_urbana_formas_d_157","name":"nas cidades e estruturação urbana; formas de segre...","tier":1,"weight":1,"cycles":1,"tags":["human"]}
+{"id":"geo_f_os_circuitos_da_produo_mundial_indstri_158","name":"F Os circuitos da produção mundial: indústria, ser...","tier":1,"weight":1,"cycles":1,"tags":["economy"]}
+{"id":"geo_f_evoluo_das_trocas_internacionais_e_esp_159","name":"F Evolução das trocas internacionais e especializa...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_f_globalizao_financeira_e_produtiva_e_a__160","name":"F Globalização financeira e produtiva e a divisão ...","tier":1,"weight":1,"cycles":1,"tags":["economy"]}
+{"id":"geo_fgeografia_das_redes_fluxos_materiais_e__161","name":"F/Geografia das redes: fluxos materiais e imateria...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_informao__162","name":"informação .","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_ftransformaes_no_mundo_do_trabalho_empre_163","name":"F/Transformações no mundo do trabalho; emprego e d...","tier":3,"weight":1,"cycles":1,"tags":["economy"]}
+{"id":"geo_fgeografia_de_gnero_e_raa_dinmicas_socio_164","name":"F/Geografia de gênero e raça: dinâmicas socio terr...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_fgeografia_e_segurana_alimentar_165","name":"F/Geografia e segurança alimentar.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_v_brasil_dinmica_territorial_166","name":"V – Brasil: dinâmica territorial","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_a_organizao_poltico_territorial_do_brasi_167","name":"A organização político territorial do Brasil","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_f_formao_territorial_do_brasil_lgica_do__168","name":"F Formação territorial do Brasil: lógica do povoam...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_fo_brasil_e_sua_insero_no_sistemamundo_169","name":"F/O Brasil e sua inserção no sistemamundo.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_fas_polticas_territoriais_e_o_processo_d_170","name":"F/As políticas territoriais e o processo de modern...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_territorial_171","name":"territorial.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_f_diviso_regional_no_brasil_ontem_e_hoje_172","name":"F Divisão regional no Brasil ontem e hoje.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_f_estado_e_governo_sistemas_de_governo_o_173","name":"F Estado e governo; Sistemas de governo; Organizaç...","tier":2,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_legislativo_e_judicirio_eleies_e_partido_174","name":"Legislativo e Judiciário; Eleições e partidos polí...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_economia_sociedade_e_territrio_175","name":"Economia, sociedade e território.","tier":1,"weight":1,"cycles":1,"tags":["economy"]}
+{"id":"geo_fo_processo_de_industrializao_a_geografi_176","name":"F/O processo de industrialização; a geografia dos ...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_fproduo_agropecuria_e_questo_agrria_no_b_177","name":"F/Produção agropecuária e questão agrária no Brasi...","tier":1,"weight":1,"cycles":1,"tags":["economy"]}
+{"id":"geo_fdesenvolvimento_mercado_de_trabalho_emp_178","name":"F/Desenvolvimento, mercado de trabalho, emprego e ...","tier":1,"weight":1,"cycles":1,"tags":["economy"]}
+{"id":"geo_fmercado_interno_e_externo_179","name":"F/Mercado interno e externo.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_fnova_diviso_social_e_territorial_do_tra_180","name":"F/Nova divisão social e territorial do trabalho.","tier":1,"weight":1,"cycles":1,"tags":["economy"]}
+{"id":"geo_fredes_de_energia_telecomunicaes_transpo_181","name":"F/Redes de energia, telecomunicações, transportes;...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_f2f_explorao_e_gesto_do_espao_martimo_182","name":"F/2ªF – Exploração e gestão do espaço marítimo.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_fpopulaes_tradicionais_especificidades_r_183","name":"F/Populações tradicionais, especificidades regiona...","tier":1,"weight":1,"cycles":1,"tags":["human"]}
+{"id":"geo_fquestes_contemporneas_socioambientais_184","name":"F/Questões contemporâneas socioambientais.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_o_processo_de_urbanizao_185","name":"O processo de urbanização","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_furbanizao_evoluo_e_tendncias_186","name":"F/Urbanização: evolução e tendências.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_fdinmica_populacional_e_urbanizao_migrae_187","name":"F/Dinâmica populacional e urbanização; migrações.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_festrutura_urbana_redes_hierarquias_e_an_188","name":"F/Estrutura urbana: redes, hierarquias e análise i...","tier":2,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_fo_processo_de_metropolizao_ontem_e_hoje_189","name":"F/O processo de metropolização ontem e hoje; o nov...","tier":1,"weight":1,"cycles":1,"tags":["human"]}
+{"id":"geo_fos_centros_de_gesto_do_territrio_190","name":"F/Os centros de gestão do território.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_cidade_universitria_zeferino_vaz_191","name":"Cidade Universitária \"Zeferino Vaz\"","tier":1,"weight":1,"cycles":1,"tags":["human"]}
+{"id":"geo_caixa_postal_6194_192","name":"Caixa Postal 6194","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_baro_geraldo_campinas_sp_193","name":"Barão Geraldo Campinas SP","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_fas_cidades_e_as_especializaes_produtiva_194","name":"F/As cidades e as especializações produtivas.","tier":1,"weight":1,"cycles":1,"tags":["human"]}
+{"id":"geo_fa_poltica_urbana_e_seus_principais_inst_195","name":"F/A política urbana e seus principais instrumentos...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_fsegregao_socioespacial_e_violncia_no_br_196","name":"F/Segregação socioespacial e violência no Brasil.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"geo_fmovimentos_sociais_urbanos_e_o_direito__197","name":"F/Movimentos sociais urbanos e o direito à cidade.","tier":1,"weight":1,"cycles":1,"tags":["human"]}
+{"id":"hist_compreender_de_forma_crtica_documentos_h_198","name":"Compreender de forma crítica documentos históricos...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"hist_iconogrfico_cartogrfico_e_material_produ_199","name":"iconográfico, cartográfico e material), produzidos...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"hist_relacionar_os_documentos_histricos_aos_s_200","name":"Relacionar os documentos históricos aos seus conte...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"hist_com_aderncia_e_pertinncia_histrica_201","name":"com aderência e pertinência histórica.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"hist_descrever_analisar_e_relacionar_conceito_202","name":"Descrever, analisar e relacionar conceitos básicos...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"hist_temporalidades_203","name":"temporalidades.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"hist_cotejar_fontes_e_estudos_historiogrficos_204","name":"Cotejar fontes e estudos historiográficos entre si...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"hist_suas_operaes_de_memria_e_esquecimento_205","name":"suas operações de memória e esquecimento.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"hist_elaborar_respostas_escritas_que_envolvam_206","name":"Elaborar respostas escritas que envolvam descrição...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"hist_eixos_norteadores_dos_recortes_temticos_207","name":"Eixos norteadores dos recortes temáticos","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"hist_leitura_crtica_do_documento_histrico_e_a_208","name":"Leitura crítica do documento histórico e análise r...","tier":2,"weight":1,"cycles":1,"tags":[]}
+{"id":"hist_o_tempo_presente_e_os_usos_do_passado_209","name":"O tempo presente e os usos do passado.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"hist_os_procedimentos_de_uma_histria_no_euroc_210","name":"Os procedimentos de uma história não eurocêntrica:...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"hist_contexto_plural_211","name":"contexto plural.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"hist_a_noo_de_cidadania_e_os_direitos_civis_s_212","name":"A noção de cidadania e os direitos civis, sociais ...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"hist_f_as_civilizaes_da_antiguidade_clssica_g_213","name":"F As civilizações da Antiguidade clássica: Grécia ...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"hist_econmicos_e_culturais_214","name":"econômicos e culturais.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"hist_perodo_medieval_215","name":"Período Medieval","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"hist_f_cultura_s_e_sociedade_s_no_medievo_e_c_216","name":"F Cultura s e sociedade s no medievo e crise do fe...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"hist_perodo_moderno_217","name":"Período Moderno","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"hist_frenascimento_e_refor_mas_fundamentos_ar_218","name":"F/Renascimento e Refor mas: fundamentos artísticos...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"hist_culturais_e_religiosos_219","name":"culturais e religiosos.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"hist_fo_estado_moderno_a_formao_das_monarquia_220","name":"F/O Estado Moderno: a formação das monarquias conf...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"hist_fexpanso_martima_europeia_encontros_e_ch_221","name":"F/Expansão marítima europeia; encontros e choques ...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"hist_fconquista_e_colonizao_das_amricas_polti_222","name":"F/Conquista e colonização das Américas: política, ...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"hist_findgenas_e_africanos_missionao_identida_223","name":"F/Indígenas e africanos: missionação, identidades ...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"hist_cidade_universitria_zeferino_vaz_224","name":"Cidade Universitária \"Zeferino Vaz\"","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"hist_caixa_postal_6194_225","name":"Caixa Postal 6194","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"hist_baro_geraldo_campinas_sp_226","name":"Barão Geraldo Campinas SP","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"hist_f2f_iluminismo_a_crise_do_antigo_regime__227","name":"F/2ªF – Iluminismo, a crise do Antigo Regime e rev...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"hist_perodo_conte_mporneo_228","name":"Período Conte mporâneo","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"hist_f2f_os_processos_de_independncia_e_a_for_229","name":"F/2ªF – Os processos de independência e a formação...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"hist_fiderios_nacionais_e_revolues_no_sculo_x_230","name":"F/Ideários nacionais e revoluções no século XIX.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"hist_f2f_revolues_industriais_e_transformaes__231","name":"F/2ªF – Revoluções industriais e transformações no...","tier":3,"weight":1,"cycles":1,"tags":[]}
+{"id":"hist_frepresentaes_e_pr_ticas_culturais_e_pol_232","name":"F/Representações e prá ticas culturais e políticas...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"hist_ffrica_e_o_imperialismo_europeu_233","name":"F/África e o imperialismo europeu.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"hist_fo_brasil_no_sculo_xix_da_chegada_da_cor_234","name":"F/O Brasil no século XIX – da chegada da corte por...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"hist_fa_questo_da_escravido_do_trfico_transat_235","name":"F/A questão da escravidão, do tráfico transatlânti...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"hist_fa_repblica_no_brasil_at_1964_236","name":"F/A República no Brasil até 1964.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"hist_fas_revolues_no_sculo_xx_mxico_rssia_chi_237","name":"F/As revoluções no século XX: México, Rússia, Chin...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"hist_fa_crise_do_liberalismo_poltico_e_econmi_238","name":"F/A crise do liberalismo político e econômico após...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"hist_ffascismos_e_regimes_totalitrios_239","name":"F/Fascismos e regimes totalitários.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"hist_fas_guerras_mundiais_e_a_formao_de_um_mu_240","name":"F/As guerras mundiais e a formação de um mundo pol...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"hist_fpopulismos_na_amrica_latina_e_na_europa_241","name":"F/Populismos na América Latina e na Europa.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"hist_histria_do_tempo_presente_242","name":"História do tempo presente","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"hist_fos_processos_e_as_lutas_de_descolonizao_243","name":"F/Os processos e as lutas de descolonização na Áfr...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"hist_fa_ditadura_civilmilitar_no_brasil_1964__244","name":"F/A ditadura civilmilitar no Brasil (1964 1985): e...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"hist_polticos_culturais_a_questo_das_memrias__245","name":"políticos, culturais, a questão das memórias e a v...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"hist_fo_brasil_aps_1985_poltica_movimentos_so_246","name":"F/O Brasil após 1985: política, movimentos sociais...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"hist_fditaduras_e_redemocratizaes_na_amrica_l_247","name":"F/Ditaduras e redemocratizações na América Latina.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"hist_f2f_a_crise_dos_regimes_comunistas_e_o_m_248","name":"F/2ªF – A crise dos regimes comunistas e o mundo a...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"hist_fo_processo_de_globalizao_e_sua_crise_di_249","name":"F/O processo de globalização e sua crise: dinâmica...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"hist_f2f_moviment_os_sociais_e_lutas_por_tran_250","name":"F/2ªF – Moviment os sociais e lutas por transforma...","tier":3,"weight":1,"cycles":1,"tags":[]}
+{"id":"hist_sculo_xxi_251","name":"século XXI.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"soc_selecionar_e_sistematizar_evidncias_info_252","name":"Selecionar e sistematizar evidências, informações ...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"soc_analisar_situaes_da_vida_cotidiana_estil_253","name":"Analisar situações da vida cotidiana, estilos de v...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"soc_coletivas_desnaturalizando_e_problematiz_254","name":"coletivas, desnaturalizando e problematizando form...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"soc_intolerncia_e_discriminao_255","name":"intolerância e discriminação.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"soc_elaborar_respostas_escritas_que_envolvam_256","name":"Elaborar respostas escritas que envolvam descrição...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"soc_nas_informaes_e_conhecimentos_listados_n_257","name":"nas informações e conhecimentos listados no conteú...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"soc_i_conceitos_fundamentais_258","name":"I – Conceitos fundamentais","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"soc_fo_indivd_uo_como_ser_social_a_insero_em_259","name":"F/O indivíd uo como ser social; a inserção em grup...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"soc_trabalho_relaes_e_interaes_sociais_socia_260","name":"trabalho; relações e interações sociais; sociabili...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"soc_fcultura_e_poder_democracia_estado_polti_261","name":"F/Cultura e poder: democracia, Estado, políticas p...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"soc_sociais_violncia_globalizao_consumo_e_hb_262","name":"sociais, violência, globalização, consumo e hábito...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"soc_ftrabalho_e_poltica_263","name":"F/Trabalho e política.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"soc_f2f_sociedade_natureza_e_cultura_conflit_264","name":"F/2ªF – Sociedade, natureza e cultura: conflitos s...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"soc_humanos_sustentabilidade_265","name":"humanos, sustentabilidade.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"soc_ii_dimenses_sociais_266","name":"II Dimensões sociais","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"soc_femprego_trabalho_e_renda_vistos_em_dife_267","name":"F/Emprego, trabalho e renda vistos em diferentes e...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"soc_associando_os_a_processos_de_estratifica_268","name":"associando os a processos de estratificação e desi...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"soc_caracterizar_e_analisar_os_impactos_das__269","name":"caracterizar e analisar os impactos das transforma...","tier":3,"weight":1,"cycles":1,"tags":[]}
+{"id":"soc_frelaes_entre_grupos_povos_e_sociedades__270","name":"F/Relações entre grupos, povos e sociedades com a ...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"soc_socioeconmicos_e_culturais_271","name":"socioeconômicos e culturais.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"soc_frelaes_de_diferentes_grupos_povos_e_soc_272","name":"F/Relações de diferentes grupos, povos e sociedade...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"soc_distribuio_e_consumo_e_seus_impactos_eco_273","name":"distribuição e consumo) e seus impactos econômicos...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"soc_fcultura_e_comunicao_msica_televiso_inte_274","name":"F/Cultura e comunicação: música, televisão, intern...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"soc_de_vida_distino_social_e_sociabilidades_275","name":"de vida, distinção social e sociabilidades.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"soc_fdemandas_por_direitos_e_questes_ligadas_276","name":"F/Demandas por direitos e questões ligadas à repre...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"soc_grupos_sociais_277","name":"grupos sociais.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"soc_fdinmicas_e_conflitos_sociais_e_culturai_278","name":"F/Dinâmicas e conflitos sociais e culturais como b...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phil_analisar_os_textos_filosficos_levando_em_279","name":"Analisar os textos filosóficos levando em consider...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phil_filosfico_as_teses_e_os_argumentos_apres_280","name":"filosófico, as teses e os argumentos apresentados.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phil_compreender_e_interpretar_de_forma_crtic_281","name":"Compreender e interpretar de forma crítica textos ...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phil_pocas_e_lugares_relacionando_os_com_tema_282","name":"pocas e lugares, relacionando os com temas e quest...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phil_como_com_conhecimentos_produzidos_em_out_283","name":"como com conhecimentos produzidos em outras áreas.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phil_comparar_distintas_abordagens_filosficas_284","name":"Comparar distintas abordagens filosóficas de um me...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phil_elaborar_respostas_escritas_que_envolvam_285","name":"Elaborar respostas escritas que envolvam descrição...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phil_ffundamentos_da_tica_e_formao_de_sujeito_286","name":"F/Fundamentos da ética e formação de sujeitos étic...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phil_dever_autonomia_moral_juzo_moral_conscin_287","name":"dever, autonomia, moral, juízo moral, consciência ...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phil_cidade_universitria_zeferino_vaz_288","name":"Cidade Universitária \"Zeferino Vaz\"","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phil_caixa_postal_6194_289","name":"Caixa Postal 6194","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phil_baro_geraldo_campinas_sp_290","name":"Barão Geraldo Campinas SP","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phil_sentimento_moral_paixes_princpio_raciona_291","name":"sentimento moral, paixões, princípio racional, uni...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phil_entre_tica_e_poltica_292","name":"entre ética e política.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phil_ffundamentos_da_poltica_e_formao_de_suje_293","name":"F/Fundamentos da política e formação de sujeitos p...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phil_democracia_liberalismo_republicanismo_ma_294","name":"democracia, liberalismo, republicanismo, marxismo,...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phil_contrato_social_justia_igualdade_liberda_295","name":"contrato social, justiça, igualdade, liberdade, re...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phil_poltica_participao_poltica_soberania_sob_296","name":"política, participação política, soberania, sobera...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"eng_ler_analisar_e_interpretar_informaes_em__297","name":"Ler, analisar e interpretar informações em textos ...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"eng_mobilizar_conhecimentos_sistmicos_vocabu_298","name":"Mobilizar conhecimentos sistêmicos (vocabulário e ...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"eng_construir_sentidos_a_partir_da_leitura_r_299","name":"construir sentidos a partir da leitura reflexiva e...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"eng_articular_conhecimentos_diversos_a_parti_300","name":"Articular conhecimentos diversos a partir do conta...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"eng_elaborar_respostas_escritas_que_envolvam_301","name":"Elaborar respostas escritas que envolvam descrição...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"eng_articular_conhecimentos_de_diversas_reas_302","name":"Articular conhecimentos de diversas áreas a partir...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"eng_interdisciplinar_303","name":"interdisciplinar.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"eng_fmobilizar_conhecimentos_prvios_lingusti_304","name":"F/Mobilizar conhecimentos prévios (linguísticos, t...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"eng_no_ato_da_leitura_de_um_texto_305","name":"no ato da leitura de um texto","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"eng_finterpretar_e_sintetizar_os_objetivos_e_306","name":"F/Interpretar e sintetizar os objetivos e a ideia ...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"eng_flocalizar_e_interpretar_argumentos_e_co_307","name":"F/Localizar e interpretar argumentos e contraargum...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"eng_fanalisar_interesses_relaes_de_poder_e_p_308","name":"F/Analisar interesses, relações de poder e perspec...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"eng_diversas_prticas_de_linguagem_para_compr_309","name":"diversas práticas de linguagem para compreender o ...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"eng_constituem_se_e_re_produzem_significao_e_310","name":"constituem se e (re )produzem significação e ideol...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"eng_fperceber_subentendidos_ironias_efeitos__311","name":"F/Perceber subentendidos, ironias, efeitos de sent...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"eng_freconhecer_relaes_ou_contradies_entre_t_312","name":"F/Reconhecer relações ou contradições entre textos","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"eng_fcomparar_informaes_em_diferentes_lingua_313","name":"F/Comparar informações em diferentes linguagens (i...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"eng_visuais_multimodais_mobilizando_conhecim_314","name":"visuais, multimodais), mobilizando conhecimentos n...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"eng_cidade_universitria_zeferino_vaz_315","name":"Cidade Universitária \"Zeferino Vaz\"","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"eng_caixa_postal_6194_316","name":"Caixa Postal 6194","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"eng_baro_geraldo_campinas_sp_317","name":"Barão Geraldo Campinas SP","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"eng_futilizar_o_contexto_e_pistas_textuais_p_318","name":"F/Utilizar o contexto e pistas textuais para infer...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"eng_pertinentes_a_palavras_e_expresses_d_esc_319","name":"pertinentes – a palavras e expressões d esconhecid...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"eng_freconhecer_a_diversidade_lingustica_atr_320","name":"F/Reconhecer a diversidade linguística atrelada a ...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"eng_discursivos_da_lngua_inglesa_321","name":"discursivos da língua inglesa","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"eng_frefletir_sobre_aspectos_sociais_cultura_322","name":"F/Refletir sobre aspectos sociais, culturais e ide...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"eng_semelhanas_entre_a_lngua_inglesa_e_a_lng_323","name":"semelhanças entre a língua inglesa e a língua port...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"eng_f_desenvolver_respostas_escritas_que_rel_324","name":"F Desenvolver respostas escritas que relacionem co...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"eng_a_partir_de_textos_variados_em_lngua_ing_325","name":"a partir de textos variados em língua inglesa, em ...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"bio_fcomponentes_bioqumicos_da_clula_326","name":"F/Componentes bioquímicos da célula","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"bio_festrutura_celular_em_procariotos_e_euca_327","name":"F/Estrutura celular em procariotos e eucariotos","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"bio_forganelas_em_clulas_vegetais_e_animais__328","name":"F/Organelas em células vegetais e animais: estrutu...","tier":2,"weight":1,"cycles":1,"tags":[]}
+{"id":"bio_forigem_evolutiva_das_organelas_329","name":"F/Origem evolutiva das organelas","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"bio_fclulas_tronco_ciclo_celular_e_diviso_ce_330","name":"F/Células tronco, ciclo celular e divisão celular ...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"bio_hereditariedade_331","name":"Hereditariedade","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"bio_fhereditariedade_e_material_gentico_dna__332","name":"F/Hereditariedade e material genético: DNA e RNA","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"bio_cidade_universitria_zeferino_vaz_333","name":"Cidade Universitária \"Zeferino Vaz\"","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"bio_caixa_postal_6194_334","name":"Caixa Postal 6194","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"bio_baro_geraldo_campinas_sp_335","name":"Barão Geraldo Campinas SP","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"bio_fcdigo_gentico_e_sntese_de_protenas_336","name":"F/Código genético e síntese de proteínas","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"bio_fleis_de_segregao_mendeliana_e_padres_de_337","name":"F/Leis de segregação mendeliana e padrões de heran...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"bio_fmanipulao_do_dna_e_biotecnologia_338","name":"F/Manipulação do DNA e biotecnologia","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"bio_f_doenas_genticas_humanas_e_seu_impacto__339","name":"F Doenças genéticas humanas e seu impacto na saúde...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"bio_origem_e_evoluo_da_vida_340","name":"Origem e evolução da vida","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"bio_forigem_e_diversificao_da_vida_341","name":"F/Origem e diversificação da vida","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"bio_fvariabilidade_gentica_e_o_papel_das_mut_342","name":"F/Variabilidade genética e o papel das mutações","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"bio_fseleo_natural_343","name":"F/Seleção natural","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"bio_f_papel_do_acaso_na_evoluo_344","name":"F Papel do acaso na evolução","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"bio_f_especiao_345","name":"F Especiação","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"bio_f2_f_evoluo_biolgica_e_interveno_antrpic_346","name":"F/2 ªF Evolução biológica e intervenção antrópica.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"bio_o_ambiente_e_a_vida_347","name":"O Ambiente e a vida","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"bio_ffluxos_de_energia_e_matria_em_ecossiste_348","name":"F/Fluxos de energia e matéria em ecossistemas e bi...","tier":2,"weight":1,"cycles":1,"tags":[]}
+{"id":"bio_fecossistemas_populaes_e_comunidades_349","name":"F/Ecossistemas, populações e comunidades","tier":2,"weight":1,"cycles":1,"tags":[]}
+{"id":"bio_finteraes_ecolgicas_350","name":"F/Interações ecológicas","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"bio_fproblemas_ambientais_contemporneos_351","name":"F/Problemas ambientais contemporâneos","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"bio_fpreservao_e_estratgias_necessrias_para__352","name":"F/Preservação e estratégias necessárias para conse...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"bio_biodiversidade_353","name":"Biodiversidade","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"bio_fbases_biolgicas_da_classificao_dos_sere_354","name":"F/Bases biológicas da classificação dos seres vivo...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"bio_fbiologia_de_vrus_bactrias_protistas_e_f_355","name":"F/Biologia de vírus, bactérias, protistas e fungos","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"bio_fbiologia_das_plantas_e_algas_356","name":"F/Biologia das plantas e algas","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"bio_fbiologia_dos_animais_357","name":"F/Biologia dos animais.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"bio_sade_humana_358","name":"Saúde humana","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"bio_fo_que_sade_359","name":"F/O que é saúde?","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"bio_festrutura_e_funo_de_clulas_rgos_e_siste_360","name":"F/Estrutura e função de células, órgãos e sistemas","tier":2,"weight":1,"cycles":1,"tags":[]}
+{"id":"bio_f_biologia_da_reproduo_concepo_mtodos_co_361","name":"F Biologia da reprodução: concepção, métodos contr...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"bio_reprodutivos_e_infeces_sexualmente_trans_362","name":"reprodutivos e infecções sexualmente transmissívei...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"bio_f_agresses_sade_das_populaes_saneamento__363","name":"F Agressões à saúde das populações, saneamento e s...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"bio_fdoenas_causadas_por_microrganismos_e_ve_364","name":"F/Doenças causadas por microrganismos e vetores tr...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_ler_analisar_interpretar_e_compreender_i_365","name":"Ler, analisar, interpretar e compreender informaçõ...","tier":2,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_resolver_problemas_de_fsica_que_envolvam_366","name":"Resolver problemas de Física que envolvam: context...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_cidade_universitria_zeferino_vaz_367","name":"Cidade Universitária \"Zeferino Vaz\"","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_caixa_postal_6194_368","name":"Caixa Postal 6194","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_baro_geraldo_campinas_sp_369","name":"Barão Geraldo Campinas SP","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_analisar_e_discutir_modelos_teorias_e_le_370","name":"Analisar e discutir modelos, teorias e leis propos...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_comparar_distintas_explicaes_sobre_os_fe_371","name":"comparar distintas explicações sobre os fenômenos ...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_evoluo_da_terra_e_do_universo_com_as_teo_372","name":"evolução da Terra e do Universo, com as teorias ci...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_descrever_analisar_e_relacio_nar_conceit_373","name":"Descrever, analisar e relacio nar conceitos básico...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_elaborar_respostas_escritas_que_envolvam_374","name":"Elaborar respostas escritas que envolvam desenvolv...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_fgrandezas_fsicas_e_suas_medidas_375","name":"F/Grandezas físicas e suas medidas","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_frelaes_matemticas_entre_grandezas_escal_376","name":"F/Relações matemáticas entre grandezas escalares e...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_frepresentao_grfica_de_uma_relao_funcion_377","name":"F/Representação gráfica de uma relação funcional e...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_f_estimativa_de_valores_378","name":"F Estimativa de valores.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_fcinemtica_do_movimento_em_uma_e_duas_di_379","name":"F/Cinemática do movimento em uma e duas dimensões","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_fleis_de_newton_380","name":"F/Leis de Newton","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_ffora_de_atrito_381","name":"F/Força de atrito","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_fpeso_de_um_corpo_e_acelerao_da_gravidad_382","name":"F/Peso de um corpo e aceleração da gravidade","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_fmomento_de_uma_fora_ou_torque_equilbrio_383","name":"F/Momento de uma força ou torque. Equilíbrio estát...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_flei_da_gravitao_universal_de_newton_e_s_384","name":"F/Lei da gravitação universal de Newton e sua veri...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_solar_leis_de_kepler_385","name":"solar, leis de Kepler","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_fquantidade_de_movimento_momento_linear__386","name":"F/Quantidade de movimento (momento linear): variaç...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_ftrabalho_e_energia_cintica_energia_pote_387","name":"F/Trabalho e energia cinética. Energia potencial e...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_fpotncia_388","name":"F/Potência","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_fhidrosttica_389","name":"F/Hidrostática.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_fforma_estrutura_e_movimentos_da_terra_390","name":"F/Forma, estrutura e movimentos da Terra","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_fcaractersticas_do_sol_terra_e_lua_391","name":"F/Características do Sol, Terra e Lua","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_fplanetas_do_sistema_solar_movimento_orb_392","name":"F/Planetas do sistema solar: movimento orbital em ...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_f_composio_estrutura_e_localizao_do_sist_393","name":"F/ Composição, estrutura e localização do sistema ...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_f_estrelas_e_evoluo_estelar_394","name":"F Estrelas e evolução estelar.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_calorimetria_e_termodinmica_395","name":"Calorimetria e termodinâmica","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_ftemperatura_e_equilbrio_trmico_396","name":"F/Temperatura e equilíbrio térmico","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_flei_zero_da_termodinmica_397","name":"F/Lei Zero da Termodinâmica","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_f_primeira_lei_da_termodinmica_398","name":"F Primeira Lei da Termodinâmica","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_ftrocas_de_calor_e_propriedades_trmicas__399","name":"F/Trocas de calor e propriedades térmicas da matér...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_fgases_perfeitos_400","name":"F/Gases perfeitos","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_f_trabalho_realizado_por_um_gs_em_expans_401","name":"F Trabalho realizado por um gás em expansão","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_ftransies_de_fase_calor_latente_402","name":"F/Transições de fase, calor latente.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_ptica_e_ondas_403","name":"ptica e ondas","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_cidade_universitria_zeferino_vaz_404","name":"Cidade Universitária \"Zeferino Vaz\"","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_caixa_postal_6194_405","name":"Caixa Postal 6194","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_baro_geraldo_campinas_sp_406","name":"Barão Geraldo Campinas SP","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_fondas_planas_comprimento_de_onda_frequn_407","name":"F/Ondas planas: comprimento de onda, frequência e ...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_fondas_mecnicas_ondas_numa_corda_e_ondas_408","name":"F/Ondas mecânicas: ondas numa corda e ondas sonora...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_f_polarizao_interferncia_e_difrao_409","name":"F Polarização, interferência e difração","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_f_ondas_esfricas_410","name":"F Ondas esféricas","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_fespelhos_planos_e_esfricos_411","name":"F/Espelhos planos e esféricos","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_fdisperso_da_luz_ndice_de_refrao_leis_da_412","name":"F/Dispersão da luz, índice de refração, leis da re...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_fprismas_lentes_e_instrumentos_pticos_413","name":"F/Prismas, lentes e instrumentos ópticos","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_fcarter_ondulatrio_da_luz_espectro_eletr_414","name":"F/Caráter ondulatório da luz. Espectro eletromagné...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_f_ptica_da_viso_415","name":"F Óptica da Visão.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_eletricidade_e_magnetismo_416","name":"Eletricidade e magnetismo","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_f_campos_e_foras_eletromagnticas_417","name":"F Campos e forças eletromagnéticas","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_fpotencial_eletrosttico_e_diferena_de_po_418","name":"F/Potencial eletrostático e diferença de potencial","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_fcorrente_eltrica_associao_de_resistores_419","name":"F/Corrente elétrica, associação de resistores em s...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_f_leis_de_kirchhoff_e_fora_eletromotriz_420","name":"F Leis de Kirchhoff e força eletromotriz","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_f_capacitores_dieltricos_e_associao_em_s_421","name":"F Capacitores, dielétricos e associação em série e...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_f_campo_magntico_gerado_por_correntes_e__422","name":"F Campo magnético gerado por correntes e por ímãs","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_f_fora_sobre_carga_eltrica_em_movimento__423","name":"F Força sobre carga elétrica em movimento na prese...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"phys_f_induo_eletromagntica_fluxo_magntico_e__424","name":"F Indução eletromagnética: fluxo magnético e a lei...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_ler_analisar_comparar_e_interpretar_info_425","name":"Ler, analisar, comparar e interpretar informações ...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_grficos_figuras_imagens_etc_426","name":"gráficos, figuras, imagens etc.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_resolver_problemas_de_qumica_que_envolva_427","name":"Resolver problemas de Química que envolvam:","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_contextualizao_de_fenmenos_e_processos_c_428","name":"contextualização de fenômenos e processos científi...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_aplicao_de_conceitos_e_informaes_a_situa_429","name":"aplicação de conceitos e informações a situações.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_descrever_analisar_e_relacionar_conceito_430","name":"Descrever, analisar e relacionar conceitos fundame...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_elaborar_respostas_escritas_que_envolvam_431","name":"Elaborar respostas escritas que envolvam descrição...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_focorrncia_na_natureza_processos_de_puri_432","name":"F/Ocorrência na natureza, processos de purificação...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_substncias_mudanas_de_estado_433","name":"substâncias, mudanças de estado.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_fsmbolos_e_frmulas_na_representao_de_tom_434","name":"F/Símbolos e fórmulas na representação de átomos, ...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_fmassas_atmicas_massas_molares_e_quantid_435","name":"F/Massas atômicas, massas molares e quantidade de ...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_fequao_geral_dos_gases_ideais_leis_de_bo_436","name":"F/Equação geral dos gases ideais, leis de Boyle e ...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_fprincpio_de_avogadro_437","name":"F/Princípio de Avogadro","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_f_gases_energia_cintica_mdia_438","name":"F Gases: energia cinética média.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_fmisturas_gasosas_presso_parcial_e_a_lei_439","name":"F/Misturas gasosas, pressão parcial e a lei de Dal...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_f_difuso_gasosa_noes_de_gases_reais_e_li_440","name":"F Difusão gasosa, noções de gases reais e liquefaç...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_flquidos_e_slidos_441","name":"F/Líquidos e sólidos.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_fcaracterizao_dos_estados_lquido_e_slido_442","name":"F/Caracterização dos estados líquido e sólido e pr...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_flquidos_solues_eletrolticos_e_no_eletro_443","name":"F/Líquidos (soluções) eletrolíticos e não eletrolí...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_condutibilidade_eltrica_e_propriedades_c_444","name":"condutibilidade elétrica e propriedades coligativa...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_fexpresses_de_concentrao_porcentagem_fra_445","name":"F/Expressões de concentração: porcentagem, fração ...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_massavolume_molvolume_molquilograma_446","name":"massa/volume, mol/volume, mol/quilograma.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_f_o_estado_coloidal_447","name":"F O estado coloidal.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_estrutura_atmica_e_classificao_peridica_448","name":"Estrutura atômica e classificação periódica","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_fsubpartculas_atmicas_nveis_de_energia_e_449","name":"F/Subpartículas atômicas, níveis de energia e dist...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_atmico_nmero_de_massa_istopos_energia_de_450","name":"atômico, número de massa, isótopos, energia de ion...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_eletronegatividade_451","name":"eletronegatividade.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_f_correlaes_entre_propriedades_das_subst_452","name":"F Correlações entre propriedades das substâncias q...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_na_classificao_peridica_453","name":"na classificação periódica.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_fradioatividade_radioistopos_equaes_qumi_454","name":"F/Radioatividade, radioisótopos: equações químicas...","tier":2,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_ligao_qumica_455","name":"Ligação química","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_fmodelo_inico_covalente_e_metlico_456","name":"F/Modelo iônico, covalente e metálico.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_fligao_qumica_e_as_propriedades_das_subs_457","name":"F/Ligação química e as propriedades das substância...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_molculas_mais_simples_como_gua_dixido_de_458","name":"moléculas mais simples como: água, dióxido de carb...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_finteraes_intermoleculares_interaes_de_v_459","name":"F/Interações intermoleculares: Interações de Van d...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_transformaes_dos_materiais_460","name":"Transformações dos materiais","tier":3,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_fconservao_de_tomos_e_de_cargas_nas_reae_461","name":"F/Conservação de átomos e de cargas nas reações qu...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_fclculos_estequiomtricos_relaes_ponderai_462","name":"F/Cálculos estequiométricos: relações ponderais e ...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_cintica_qumica_463","name":"Cinética química","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_freaes_qumicas_464","name":"F/Reações químicas","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_f_colises_efetivas_465","name":"F Colisões efetivas.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_fvelocidade_de_reao_e_energia_de_ativa_o_466","name":"F/Velocidade de reação e energia de ativaç ão.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_fefeito_do_estado_de_agregao_da_concentr_467","name":"F/Efeito do estado de agregação, da concentração, ...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_catalisador_na_velocidade_das_transforma_468","name":"catalisador na velocidade das transformações das s...","tier":3,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_energia_nas_reaes_qumicas_469","name":"Energia nas reações químicas","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_cidade_universitria_zeferino_vaz_470","name":"Cidade Universitária \"Zeferino Vaz\"","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_caixa_postal_6194_471","name":"Caixa Postal 6194","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_baro_geraldo_campinas_sp_472","name":"Barão Geraldo Campinas SP","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_freaes_exotrmicas_e_endotrmicas_e_clculo_473","name":"F/Reações exotérmicas e endotérmicas e cálculos de...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_fprincpio_da_conservao_da_energia_lei_de_474","name":"F/Princípio da conservação da energia, lei de Hess...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_equilbrio_qumico_475","name":"Equilíbrio químico","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_fsistemas_em_equilbrio_476","name":"F/Sistemas em equilíbrio.","tier":2,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_fconstante_de_equilbrio_477","name":"F/Constante de equilíbrio.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_fprincpio_de_le_chatelier_478","name":"F/Princípio de Le Chatelier.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_fconceitos_cido_base_de_arrhenius_bronst_479","name":"F/Conceitos ácido base de Arrhenius, Bronsted e Le...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_fequilbrios_envolvendo_cidos_e_bases_hid_480","name":"F/Equilíbrios envolvendo ácidos e bases, hidrólise...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_fph_de_solues_481","name":"F/pH de soluções.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_eletroqumica_482","name":"Eletroquímica","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_fprocessos_de_oxidao_e_reduo_equacioname_483","name":"F/Processos de oxidação e redução – equacionamento...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_iden_tificao_de_espcies_redutoras_e_oxid_484","name":"iden tificação de espécies redutoras e oxidantes.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_faplicao_da_tabela_de_potenciais_padro_d_485","name":"F/Aplicação da tabela de potenciais padrão de elet...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_f_leis_de_faraday_486","name":"F Leis de Faraday.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_f_eletrlise_de_solues_aquosas_e_de_compo_487","name":"F Eletrólise de soluções aquosas e de compostos fu...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_qumica_de_compostos_orgnicos_488","name":"Química de compostos orgânicos","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_ffrmulas_moleculares_estruturais_e_de_le_489","name":"F/Fórmulas moleculares, estruturais e de Lewis, ca...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_f_reconhecimento_de_funes_orgnicas_hidro_490","name":"F Reconhecimento de funções orgânicas: hidrocarbon...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_alcois_fenis_teres_aldedos_cetonas_cidos_491","name":"alcoóis, fenóis, éteres, aldeídos, cetonas, ácidos...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_fnomenclatura_obteno_e_propriedades_dos__492","name":"F/Nomenclatura, obtenção e propriedades dos compos...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_representativos_493","name":"representativos.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_fnoes_sobre_carboidratos_lipdeos_protena_494","name":"F/Noções sobre carboidratos, lipídeos, proteínas e...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_fnoes_de_polmeros_495","name":"F/Noções de polímeros.","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_o_mundo_em_transformao_496","name":"O mundo em transformação","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_fnoes_gerais_sobre_a_composio_a_utilizao_497","name":"F/Noções gerais sobre a composição, a utilização d...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_terrestre_da_atmosfera_da_biosfera_e_da__498","name":"terrestre, da atmosfera, da biosfera e da hidrosfe...","tier":1,"weight":1,"cycles":1,"tags":[]}
+{"id":"chem_utilizao_499","name":"utilização.","tier":1,"weight":1,"cycles":1,"tags":[]}

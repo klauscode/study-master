@@ -11,10 +11,7 @@ import CurrencyBenchView from './components/views/CurrencyBenchView'
 import AnkiView from './components/views/AnkiView'
 import MapCraftView from './components/views/MapCraftView'
 import ShopView from './components/views/ShopView'
-// Floating SR alerts removed in favor of header badges and in-page coach rail
-// Widgets are now shown via CoachRail within Study view
 import { resetGameState } from './services/persistenceService'
-// import BuffIconBar from './components/ui/BuffIconBar'
 import { calculateXPForNextLevel } from './services/experienceService'
 import GemsView from './components/views/GemsView'
 
@@ -29,14 +26,12 @@ function Main() {
     return (TABS as readonly string[]).includes(h) ? (h as Tab) : 'study'
   }
   const [tab, setTabState] = React.useState<Tab>(getInitialTab())
-  // overlays removed
   const setTab = (t: Tab) => { setTabState(t); window.location.hash = t }
   React.useEffect(() => {
     const onHash = () => setTabState(getInitialTab())
     window.addEventListener('hashchange', onHash)
     return () => window.removeEventListener('hashchange', onHash)
   }, [])
-  // XP progress bar data
   const curXP = state.character.xp || 0
   const curLevel = state.character.level || 1
   const nextReq = calculateXPForNextLevel(curLevel)
@@ -52,13 +47,12 @@ function Main() {
       flexDirection: 'column',
       overflow: 'hidden'
     }}>
-            <header style={{ padding: 16, borderBottom: '1px solid var(--border)', display: 'flex', alignItems: 'center', gap: 12, flexWrap:'wrap' }}>
+      <header style={{ padding: 16, borderBottom: '1px solid var(--border)', display: 'flex', alignItems: 'center', gap: 12, flexWrap:'wrap' }}>
         <h1 style={{ margin: 0, marginRight: 'auto' }}>Klaus Study</h1>
         <button onClick={() => setTab('study')} disabled={tab==='study'}>Study</button>
         <button onClick={() => setTab('character')} disabled={tab==='character'}>Character</button>
         <button onClick={() => setTab('tasks')} disabled={tab==='tasks'}>Tasks</button>
         <button onClick={() => setTab('shop')} disabled={tab==='shop'}>Shop</button>
-        {/* Advanced dropdown */}
         <div style={{ position:'relative' }}>
           <button onClick={() => setShowAdvanced(v=>!v)}>Advanced</button>
           {showAdvanced && (
@@ -72,9 +66,10 @@ function Main() {
             </div>
           )}
         </div>
-      </header>{/* Floating XP bar */}
+      </header>
+      {/* Floating XP bar */}
       <div style={{ padding:'6px 12px', borderBottom:'1px solid var(--border)', background:'var(--card-bg)', display:'flex', alignItems:'center', gap:10 }}>
-        <div style={{ fontSize:18 }}>💎</div>
+        <div style={{ fontSize:18 }}>⭐</div>
         <div style={{ flex:1, height:10, background:'var(--bg)', borderRadius:6, overflow:'hidden', border:'1px solid #1f2937' }}>
           <div style={{ width: `${(xpPct*100).toFixed(1)}%`, height:'100%', background:'#22c55e' }} />
         </div>
@@ -101,10 +96,6 @@ function Main() {
           : tab === 'maps' ? <MapCraftView />
           : <SettingsView />}
       </main>
-
-      {/* Floating overlays removed */}
-
-      {/* MapleStory-style buff icons removed; buffs shown around timer */}
     </div>
   )
 }
@@ -145,7 +136,7 @@ function CycleSummaryModal(){
           <button onClick={()=>{ setVisible(false); dispatch({ type:'CLEAR_CYCLE_SUMMARY' }) }}>Close</button>
         </div>
         <div style={{ fontSize:13, opacity:0.8, marginBottom:8 }}>
-          {new Date(r.startedAtISO).toLocaleTimeString()} → {new Date(r.endedAtISO).toLocaleTimeString()} · {Math.round(r.studySeconds/60)} min{r.topic ? ` · ${r.topic}` : ''}
+          {new Date(r.startedAtISO).toLocaleTimeString()} → {new Date(r.endedAtISO).toLocaleTimeString()} • {Math.round(r.studySeconds/60)} min{r.topic ? ` • ${r.topic}` : ''}
         </div>
         <div style={{ display:'flex', gap:16, marginBottom:12 }}>
           <SummaryStat label="Avg Focus" value={r.avgFocus.toFixed(2)} />
@@ -188,7 +179,4 @@ function SummaryStat({label, value}:{label:string; value:string}){
     </div>
   )
 }
-
-
-
 

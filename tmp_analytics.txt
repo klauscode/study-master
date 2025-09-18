@@ -59,10 +59,10 @@ export default function AnalyticsView() {
           WebkitTextFillColor: 'transparent',
           backgroundClip: 'text'
         }}>
-          📊 Analytics Dashboard
+          ðŸ“Š Analytics Dashboard
         </h1>
         <p style={{ fontSize: 16, opacity: 0.8, margin: 0, fontWeight: 500 }}>
-          Track your progress • Analyze patterns • Optimize performance
+          Track your progress â€¢ Analyze patterns â€¢ Optimize performance
         </p>
       </div>
 
@@ -75,25 +75,25 @@ export default function AnalyticsView() {
         gap: 24
       }}>
         <StatCard
-          icon="⏱️"
+          icon="â±ï¸"
           label="Total Study Time"
           value={`${Math.round(totalStudy/60)} min`}
           color="#3b82f6"
         />
         <StatCard
-          icon="🔁"
+          icon="ðŸ”„"
           label="Study Cycles"
           value={`${totalCycles}`}
           color="#8b5cf6"
         />
         <StatCard
-          icon="🎯"
+          icon="ðŸŽ¯"
           label="Average Focus"
           value={avgFocus.toFixed(2)}
           color="#f59e0b"
         />
         <StatCard
-          icon="⭐"
+          icon="â­"
           label="Total XP"
           value={`${Math.round(totalXp).toLocaleString()}`}
           color="#22c55e"
@@ -135,7 +135,7 @@ export default function AnalyticsView() {
             e.currentTarget.style.boxShadow = '0 6px 20px rgba(99, 102, 241, 0.3)';
           }}
         >
-          ⬇️ Download CSV Report
+          ðŸ“¥ Download CSV Report
         </button>
       </div>
       {/* Chart Section */}
@@ -155,7 +155,7 @@ export default function AnalyticsView() {
           alignItems: 'center',
           gap: 8
         }}>
-          📈 Last 7 Days Activity
+          ðŸ“ˆ Last 7 Days Activity
         </div>
         <BarRow bins={last7} />
       </div>
@@ -176,7 +176,7 @@ export default function AnalyticsView() {
           alignItems: 'center',
           gap: 8
         }}>
-          🧭 Category Balance (Last 7 Days)
+          ðŸŽ¨ Category Balance (Last 7 Days)
         </div>
         <div style={{
           display: 'grid',
@@ -185,7 +185,7 @@ export default function AnalyticsView() {
         }}>
           {(['Math','Science','Language','Humanities'] as const).map((cat, index) => {
             const colors = ['#3b82f6', '#8b5cf6', '#f59e0b', '#22c55e'];
-            const icons = ['📐', '🔬', '🗣️', '🏛️'];
+            const icons = ['ðŸ”¢', 'ðŸ”¬', 'ðŸ“š', 'ðŸŽ¨'];
             const minutes = Math.round((catTotals[cat]||0)/60);
             const percentage = Math.min(100, (catTotals[cat]||0) / Math.max(1,totalStudy/4) * 100);
 
@@ -264,7 +264,7 @@ export default function AnalyticsView() {
           alignItems: 'center',
           gap: 8
         }}>
-          🕰️ Recent Study Sessions
+          ðŸ•°ï¸ Recent Study Sessions
         </div>
         {cycles.length === 0 ? (
           <div style={{
@@ -272,7 +272,7 @@ export default function AnalyticsView() {
             padding: '60px 20px',
             opacity: 0.6
           }}>
-            <div style={{ fontSize: 48, marginBottom: 16, opacity: 0.3 }}>📊</div>
+            <div style={{ fontSize: 48, marginBottom: 16, opacity: 0.3 }}>ðŸ“Š</div>
             <div style={{ fontSize: 16, fontWeight: 700, marginBottom: 8 }}>
               No study sessions yet
             </div>
@@ -345,7 +345,7 @@ export default function AnalyticsView() {
                         marginBottom: 8,
                         fontStyle: 'italic'
                       }}>
-                        "📝 {r.topic}"
+                        "ðŸ“ {r.topic}"
                       </div>
                     )}
                     <div style={{
@@ -360,7 +360,7 @@ export default function AnalyticsView() {
                         padding: '4px 8px',
                         borderRadius: 6
                       }}>
-                        ⏱️ {Math.round(r.studySeconds/60)} min
+                        â±ï¸ {Math.round(r.studySeconds/60)} min
                       </div>
                       <div style={{
                         background: 'rgba(245, 158, 11, 0.1)',
@@ -368,7 +368,7 @@ export default function AnalyticsView() {
                         padding: '4px 8px',
                         borderRadius: 6
                       }}>
-                        🎯 {r.avgFocus.toFixed(2)} focus
+                        ðŸŽ¯ {r.avgFocus.toFixed(2)} focus
                       </div>
                       <div style={{
                         background: 'rgba(34, 197, 94, 0.1)',
@@ -376,7 +376,7 @@ export default function AnalyticsView() {
                         padding: '4px 8px',
                         borderRadius: 6
                       }}>
-                        ⭐ {Math.round(r.xpGained)} XP
+                        â­ {Math.round(r.xpGained)} XP
                       </div>
                       <div style={{
                         background: 'rgba(139, 92, 246, 0.1)',
@@ -384,7 +384,7 @@ export default function AnalyticsView() {
                         padding: '4px 8px',
                         borderRadius: 6
                       }}>
-                        🎁 {r.lootCount} loot
+                        ðŸŽ {r.lootCount} loot
                       </div>
                     </div>
                   </div>
@@ -452,7 +452,7 @@ function DailyPlanStrip(){
   const reviewDone = Object.values(srs).some(it => new Date(it.lastReviewISO || 0).toDateString() === today)
   const targetMaps = 3
   const itemStyle = { display:'flex', alignItems:'center', gap:8, border:'1px solid var(--border)', borderRadius:8, padding:'8px 12px', background:'var(--card-bg)' } as const
-  const check = (done:boolean) => <span style={{ fontWeight:700, color: done ? '#10b981' : 'var(--fg-muted)' }}>{done ? '✓' : '○'}</span>
+  const check = (done:boolean) => <span style={{ fontWeight:700, color: done ? '#10b981' : 'var(--fg-muted)' }}>{done ? 'âœ”' : 'â—‹'}</span>
   const openMock = () => {
     // Seed a mock_section_target task via generation and route to tasks
     dispatch({ type:'GENERATE_SMART_TASKS', force:true })
@@ -515,10 +515,10 @@ function MapOutcomes(){
 
   // Time vs Accuracy buckets
   const buckets = [
-    { label: '≤10m', min:0, max:10 },
-    { label: '11—20m', min:11, max:20 },
-    { label: '21—30m', min:21, max:30 },
-    { label: '31—45m', min:31, max:45 },
+    { label: 'â‰¤10m', min:0, max:10 },
+    { label: '11â€“20m', min:11, max:20 },
+    { label: '21â€“30m', min:21, max:30 },
+    { label: '31â€“45m', min:31, max:45 },
     { label: '46m+', min:46, max:1e9 }
   ]
   const bucketStats = buckets.map(b => ({ ...b, count:0, sum:0 }))
@@ -531,7 +531,7 @@ function MapOutcomes(){
   const cardStyle = { background:'var(--card-bg)', border:'1px solid var(--border)', borderRadius:8, padding:16 } as const
   const chip = (text:string, sub?:string) => (
     <span style={{ border:'1px solid var(--border)', borderRadius:999, padding:'2px 8px', fontSize:12 }}>
-      {text}{sub ? <span style={{ opacity:0.7 }}> · {sub}</span> : null}
+      {text}{sub ? <span style={{ opacity:0.7 }}> Â· {sub}</span> : null}
     </span>
   )
 
@@ -565,7 +565,7 @@ function MapOutcomes(){
                 <span style={{ opacity:0.7, fontSize:12 }}>No data</span>
               ) : (
                 affixList.map(a => (
-                  <span key={a.id}>{chip(getAffixDisplayName(a.id), `${(a.avg*100).toFixed(0)}% · ${a.count}`)}</span>
+                  <span key={a.id}>{chip(getAffixDisplayName(a.id), `${(a.avg*100).toFixed(0)}% Â· ${a.count}`)}</span>
                 ))
               )}
             </div>
@@ -647,7 +647,7 @@ function SrsOverview(){
           })}
         </div>
       ) : (
-        <div style={{ fontSize:12, opacity:0.7 }}>No due items. 🎉</div>
+        <div style={{ fontSize:12, opacity:0.7 }}>No due items. ðŸŽ‰</div>
       )}
     </div>
   )
@@ -734,7 +734,7 @@ function BarRow({ bins }: { bins: DayBin[] }){
         return (
           <div
             key={b.date}
-            title={`${b.date} • ${Math.round(b.studySeconds/60)} min • ${b.cycles} cycles`}
+            title={`${b.date} â€¢ ${Math.round(b.studySeconds/60)} min â€¢ ${b.cycles} cycles`}
             style={{
               display: 'flex',
               flexDirection: 'column',
@@ -800,3 +800,4 @@ function aggregateCategories(cycles: { endedAtISO: string; studySeconds: number;
   }
   return totals;
 }
+

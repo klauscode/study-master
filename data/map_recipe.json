@@ -1,0 +1,19 @@
+{
+  "question_count": 5,
+  "affix_slots": 2,
+  "affixes_pool": [
+    "time_pressure",
+    "mental_fog",
+    "perfectionist",
+    "overthinking",
+    "distraction",
+    "memory_leak",
+    "complexity_spike",
+    "fatigue",
+    "imposter_syndrome",
+    "analysis_paralysis",
+    "information_overload",
+    "multitasking_chaos"
+  ]
+}
+

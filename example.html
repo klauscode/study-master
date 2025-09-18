@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Klaus Study – Revamped Wireframe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        color-scheme: dark;
+      }
+      html,
+      body {
+        background: #0b1220;
+      }
+      body {
+        font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto,
+          "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+      }
+      .glass {
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.06),
+          rgba(255, 255, 255, 0.02)
+        );
+        backdrop-filter: blur(8px);
+      }
+      .ring-grad {
+        stroke: url(#grad);
+      }
+      .pulse {
+        box-shadow: 0 0 32px rgba(75, 192, 140, 0.35);
+      }
+      .tab-btn[aria-selected="true"] {
+        background: #0f172a;
+        color: #e2e8f0;
+        border-color: #22d3ee;
+      }
+      .badge {
+        background: rgba(34, 211, 238, 0.12);
+        color: #67e8f9;
+        border: 1px solid rgba(34, 211, 238, 0.35);
+      }
+      .wallet-pill {
+        background: rgba(148, 163, 184, 0.08);
+      }
+    </style>
+  </head>
+  <body class="text-slate-200">
+    <!-- Top Nav -->
+    <header
+      class="sticky top-0 z-40 border-b border-slate-800/70 bg-slate-950/70 backdrop-blur"
+    >
+      <div class="mx-auto max-w-7xl px-4 py-3 flex items-center gap-3">
+        <div class="text-2xl font-extrabold tracking-tight">
+          <span class="text-cyan-400">Klaus</span> Study
+        </div>
+        <nav class="ml-6 hidden md:flex items-center gap-2">
+          <button
+            class="tab-btn px-3 py-1.5 text-sm rounded-lg border border-transparent"
+            data-tab="study"
+            aria-selected="true"
+          >
+            Study
+          </button>
+          <button
+            class="tab-btn px-3 py-1.5 text-sm rounded-lg border border-transparent"
+            data-tab="character"
+          >
+            Character
+          </button>
+          <button
+            class="tab-btn px-3 py-1.5 text-sm rounded-lg border border-transparent"
+            data-tab="tasks"
+          >
+            Tasks
+          </button>
+          <button
+            class="tab-btn px-3 py-1.5 text-sm rounded-lg border border-transparent"
+            data-tab="shop"
+          >
+            Shop
+          </button>
+          <div class="relative">
+            <button
+              id="advToggle"
+              class="px-3 py-1.5 text-sm rounded-lg border border-slate-800 hover:border-slate-600"
+            >
+              Advanced ▾
+            </button>
+            <div
+              id="advMenu"
+              class="hidden absolute mt-2 w-44 rounded-xl border border-slate-800 bg-slate-900/90 shadow-xl"
+            >
+              <button
+                class="w-full text-left px-3 py-2 hover:bg-slate-800"
+                data-tab="maps"
+              >
+                Maps
+              </button>
+              <button
+                class="w-full text-left px-3 py-2 hover:bg-slate-800"
+                data-tab="crafting"
+              >
+                Crafting
+              </button>
+              <button
+                class="w-full text-left px-3 py-2 hover:bg-slate-800"
+                data-tab="analytics"
+              >
+                Analytics
+              </button>
+              <button
+                class="w-full text-left px-3 py-2 hover:bg-slate-800"
+                data-tab="settings"
+              >
+                Settings
+              </button>
+            </div>
+          </div>
+        </nav>
+
+        <!-- Spacer -->
+        <div class="flex-1"></div>
+
+        <!-- Wallet collapsed -->
+        <button
+          id="walletBtn"
+          class="wallet-pill flex items-center gap-2 rounded-full px-3 py-1 text-sm border border-slate-800 hover:border-slate-600"
+        >
+          <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+          Wallet
+        </button>
+      </div>
+
+      <!-- Wallet panel -->
+      <div
+        id="walletPanel"
+        class="hidden border-t border-slate-800/60 bg-slate-950/80"
+      >
+        <div
+          class="mx-auto max-w-7xl px-4 py-3 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2"
+        >
+          <div class="glass rounded-lg px-3 py-2 text-sm">
+            Transmute <span class="float-right text-cyan-300">265</span>
+          </div>
+          <div class="glass rounded-lg px-3 py-2 text-sm">
+            Alchemy <span class="float-right text-cyan-300">5</span>
+          </div>
+          <div class="glass rounded-lg px-3 py-2 text-sm">
+            Chaos <span class="float-right text-cyan-300">4</span>
+          </div>
+          <div class="glass rounded-lg px-3 py-2 text-sm">
+            Regal <span class="float-right text-cyan-300">1</span>
+          </div>
+          <div class="glass rounded-lg px-3 py-2 text-sm">
+            Map Fragments <span class="float-right text-cyan-300">13</span>
+          </div>
+          <div class="glass rounded-lg px-3 py-2 text-sm">
+            Chisels <span class="float-right text-cyan-300">7</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="mx-auto max-w-7xl px-4 py-6">
+      <!-- Tabs Container -->
+      <section id="tab-study" class="tab">
+        <div class="grid lg:grid-cols-3 gap-6">
+          <!-- Core: Timer & HUD -->
+          <div class="lg:col-span-2 space-y-6">
+            <div class="glass rounded-2xl border border-slate-800 p-6">
+              <div class="flex items-start gap-6">
+                <!-- Progress Ring -->
+                <div class="relative">
+                  <svg
+                    width="200"
+                    height="200"
+                    viewBox="0 0 120 120"
+                    class="pulse rounded-full"
+                  >
+                    <defs>
+                      <linearGradient
+                        id="grad"
+                        x1="0%"
+                        y1="0%"
+                        x2="100%"
+                        y2="0%"
+                      >
+                        <stop offset="0%" stop-color="#22d3ee" />
+                        <stop offset="100%" stop-color="#34d399" />
+                      </linearGradient>
+                    </defs>
+                    <circle
+                      cx="60"
+                      cy="60"
+                      r="52"
+                      fill="none"
+                      stroke="#0b1220"
+                      stroke-width="10"
+                    />
+                    <circle
+                      id="ring"
+                      cx="60"
+                      cy="60"
+                      r="52"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-width="10"
+                      class="ring-grad"
+                      stroke-dasharray="326"
+                      stroke-dashoffset="65"
+                    />
+                    <text
+                      id="timerText"
+                      x="50%"
+                      y="50%"
+                      dominant-baseline="middle"
+                      text-anchor="middle"
+                      class="fill-slate-100"
+                      font-size="22"
+                      font-weight="700"
+                    >
+                      50:00
+                    </text>
+                  </svg>
+                </div>
+                <!-- HUD -->
+                <div class="flex-1">
+                  <div class="flex items-center justify-between">
+                    <h2 class="text-xl font-bold">Study Session</h2>
+                    <span class="badge rounded-full px-2 py-0.5 text-xs"
+                      >Termologia & Termodinâmica</span
+                    >
+                  </div>
+                  <p class="mt-1 text-sm text-slate-400">
+                    Focus mode with live XP feedback.
+                  </p>
+
+                  <!-- Live Bars -->
+                  <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-3">
+                    <div
+                      class="rounded-xl border border-emerald-500/20 bg-emerald-500/10 p-3"
+                    >
+                      <div class="text-xs text-emerald-300">XP / min</div>
+                      <div id="xpRate" class="text-2xl font-extrabold">
+                        25.6
+                      </div>
+                    </div>
+                    <div
+                      class="rounded-xl border border-cyan-500/20 bg-cyan-500/10 p-3"
+                    >
+                      <div class="text-xs text-cyan-300">Focus Multiplier</div>
+                      <div id="focusMult" class="text-2xl font-extrabold">
+                        1.00×
+                      </div>
+                    </div>
+                    <div
+                      class="rounded-xl border border-fuchsia-500/20 bg-fuchsia-500/10 p-3"
+                    >
+                      <div class="text-xs text-fuchsia-300">Loot Rate</div>
+                      <div id="lootRate" class="text-2xl font-extrabold">
+                        +10%
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mt-4 flex items-center gap-3">
+                    <button
+                      id="startBtn"
+                      class="rounded-xl bg-emerald-500/90 hover:bg-emerald-400 text-slate-900 font-semibold px-4 py-2"
+                    >
+                      Start
+                    </button>
+                    <button
+                      id="pauseBtn"
+                      class="rounded-xl bg-slate-800 hover:bg-slate-700 px-4 py-2"
+                    >
+                      Pause
+                    </button>
+                    <button
+                      id="resetBtn"
+                      class="rounded-xl bg-slate-800 hover:bg-slate-700 px-4 py-2"
+                    >
+                      Reset
+                    </button>
+                  </div>
+
+                  <!-- Buffs around timer (legend) -->
+                  <div class="mt-4 flex flex-wrap gap-2 text-xs">
+                    <span
+                      class="rounded-full border border-amber-400/40 bg-amber-400/10 px-2 py-1"
+                      >☕ Coffee +25% Focus • 28m</span
+                    >
+                    <span
+                      class="rounded-full border border-pink-400/40 bg-pink-400/10 px-2 py-1"
+                      >🧠 Brain Pills +75% XP • 18m</span
+                    >
+                    <span
+                      class="rounded-full border border-indigo-400/40 bg-indigo-400/10 px-2 py-1"
+                      >📚 Study Boost +50% XP • 22m</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quick Slots -->
+              <div class="mt-6">
+                <div class="text-sm mb-2 text-slate-400">Quick Slots</div>
+                <div
+                  class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3"
+                >
+                  <button
+                    class="glass rounded-xl border border-slate-800 p-3 hover:border-amber-400/40"
+                  >
+                    ☕ Coffee
+                  </button>
+                  <button
+                    class="glass rounded-xl border border-slate-800 p-3 hover:border-indigo-400/40"
+                  >
+                    📚 Study Boost
+                  </button>
+                  <button
+                    class="glass rounded-xl border border-slate-800 p-3 hover:border-pink-400/40"
+                  >
+                    🧠 Brain Pills
+                  </button>
+                  <button
+                    class="glass rounded-xl border border-slate-800 p-3 hover:border-emerald-400/40"
+                  >
+                    ⚡ Energy Drink
+                  </button>
+                  <button
+                    class="glass rounded-xl border border-slate-800 p-3 hover:border-yellow-400/40"
+                  >
+                    🍀 Lucky Charm
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Recent Sessions Widget -->
+            <div class="glass rounded-2xl border border-slate-800 p-6">
+              <h3 class="font-semibold mb-3">Recent Study Sessions</h3>
+              <ul class="space-y-2 text-sm">
+                <li
+                  class="flex justify-between border-b border-slate-800/60 pb-2"
+                >
+                  <span>Thermodynamics • 50m</span
+                  ><span class="text-emerald-300">+1,280 XP</span>
+                </li>
+                <li
+                  class="flex justify-between border-b border-slate-800/60 pb-2"
+                >
+                  <span>Leitura & Interpretação • 30m</span
+                  ><span class="text-emerald-300">+760 XP</span>
+                </li>
+                <li class="flex justify-between">
+                  <span>Gramática Funcional • 25m</span
+                  ><span class="text-emerald-300">+540 XP</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Side Panel -->
+          <aside class="space-y-6">
+            <div class="glass rounded-2xl border border-slate-800 p-6">
+              <h3 class="font-semibold">Active Subject</h3>
+              <p class="mt-1 text-sm text-slate-400">
+                Select the gem to focus.
+              </p>
+              <select
+                class="mt-3 w-full rounded-lg border border-slate-700 bg-slate-900 px-3 py-2"
+              >
+                <option>Termologia & Termodinâmica (Lv.2)</option>
+                <option>Leitura & Interpretação (Lv.1)</option>
+                <option>Gramática Funcional (Lv.1)</option>
+              </select>
+            </div>
+
+            <div class="glass rounded-2xl border border-slate-800 p-6">
+              <h3 class="font-semibold">Targets</h3>
+              <div class="mt-3 space-y-3 text-sm">
+                <div>
+                  <div class="flex justify-between">
+                    <span>Daily Minutes</span><span>40 / 90</span>
+                  </div>
+                  <div class="h-2 rounded bg-slate-800">
+                    <div class="h-2 w-2/5 rounded bg-emerald-500"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between">
+                    <span>Weekly Balance</span><span>Science 62%</span>
+                  </div>
+                  <div class="h-2 rounded bg-slate-800">
+                    <div class="h-2 w-3/5 rounded bg-cyan-400"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- Character -->
+      <section id="tab-character" class="tab hidden">
+        <div class="grid lg:grid-cols-3 gap-6">
+          <div
+            class="glass rounded-2xl border border-slate-800 p-6 flex flex-col items-center justify-center"
+          >
+            <div
+              class="h-48 w-36 rounded-2xl bg-gradient-to-b from-slate-800 to-slate-900 flex items-center justify-center"
+            >
+              <div class="h-28 w-20 rounded-lg bg-slate-700/60"></div>
+            </div>
+            <div class="mt-4 text-sm text-slate-400">
+              Ascendant • Level 2 • 139 XP
+            </div>
+          </div>
+          <div class="glass rounded-2xl border border-slate-800 p-6">
+            <h3 class="font-semibold mb-3">Equipment</h3>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-sm">
+              <div class="glass rounded-xl border border-slate-800 p-3">
+                Head — Student Cap
+              </div>
+              <div class="glass rounded-xl border border-slate-800 p-3">
+                Chest — Study Vest
+              </div>
+              <div class="glass rounded-xl border border-slate-800 p-3">
+                Legs — Focus Pants
+              </div>
+              <div class="glass rounded-xl border border-slate-800 p-3">
+                Feet — Scholar Boots
+              </div>
+              <div class="glass rounded-xl border border-slate-800 p-3">
+                Accessory — Empty
+              </div>
+              <div class="glass rounded-xl border border-slate-800 p-3">
+                Weapon — Learning Style
+              </div>
+            </div>
+          </div>
+          <div class="glass rounded-2xl border border-slate-800 p-6">
+            <h3 class="font-semibold mb-3">Stats</h3>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-sm">
+              <div
+                class="rounded-xl border border-emerald-500/20 bg-emerald-500/10 p-3"
+              >
+                ⚡ XP +28%
+              </div>
+              <div
+                class="rounded-xl border border-cyan-500/20 bg-cyan-500/10 p-3"
+              >
+                💎 Gem XP +12%
+              </div>
+              <div
+                class="rounded-xl border border-fuchsia-500/20 bg-fuchsia-500/10 p-3"
+              >
+                🎁 Loot +15%
+              </div>
+              <div
+                class="rounded-xl border border-indigo-500/20 bg-indigo-500/10 p-3"
+              >
+                🌟 Rarity +10%
+              </div>
+              <div
+                class="rounded-xl border border-amber-500/20 bg-amber-500/10 p-3"
+              >
+                🔥 Focus +8%
+              </div>
+            </div>
+
+            <h3 class="font-semibold mt-6 mb-3">Subject Gems</h3>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-sm">
+              <button
+                class="rounded-xl border border-cyan-400/40 bg-cyan-400/10 p-3"
+              >
+                Thermo • Lv2
+              </button>
+              <button
+                class="rounded-xl border border-slate-700 bg-slate-800 p-3"
+              >
+                Leitura • Lv1
+              </button>
+              <button
+                class="rounded-xl border border-slate-700 bg-slate-800 p-3"
+              >
+                Gramática • Lv1
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tasks -->
+      <section id="tab-tasks" class="tab hidden">
+        <div class="glass rounded-2xl border border-slate-800 p-6">
+          <div class="flex items-center justify-between">
+            <h3 class="font-semibold">Tasks</h3>
+            <button
+              class="rounded-lg bg-emerald-500/90 px-3 py-1.5 text-slate-900 font-semibold"
+            >
+              + New
+            </button>
+          </div>
+          <ul class="mt-4 divide-y divide-slate-800 text-sm">
+            <li class="py-3 flex items-center justify-between">
+              <span>Thermo: 20 questions (Precision affix)</span
+              ><span class="text-emerald-300">Pending</span>
+            </li>
+            <li class="py-3 flex items-center justify-between">
+              <span>Portuguese: 30m reading</span
+              ><span class="text-amber-300">In progress</span>
+            </li>
+            <li class="py-3 flex items-center justify-between">
+              <span>Math: 10 mixed problems</span
+              ><span class="text-slate-400">Done</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Shop -->
+      <section id="tab-shop" class="tab hidden">
+        <div class="grid md:grid-cols-3 gap-6">
+          <div
+            class="glass rounded-2xl border border-slate-800 p-6 md:col-span-2"
+          >
+            <h3 class="font-semibold mb-4">Consumables Shop</h3>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 text-sm">
+              <div class="glass rounded-xl border border-slate-800 p-4">
+                <div class="font-semibold">☕ Coffee</div>
+                <div class="text-slate-400">+25% Focus • 30m</div>
+                <button
+                  class="mt-3 rounded-lg bg-slate-200 text-slate-900 px-3 py-1.5"
+                >
+                  Buy (25)
+                </button>
+              </div>
+              <div class="glass rounded-xl border border-slate-800 p-4">
+                <div class="font-semibold">📚 Study Boost</div>
+                <div class="text-slate-400">+50% XP • 25m</div>
+                <button
+                  class="mt-3 rounded-lg bg-slate-200 text-slate-900 px-3 py-1.5"
+                >
+                  Buy (35)
+                </button>
+              </div>
+              <div class="glass rounded-xl border border-slate-800 p-4">
+                <div class="font-semibold">🧠 Brain Pills</div>
+                <div class="text-slate-400">+75% XP • 20m</div>
+                <button
+                  class="mt-3 rounded-lg bg-slate-200 text-slate-900 px-3 py-1.5"
+                >
+                  Buy (120)
+                </button>
+              </div>
+              <div class="glass rounded-xl border border-slate-800 p-4">
+                <div class="font-semibold">⚡ Energy Drink</div>
+                <div class="text-slate-400">+40% Focus • 20m</div>
+                <button
+                  class="mt-3 rounded-lg bg-slate-200 text-slate-900 px-3 py-1.5"
+                >
+                  Buy (75)
+                </button>
+              </div>
+              <div class="glass rounded-xl border border-slate-800 p-4">
+                <div class="font-semibold">🍀 Lucky Charm</div>
+                <div class="text-slate-400">+30% Loot • 1 cycle</div>
+                <button
+                  class="mt-3 rounded-lg bg-slate-200 text-slate-900 px-3 py-1.5"
+                >
+                  Buy (85)
+                </button>
+              </div>
+              <div class="glass rounded-xl border border-slate-800 p-4">
+                <div class="font-semibold">🐎 Golden Horseshoe</div>
+                <div class="text-slate-400">+50% Rare • 1 cycle</div>
+                <button
+                  class="mt-3 rounded-lg bg-slate-200 text-slate-900 px-3 py-1.5"
+                >
+                  Buy (110)
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="glass rounded-2xl border border-slate-800 p-6">
+            <h3 class="font-semibold mb-3">Active Buffs</h3>
+            <ul class="space-y-2 text-sm">
+              <li class="flex justify-between">
+                <span>☕ Coffee</span><span>28m</span>
+              </li>
+              <li class="flex justify-between">
+                <span>🧠 Brain Pills</span><span>18m</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Maps -->
+      <section id="tab-maps" class="tab hidden">
+        <div class="glass rounded-2xl border border-slate-800 p-6">
+          <h3 class="font-semibold mb-3">Map Crafting</h3>
+          <div class="grid lg:grid-cols-3 gap-6 text-sm">
+            <div class="lg:col-span-2 space-y-4">
+              <div>
+                <div class="text-slate-400 mb-2">Affixes</div>
+                <div class="flex flex-wrap gap-2">
+                  <button class="badge rounded-full px-3 py-1">
+                    Time Crunch
+                  </button>
+                  <button class="badge rounded-full px-3 py-1">No Hints</button>
+                  <button class="badge rounded-full px-3 py-1">
+                    Low Level Only
+                  </button>
+                  <button class="badge rounded-full px-3 py-1">
+                    Precision
+                  </button>
+                  <button class="badge rounded-full px-3 py-1">Marathon</button>
+                </div>
+              </div>
+              <div>
+                <div class="text-slate-400 mb-2">Select Gems</div>
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                  <button
+                    class="rounded-lg border border-cyan-400/40 bg-cyan-400/10 px-3 py-2"
+                  >
+                    Thermo Lv2
+                  </button>
+                  <button
+                    class="rounded-lg border border-slate-700 bg-slate-800 px-3 py-2"
+                  >
+                    Leitura Lv1
+                  </button>
+                  <button
+                    class="rounded-lg border border-slate-700 bg-slate-800 px-3 py-2"
+                  >
+                    Gramática Lv1
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="space-y-3">
+              <div class="rounded-xl border border-slate-800 bg-slate-900 p-4">
+                Cost:
+                <span class="text-cyan-300">1 Map Fragment + 1 Chisel</span>
+              </div>
+              <button
+                class="w-full rounded-xl bg-emerald-500/90 px-4 py-2 text-slate-900 font-semibold"
+              >
+                Craft & Start
+              </button>
+              <div class="rounded-xl border border-slate-800 bg-slate-900 p-4">
+                <div class="text-slate-400 mb-1">Current Run</div>
+                <div class="h-2 rounded bg-slate-800 mb-2">
+                  <div class="h-2 w-2/5 rounded bg-emerald-500"></div>
+                </div>
+                <div class="flex justify-between text-xs">
+                  <span>Bronze</span><span>6/15 questions</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Crafting -->
+      <section id="tab-crafting" class="tab hidden">
+        <div class="glass rounded-2xl border border-slate-800 p-6">
+          <h3 class="font-semibold mb-3">Crafting Bench</h3>
+          <div
+            class="rounded-xl border border-slate-800 bg-slate-900 p-6 text-sm text-slate-400"
+          >
+            No loot yet. Conquer study sessions to forge your path.
+          </div>
+        </div>
+      </section>
+
+      <!-- Analytics -->
+      <section id="tab-analytics" class="tab hidden">
+        <div class="grid lg:grid-cols-3 gap-6">
+          <div
+            class="glass rounded-2xl border border-slate-800 p-6 lg:col-span-3"
+          >
+            <div class="grid sm:grid-cols-4 gap-4 text-center">
+              <div class="rounded-xl border border-slate-800 bg-slate-900 p-4">
+                <div class="text-sm text-slate-400">Total Time</div>
+                <div class="text-2xl font-extrabold">12h 40m</div>
+              </div>
+              <div class="rounded-xl border border-slate-800 bg-slate-900 p-4">
+                <div class="text-sm text-slate-400">Study Cycles</div>
+                <div class="text-2xl font-extrabold">27</div>
+              </div>
+              <div class="rounded-xl border border-slate-800 bg-slate-900 p-4">
+                <div class="text-sm text-slate-400">Avg Focus</div>
+                <div class="text-2xl font-extrabold">1.18×</div>
+              </div>
+              <div class="rounded-xl border border-slate-800 bg-slate-900 p-4">
+                <div class="text-sm text-slate-400">Total XP</div>
+                <div class="text-2xl font-extrabold">18,420</div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="glass rounded-2xl border border-slate-800 p-6 lg:col-span-2"
+          >
+            <h3 class="font-semibold mb-3">Last 7 Days</h3>
+            <div class="grid grid-cols-7 gap-2 text-center text-sm">
+              <div class="flex flex-col gap-2">
+                <div class="mx-auto h-24 w-4 bg-emerald-500/20">
+                  <div class="h-8 w-4 bg-emerald-500"></div>
+                </div>
+                <span>Thu</span>
+              </div>
+              <div class="flex flex-col gap-2">
+                <div class="mx-auto h-24 w-4 bg-emerald-500/20">
+                  <div class="h-14 w-4 bg-emerald-500"></div>
+                </div>
+                <span>Fri</span>
+              </div>
+              <div class="flex flex-col gap-2">
+                <div class="mx-auto h-24 w-4 bg-emerald-500/20">
+                  <div class="h-5 w-4 bg-emerald-500"></div>
+                </div>
+                <span>Sat</span>
+              </div>
+              <div class="flex flex-col gap-2">
+                <div class="mx-auto h-24 w-4 bg-emerald-500/20">
+                  <div class="h-6 w-4 bg-emerald-500"></div>
+                </div>
+                <span>Sun</span>
+              </div>
+              <div class="flex flex-col gap-2">
+                <div class="mx-auto h-24 w-4 bg-emerald-500/20">
+                  <div class="h-10 w-4 bg-emerald-500"></div>
+                </div>
+                <span>Mon</span>
+              </div>
+              <div class="flex flex-col gap-2">
+                <div class="mx-auto h-24 w-4 bg-emerald-500/20">
+                  <div class="h-12 w-4 bg-emerald-500"></div>
+                </div>
+                <span>Tue</span>
+              </div>
+              <div class="flex flex-col gap-2">
+                <div class="mx-auto h-24 w-4 bg-emerald-500/20">
+                  <div class="h-20 w-4 bg-emerald-500"></div>
+                </div>
+                <span>Wed</span>
+              </div>
+            </div>
+          </div>
+          <div class="glass rounded-2xl border border-slate-800 p-6">
+            <h3 class="font-semibold mb-3">Category Balance</h3>
+            <ul class="space-y-3 text-sm">
+              <li class="flex items-center justify-between">
+                <span>Math</span><span>32%</span>
+              </li>
+              <li class="flex items-center justify-between">
+                <span>Science</span><span>41%</span>
+              </li>
+              <li class="flex items-center justify-between">
+                <span>Languages</span><span>17%</span>
+              </li>
+              <li class="flex items-center justify-between">
+                <span>Humanities</span><span>10%</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Settings (placeholder) -->
+      <section id="tab-settings" class="tab hidden">
+        <div class="glass rounded-2xl border border-slate-800 p-6 text-sm">
+          <h3 class="font-semibold mb-3">Settings</h3>
+          <p>Minimal wireframe. Hook your real settings here.</p>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      // Simple tab router
+      const tabs = document.querySelectorAll(".tab-btn");
+      const panes = document.querySelectorAll(".tab");
+      tabs.forEach((btn) =>
+        btn.addEventListener("click", () => {
+          tabs.forEach((b) => b.setAttribute("aria-selected", "false"));
+          btn.setAttribute("aria-selected", "true");
+          const t = btn.dataset.tab;
+          panes.forEach((p) => p.classList.add("hidden"));
+          document.getElementById(`tab-${t}`).classList.remove("hidden");
+        })
+      );
+
+      // Advanced dropdown
+      const advToggle = document.getElementById("advToggle");
+      const advMenu = document.getElementById("advMenu");
+      advToggle.addEventListener("click", () =>
+        advMenu.classList.toggle("hidden")
+      );
+      advMenu.querySelectorAll("[data-tab]").forEach((el) =>
+        el.addEventListener("click", () => {
+          advMenu.classList.add("hidden");
+          document
+            .querySelector(`.tab-btn[data-tab="study"]`)
+            .setAttribute("aria-selected", "false");
+          panes.forEach((p) => p.classList.add("hidden"));
+          document
+            .getElementById(`tab-${el.dataset.tab}`)
+            .classList.remove("hidden");
+        })
+      );
+
+      // Wallet panel
+      const walletBtn = document.getElementById("walletBtn");
+      const walletPanel = document.getElementById("walletPanel");
+      walletBtn.addEventListener("click", () =>
+        walletPanel.classList.toggle("hidden")
+      );
+
+      // Timer mock (wireframe)
+      let total = 50 * 60;
+      let left = total;
+      let interval = null;
+      const ring = document.getElementById("ring");
+      const timerText = document.getElementById("timerText");
+      const startBtn = document.getElementById("startBtn");
+      const pauseBtn = document.getElementById("pauseBtn");
+      const resetBtn = document.getElementById("resetBtn");
+      const circumference = 2 * Math.PI * 52;
+      ring.setAttribute("stroke-dasharray", circumference);
+
+      function render() {
+        const mm = String(Math.floor(left / 60)).padStart(2, "0");
+        const ss = String(left % 60).padStart(2, "0");
+        timerText.textContent = `${mm}:${ss}`;
+        const offset = circumference * (1 - (total - left) / total);
+        ring.setAttribute("stroke-dashoffset", offset);
+      }
+      function tick() {
+        left = Math.max(0, left - 1);
+        render();
+        if (left === 0) {
+          clearInterval(interval);
+        }
+      }
+      startBtn.addEventListener("click", () => {
+        clearInterval(interval);
+        interval = setInterval(tick, 1000);
+      });
+      pauseBtn.addEventListener("click", () => clearInterval(interval));
+      resetBtn.addEventListener("click", () => {
+        left = total;
+        clearInterval(interval);
+        render();
+      });
+      render();
+    </script>
+  </body>
+</html>

@@ -69,7 +69,7 @@ function PreStudyPromptModalStable({ craftedMap, onProceed, onSkip }: PreStudyPr
       overflow: 'auto'
     }}>
       <h2 style={{ marginBottom: 24, textAlign: 'center', color: 'var(--accent)' }}>
-        dYï¿½ Active Recall Check
+        🧠 Active Recall Check
       </h2>
       <div style={{ marginBottom: 20, textAlign: 'center' }}>
         <div style={{ fontSize: 14, opacity: 0.8 }}>
@@ -77,7 +77,7 @@ function PreStudyPromptModalStable({ craftedMap, onProceed, onSkip }: PreStudyPr
         </div>
       </div>
       <div style={{ marginBottom: 20 }}>
-        <h4 style={{ color: 'var(--accent)', marginBottom: 12 }}>dY"s Topics in this map:</h4>
+        📚 Topics in this map:
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 16 }}>
           {usedGems.map((gem: any, i: number) => (
             <div key={i} style={{
@@ -95,7 +95,7 @@ function PreStudyPromptModalStable({ craftedMap, onProceed, onSkip }: PreStudyPr
       </div>
       <div style={{ marginBottom: 16 }}>
         <label style={{ display: 'block', marginBottom: 4, fontWeight: 600 }}>
-          dY'- Key concepts you remember (without looking):
+          📝 Key concepts you remember (without looking):
         </label>
         <textarea
           value={answers.concepts}
@@ -106,7 +106,7 @@ function PreStudyPromptModalStable({ craftedMap, onProceed, onSkip }: PreStudyPr
       </div>
       <div style={{ marginBottom: 16 }}>
         <label style={{ display: 'block', marginBottom: 4, fontWeight: 600 }}>
-          dY"? Formulas or methods you recall:
+          🧮 Formulas or methods you recall:
         </label>
         <textarea
           value={answers.formulas}
@@ -117,7 +117,7 @@ function PreStudyPromptModalStable({ craftedMap, onProceed, onSkip }: PreStudyPr
       </div>
       <div style={{ marginBottom: 24 }}>
         <label style={{ display: 'block', marginBottom: 4, fontWeight: 600 }}>
-          dY'ï¿½ Examples or applications you can think of:
+          💡 Examples or applications you can think of:
         </label>
         <textarea
           value={answers.examples}
@@ -826,7 +826,7 @@ export default function MapCraftView() {
         })
       }
 
-      // MASSIVE MAP CURRENCY REWARDS! ðŸ’°
+      // MASSIVE MAP CURRENCY REWARDS! 💰
       const difficultyMultiplier = getDifficultyMultiplier(craftedMap?.difficultyTier || 'Bronze')
 
       // Big currency payouts from maps (main income source!)
@@ -1071,7 +1071,7 @@ export default function MapCraftView() {
             padding: 16,
             marginBottom: 16
           }}>
-            <h4 style={{ marginBottom: 16, color: 'var(--accent)' }}>ðŸ“Š Self-Assessment</h4>
+            <h4 style={{ marginBottom: 16, color: 'var(--accent)' }}>📊 Self-Assessment</h4>
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 16, marginBottom: 16 }}>
               <div>
@@ -1148,7 +1148,7 @@ export default function MapCraftView() {
             </div>
 
             <div style={{ fontSize: 12, opacity: 0.7, fontStyle: 'italic' }}>
-              ðŸ’¡ Self-assessment bonuses: High confidence + performance, tackling hard material, and good recall quality provide XP bonuses!
+              💡 Self-assessment bonuses: High confidence + performance, tackling hard material, and good recall quality provide XP bonuses!
             </div>
           </div>
 
@@ -1321,7 +1321,7 @@ export default function MapCraftView() {
           overflow: 'auto'
         }}>
           <h2 style={{ marginBottom: 24, textAlign: 'center', color: 'var(--accent)' }}>
-            ðŸŽ‰ Choose Your Rewards! ðŸŽ‰
+            🎉 Choose Your Rewards! 🎉
           </h2>
 
           <div style={{ marginBottom: 20, textAlign: 'center' }}>
@@ -1344,7 +1344,7 @@ export default function MapCraftView() {
               Time: {sessionScore.timeSpent}min | XP Earned: {Math.round(10 * sessionScore.correct * (sessionScore.timeSpent <= studyTimeMinutes ? 1.2 : 1.0) * getDifficultyMultiplier(craftedMap?.difficultyTier || 'Bronze'))}
             </div>
             <div style={{ fontSize: 12, opacity: 0.6, marginTop: 8 }}>
-              ðŸŽ Automatic rewards already granted: Currency orbs{accuracy >= 0.7 && (craftedMap?.difficultyTier === 'Gold' || craftedMap?.difficultyTier === 'Platinum' || craftedMap?.difficultyTier === 'Diamond') ? ' + Equipment' : ''}
+              🎁 Automatic rewards already granted: Currency orbs{accuracy >= 0.7 && (craftedMap?.difficultyTier === 'Gold' || craftedMap?.difficultyTier === 'Platinum' || craftedMap?.difficultyTier === 'Diamond') ? ' + Equipment' : ''}
             </div>
           </div>
 
@@ -1482,7 +1482,7 @@ export default function MapCraftView() {
           overflow: 'auto'
         }}>
           <h2 style={{ marginBottom: 24, textAlign: 'center', color: 'var(--accent)' }}>
-            ðŸ§  Active Recall Check
+        🧠 Active Recall Check
           </h2>
 
           <div style={{ marginBottom: 20, textAlign: 'center' }}>
@@ -1494,7 +1494,7 @@ export default function MapCraftView() {
           
 
           <div style={{ marginBottom: 20 }}>
-            <h4 style={{ color: 'var(--accent)', marginBottom: 12 }}>ðŸ“š Topics in this map:</h4>
+        📚 Topics in this map:
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 16 }}>
               {usedGems.map(gem => (
                 <div key={gem?.id} style={{
@@ -1513,7 +1513,7 @@ export default function MapCraftView() {
 
           <div style={{ marginBottom: 16 }}>
             <label style={{ display: 'block', marginBottom: 4, fontWeight: 600 }}>
-              ðŸ’­ Key concepts you remember (without looking):
+          📝 Key concepts you remember (without looking):
             </label>
             <textarea
               value={answers.concepts}
@@ -1535,7 +1535,7 @@ export default function MapCraftView() {
 
           <div style={{ marginBottom: 16 }}>
             <label style={{ display: 'block', marginBottom: 4, fontWeight: 600 }}>
-              ðŸ“ Formulas or methods you recall:
+          🧮 Formulas or methods you recall:
             </label>
             <textarea
               value={answers.formulas}
@@ -1557,7 +1557,7 @@ export default function MapCraftView() {
 
           <div style={{ marginBottom: 24 }}>
             <label style={{ display: 'block', marginBottom: 4, fontWeight: 600 }}>
-              ðŸ’¡ Examples or applications you can think of:
+          💡 Examples or applications you can think of:
             </label>
             <textarea
               value={answers.examples}
@@ -1661,7 +1661,7 @@ export default function MapCraftView() {
         overflow: 'auto'
       }}>
         <h2 style={{ marginBottom: 24, textAlign: 'center', color: 'var(--accent)' }}>
-          ðŸ§  Active Recall Check
+        🧠 Active Recall Check
         </h2>
 
         <div style={{ marginBottom: 20, textAlign: 'center' }}>
@@ -1671,7 +1671,7 @@ export default function MapCraftView() {
         </div>
 
         <div style={{ marginBottom: 20 }}>
-          <h4 style={{ color: 'var(--accent)', marginBottom: 12 }}>ðŸ“š Topics in this map:</h4>
+        📚 Topics in this map:
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 16 }}>
             {usedGems.map((gem: any, i: number) => (
               <div key={i} style={{
@@ -1690,7 +1690,7 @@ export default function MapCraftView() {
 
         <div style={{ marginBottom: 16 }}>
           <label style={{ display: 'block', marginBottom: 4, fontWeight: 600 }}>
-            ðŸ’­ Key concepts you remember (without looking):
+          📝 Key concepts you remember (without looking):
           </label>
           <textarea
             value={answers.concepts}
@@ -1712,7 +1712,7 @@ export default function MapCraftView() {
 
         <div style={{ marginBottom: 16 }}>
           <label style={{ display: 'block', marginBottom: 4, fontWeight: 600 }}>
-            ðŸ“ Formulas or methods you recall:
+          🧮 Formulas or methods you recall:
           </label>
           <textarea
             value={answers.formulas}
@@ -1734,7 +1734,7 @@ export default function MapCraftView() {
 
         <div style={{ marginBottom: 24 }}>
           <label style={{ display: 'block', marginBottom: 4, fontWeight: 600 }}>
-            ðŸ’¡ Examples or applications you can think of:
+          💡 Examples or applications you can think of:
           </label>
           <textarea
             value={answers.examples}
@@ -1868,7 +1868,7 @@ export default function MapCraftView() {
               <div style={{ width: `${progress}%`, height:'100%', background:'var(--accent)', transition:'width 0.1s ease' }} />
             </div>
             <div style={{ display:'flex', justifyContent:'space-between', marginTop:8, fontSize:13 }}>
-              <div>{progress.toFixed(1)}% â€¢ Time: {studyTimeMinutes}m</div>
+              <div>{progress.toFixed(1)}% • Time: {studyTimeMinutes}m</div>
               <div>
                 {(() => {
                   try {
@@ -1879,7 +1879,7 @@ export default function MapCraftView() {
                 })()}
               </div>
             </div>
-            <div style={{ fontSize:12, opacity:0.7, marginTop:4 }}>Hotkeys: Space=Correct â€¢ X=Incorrect â€¢ Z=Undo â€¢ Tab=Next Topic</div>
+            <div style={{ fontSize:12, opacity:0.7, marginTop:4 }}>Hotkeys: Space=Correct • X=Incorrect • Z=Undo • Tab=Next Topic</div>
             {craftedMap?.lineup?.length ? (
               <div style={{ marginTop:12, display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(240px, 1fr))', gap:8 }}>
                 {craftedMap.lineup.map((l:any, idx:number) => {
@@ -1889,7 +1889,7 @@ export default function MapCraftView() {
                   return (
                     <div key={l.gemId} style={{ border:'1px solid var(--border)', borderRadius:8, padding:8, background: isCur ? 'rgba(34,197,94,0.08)' : 'var(--bg)' }}>
                       <div style={{ fontWeight:700, fontSize:13 }}>{l.name} <span style={{ opacity:0.7 }}>({l.allocated}q)</span></div>
-                      <div style={{ fontSize:12, opacity:0.8 }}>Correct: {c.correct} â€¢ Attempted: {c.attempted} â€¢ Left: {remaining}</div>
+                      <div style={{ fontSize:12, opacity:0.8 }}>Correct: {c.correct} • Attempted: {c.attempted} • Left: {remaining}</div>
                     </div>
                   )
                 })}
@@ -1914,7 +1914,7 @@ export default function MapCraftView() {
           Affix guide moved to Settings.
         </div>
         <div style={{ marginTop: 12, fontSize: 13, opacity: 0.7 }}>
-          ðŸ’¡ Maps are now fully RNG! Question count and affixes are determined by your gem levels.
+          💡 Maps are now fully RNG! Question count and affixes are determined by your gem levels.
         </div>
       </div>
       )}
@@ -1958,7 +1958,7 @@ export default function MapCraftView() {
             >
               <div style={{ fontWeight: 600 }}>{gem.name}</div>
               <div style={{ fontSize: 12, opacity: 0.8 }}>
-                Tier {gem.tier || 1} â€¢ Weight {gem.weight || 1} â€¢ Cycles {gem.cycles || 1}
+                Tier {gem.tier || 1} • Weight {gem.weight || 1} • Cycles {gem.cycles || 1}
               </div>
               {gem.tags && gem.tags.length > 0 && (
                 <div style={{ fontSize: 11, opacity: 0.6, marginTop: 4 }}>
@@ -2183,21 +2183,21 @@ export default function MapCraftView() {
         padding: 16,
         opacity: 0.8
       }}>
-        <h4>ðŸŽ¯ Enhanced Study Workflow:</h4>
+        <h4>🎯 Enhanced Study Workflow:</h4>
         <ol>
           <li>Select gems (study topics) to include in the map</li>
           <li>Click "Craft Map" to create your practice session</li>
           <li>Click "Start Map Session" to begin with <strong>active recall prompts</strong></li>
-          <li>ðŸ§  <strong>Pre-study memory test:</strong> Write down what you remember without looking</li>
-          <li>ðŸ“– Study session begins - screen freezes, solve questions on paper!</li>
+          <li>🧠  <strong>Pre-study memory test:</strong> Write down what you remember without looking</li>
+          <li>📖 Study session begins - screen freezes, solve questions on paper!</li>
           <li>Follow affix rules (time limits, difficulty filters, etc.)</li>
-          <li>ðŸ“Š <strong>Self-assessment:</strong> Rate confidence, difficulty, and recall quality</li>
-          <li>ðŸŽ Get XP + currency rewards with <strong>metacognitive bonuses</strong></li>
-          <li>ðŸ’¡ <strong>Knowledge consolidation:</strong> Extra XP for good performance (70%+)</li>
+          <li>📊 <strong>Self-assessment:</strong> Rate confidence, difficulty, and recall quality</li>
+          <li>🎁 Get XP + currency rewards with <strong>metacognitive bonuses</strong></li>
+          <li>💡 <strong>Knowledge consolidation:</strong> Extra XP for good performance (70%+)</li>
           <li><strong>Sessions are saved!</strong> Refresh-safe progress tracking</li>
         </ol>
         <div style={{ marginTop: 12, padding: 12, background: 'var(--accent-bg)', borderRadius: 6, fontSize: 13 }}>
-          <strong>ðŸ§ª Learning Science Features:</strong> Active recall testing, metacognitive self-assessment, spaced repetition integration, and knowledge consolidation bonuses based on pedagogical research!
+          <strong>🧪 Learning Science Features:</strong> Active recall testing, metacognitive self-assessment, spaced repetition integration, and knowledge consolidation bonuses based on pedagogical research!
         </div>
       </div>
 
@@ -2228,7 +2228,7 @@ export default function MapCraftView() {
             boxShadow: '0 8px 32px rgba(0,0,0,0.5)'
           }}>
             <div style={{ fontSize: 16, fontWeight: 700, marginBottom: 8, color: 'var(--accent)' }}>
-              ðŸŽ¯ Focus Mode Active
+              🎯 Focus Mode Active
             </div>
             <div style={{ fontSize: 13, opacity: 0.9, marginBottom: 12 }}>
               Study session in progress - solve on paper!

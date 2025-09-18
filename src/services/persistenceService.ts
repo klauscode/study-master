@@ -6,6 +6,15 @@ const CURRENT_VERSION = 1;
 export function saveGameState(state: GameState) {
   const payload = { ...state, saveVersion: CURRENT_VERSION };
   localStorage.setItem(SAVE_KEY, JSON.stringify(payload));
+
+  // Trigger cloud sync if available (lazy import to avoid circular deps)
+  if (typeof window !== 'undefined') {
+    import('./cloudSyncService').then(({ cloudSync }) => {
+      cloudSync.queuePendingChanges(payload);
+    }).catch(() => {
+      // Cloud sync not available or failed - that's OK
+    });
+  }
 }
 
 export function loadGameState(): GameState | null {

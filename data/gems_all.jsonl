@@ -1,0 +1,39 @@
+{"id":"lang_leitura_e_interpretao_1","name":"Leitura e interpretação","tier":1,"weight":1,"cycles":1,"tags":["reading"],"category":"Language"}
+{"id":"lang_gramtica_funcional_2","name":"Gramática funcional","tier":1,"weight":1,"cycles":1,"tags":["grammar"],"category":"Language"}
+{"id":"lang_redao_3","name":"Redação","tier":1,"weight":1,"cycles":1,"tags":["writing"],"category":"Language"}
+{"id":"lang_ingls_instrumental_4","name":"Inglês instrumental","tier":1,"weight":1,"cycles":1,"tags":["english"],"category":"Language"}
+{"id":"math_fundamentos_5","name":"Fundamentos","tier":1,"weight":1,"cycles":1,"tags":["basics"],"category":"Math"}
+{"id":"math_lgebra_i_6","name":"Álgebra I","tier":1,"weight":1,"cycles":1,"tags":["algebra"],"category":"Math"}
+{"id":"math_lgebra_ii_7","name":"Álgebra II","tier":1,"weight":1,"cycles":1,"tags":["algebra"],"category":"Math"}
+{"id":"math_geometria_8","name":"Geometria","tier":2,"weight":1,"cycles":1,"tags":["geometry"],"category":"Math"}
+{"id":"math_analtica_trigonometria_9","name":"Analítica & Trigonometria","tier":2,"weight":1,"cycles":1,"tags":["advanced"],"category":"Math"}
+{"id":"math_contagem_dados_10","name":"Contagem & Dados","tier":1,"weight":1,"cycles":1,"tags":["statistics"],"category":"Math"}
+{"id":"phys_cinemtica_11","name":"Cinemática","tier":1,"weight":1,"cycles":1,"tags":["mechanics"],"category":"Science"}
+{"id":"phys_dinmica_12","name":"Dinâmica","tier":1,"weight":1,"cycles":1,"tags":["mechanics"],"category":"Science"}
+{"id":"phys_energia_quantidade_de_movimento_13","name":"Energia & Quantidade de movimento","tier":1,"weight":1,"cycles":1,"tags":["energy"],"category":"Science"}
+{"id":"phys_fluidos_gravitao_14","name":"Fluidos & Gravitação","tier":1,"weight":1,"cycles":1,"tags":["fluids"],"category":"Science"}
+{"id":"phys_termologia_termodinmica_15","name":"Termologia & Termodinâmica","tier":1,"weight":1,"cycles":1,"tags":["mechanics","thermodynamics"],"category":"Science"}
+{"id":"phys_ondas_ptica_16","name":"Ondas & Óptica","tier":1,"weight":1,"cycles":1,"tags":["waves"],"category":"Science"}
+{"id":"phys_eletricidade_magnetismo_17","name":"Eletricidade & Magnetismo","tier":1,"weight":1,"cycles":1,"tags":["electromagnetism"],"category":"Science"}
+{"id":"phys_noes_de_moderna_18","name":"Noções de Moderna","tier":1,"weight":1,"cycles":1,"tags":["modern"],"category":"Science"}
+{"id":"chem_estrutura_da_matria_19","name":"Estrutura da matéria","tier":1,"weight":1,"cycles":1,"tags":["structure"],"category":"Science"}
+{"id":"chem_mol_gases_20","name":"Mol & Gases","tier":1,"weight":1,"cycles":1,"tags":["stoichiometry"],"category":"Science"}
+{"id":"chem_solues_coligativas_21","name":"Soluções & Coligativas","tier":1,"weight":1,"cycles":1,"tags":["solutions"],"category":"Science"}
+{"id":"chem_termoqumica_22","name":"Termoquímica","tier":1,"weight":1,"cycles":1,"tags":["thermochemistry"],"category":"Science"}
+{"id":"chem_equilbrios_23","name":"Equilíbrios","tier":1,"weight":1,"cycles":1,"tags":["equilibrium"],"category":"Science"}
+{"id":"chem_cintica_eletroqumica_24","name":"Cinética & Eletroquímica","tier":1,"weight":1,"cycles":1,"tags":["kinetics"],"category":"Science"}
+{"id":"chem_orgnica_i_25","name":"Orgânica I","tier":1,"weight":1,"cycles":1,"tags":["organic"],"category":"Science"}
+{"id":"chem_orgnica_ii_biomolculas_26","name":"Orgânica II / Biomoléculas","tier":1,"weight":1,"cycles":1,"tags":["stoichiometry","organic"],"category":"Science"}
+{"id":"bio_bases_moleculares_celulares_27","name":"Bases moleculares & celulares","tier":1,"weight":1,"cycles":1,"tags":["molecular"],"category":"Science"}
+{"id":"bio_metabolismo_28","name":"Metabolismo","tier":1,"weight":1,"cycles":1,"tags":["metabolism"],"category":"Science"}
+{"id":"bio_gentica_i_clssica_29","name":"Genética I (clássica)","tier":1,"weight":1,"cycles":1,"tags":["genetics"],"category":"Science"}
+{"id":"bio_gentica_ii_biologia_molecular_30","name":"Genética II & Biologia molecular","tier":1,"weight":1,"cycles":1,"tags":["molecular","genetics"],"category":"Science"}
+{"id":"bio_evoluo_31","name":"Evolução","tier":1,"weight":1,"cycles":1,"tags":["evolution"],"category":"Science"}
+{"id":"bio_ecologia_32","name":"Ecologia","tier":1,"weight":1,"cycles":1,"tags":["ecology"],"category":"Science"}
+{"id":"bio_microbiologia_proto_33","name":"Microbiologia & Proto","tier":1,"weight":1,"cycles":1,"tags":["microorganisms"],"category":"Science"}
+{"id":"bio_botnica_algas_34","name":"Botânica & Algas","tier":1,"weight":1,"cycles":1,"tags":["botany"],"category":"Science"}
+{"id":"bio_zoologia_animalia_35","name":"Zoologia (animalia)","tier":1,"weight":1,"cycles":1,"tags":["zoology"],"category":"Science"}
+{"id":"bio_sade_humana_doenas_36","name":"Saúde humana & Doenças","tier":1,"weight":1,"cycles":1,"tags":["health"],"category":"Science"}
+{"id":"hum_geografia_37","name":"Geografia","tier":1,"weight":1,"cycles":1,"tags":["geography"],"category":"Humanities"}
+{"id":"hum_histria_38","name":"História","tier":1,"weight":1,"cycles":1,"tags":["history"],"category":"Humanities"}
+{"id":"hum_filosofia_sociologia_39","name":"Filosofia & Sociologia","tier":1,"weight":1,"cycles":1,"tags":["philosophy","sociology"],"category":"Humanities"}

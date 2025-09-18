@@ -91,12 +91,12 @@ export default function StudyPage() {
       </div>
       {warning && (
         <div style={{ fontSize:10, color:'#ef4444', marginTop:2, fontWeight:600 }}>
-          ⚠️ {warning}
+          âš ï¸ {warning}
         </div>
       )}
       {info && (
         <div style={{ fontSize:10, color:'#22c55e', marginTop:2, opacity:0.8 }}>
-          ℹ️ {info}
+          💡 {info}
         </div>
       )}
     </div>
@@ -228,7 +228,7 @@ export default function StudyPage() {
 
           {state.session.lockedGemId && (
             <div style={{ textAlign:'center', fontSize:12, opacity:0.8 }}>
-              Locked subject: {state.gems.find(g => g.id === state.session.lockedGemId)?.name || '—'}
+              Locked subject: {state.gems.find(g => g.id === state.session.lockedGemId)?.name || 'â€”'}
             </div>
           )}
 
@@ -406,7 +406,7 @@ export default function StudyPage() {
               <div style={{ fontWeight:700 }}>{activeGem.name}</div>
               <div style={{ fontSize:12, opacity:0.8 }}>Category nudge: {(nudge*100-100).toFixed(0)}%</div>
               <div style={{ fontSize:12, opacity:0.8 }}>Level {activeGem.level} • XP {Math.round(activeGem.xp)}</div>
-              <div style={{ fontSize:12, opacity:0.8 }}>Topic: {state.session.topic || '—'}</div>
+              <div style={{ fontSize:12, opacity:0.8 }}>Topic: {state.session.topic || 'â€”'}</div>
             </div>
           ) : (
             <div style={{ fontSize:13, opacity:0.8 }}>Select a subject gem to start studying</div>

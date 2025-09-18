@@ -1,4 +1,4 @@
-import React from 'react'
+﻿import React from 'react'
 import { useGameState } from '../../context/GameStateContext'
 import AffixDisplay from '../ui/AffixDisplay'
 
@@ -81,10 +81,10 @@ export default function InventoryGrid() {
             WebkitTextFillColor: 'transparent',
             backgroundClip: 'text'
           }}>
-            🎒 Inventory
+            ðŸŽ’ Inventory
           </h1>
           <p style={{ fontSize: 16, opacity: 0.8, margin: 0, fontWeight: 500 }}>
-            Manage your equipment • Compare stats • Optimize your build
+            Manage your equipment â€¢ Compare stats â€¢ Optimize your build
           </p>
         </div>
 
@@ -97,7 +97,7 @@ export default function InventoryGrid() {
           border: '2px solid var(--border)',
           boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)'
         }}>
-          <div style={{ fontSize: 64, marginBottom: 24, opacity: 0.3 }}>📦</div>
+          <div style={{ fontSize: 64, marginBottom: 24, opacity: 0.3 }}>ðŸŽ’</div>
           <div style={{ fontSize: 24, fontWeight: 700, marginBottom: 16, color: 'var(--accent)' }}>
             No items yet
           </div>
@@ -111,9 +111,9 @@ export default function InventoryGrid() {
 
   return (
     <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 20px' }}>
-      <h2>🎒 Inventory</h2>
+      <h2>ðŸŽ’ Inventory</h2>
       <p style={{ opacity: 0.8, marginBottom: 24 }}>
-        {items.length} item{items.length !== 1 ? 's' : ''} • Click items to equip or sell
+        {items.length} item{items.length !== 1 ? 's' : ''} â€¢ Click items to equip or sell
       </p>
 
       {/* Usables Panel */}
@@ -230,7 +230,7 @@ export default function InventoryGrid() {
                 {selected.name}
               </div>
               <div style={{ fontSize: 13, opacity: 0.8 }}>
-                {selected.slot} • Item Level {selected.itemLevel} • {selected.rarity}
+                {selected.slot} â€¢ Item Level {selected.itemLevel} â€¢ {selected.rarity}
               </div>
             </div>
             <div style={{ display: 'flex', gap: 8 }}>
@@ -247,7 +247,7 @@ export default function InventoryGrid() {
                   cursor: 'pointer'
                 }}
               >
-                ⚔️ Equip
+                âš”ï¸ Equip
               </button>
               <button
                 onClick={() => {
@@ -271,7 +271,7 @@ export default function InventoryGrid() {
                   cursor: 'pointer'
                 }}
               >
-                🪙 Sell
+                ðŸ’° Sell
               </button>
             </div>
           </div>
@@ -295,7 +295,7 @@ export default function InventoryGrid() {
             padding: 12
           }}>
             <div style={{ fontSize: 14, fontWeight: 600, marginBottom: 8, color: 'var(--accent)' }}>
-              ⚖️ vs Equipped
+              âš–ï¸ vs Equipped
             </div>
             <CompareBlock item={selected} equipped={(state.character.equipped as any)[selected.slot]} />
           </div>
@@ -359,7 +359,7 @@ export default function InventoryGrid() {
                 opacity: 0.8,
                 marginBottom: 8
               }}>
-                {it.slot} • iLv{it.itemLevel}
+                {it.slot} â€¢ iLv{it.itemLevel}
               </div>
               <div style={{
                 display: 'flex',
@@ -405,7 +405,7 @@ function CompareBlock({ item, equipped }: { item: any; equipped: any }) {
         opacity: 0.6,
         fontSize: 12
       }}>
-        ℹ️ No stats to compare
+        ðŸ“Š No stats to compare
       </div>
     )
   }
@@ -417,7 +417,7 @@ function CompareBlock({ item, equipped }: { item: any; equipped: any }) {
         if (!delta && !cur[k] && !nxt[k]) return null
 
         const color = delta > 0 ? '#22c55e' : delta < 0 ? '#ef4444' : '#94a3b8'
-        const icon = delta > 0 ? '▲' : delta < 0 ? '▼' : '≈'
+        const icon = delta > 0 ? 'â¬†ï¸' : delta < 0 ? 'â¬‡ï¸' : 'âž¡ï¸'
 
         return (
           <div
@@ -443,7 +443,7 @@ function CompareBlock({ item, equipped }: { item: any; equipped: any }) {
               gap: 6,
               fontWeight: 700
             }}>
-              {icon} {(cur[k] || 0)}% → {nxt[k]}%
+              {icon} {(cur[k] || 0)}% â†’ {nxt[k]}%
               {delta !== 0 && (
                 <span style={{
                   background: color,

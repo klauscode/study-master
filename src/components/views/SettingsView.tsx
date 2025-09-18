@@ -1,5 +1,6 @@
 import { useGameState } from '../../context/GameStateContext'
 import affixDescriptions from '../../constants/affixDescriptions.json'
+import CloudSavePanel from '../ui/CloudSavePanel'
 
 export default function SettingsView(){
   const { state, dispatch } = useGameState()
@@ -9,6 +10,9 @@ export default function SettingsView(){
   }
   return (
     <div style={{ display:'grid', gap:16 }}>
+      {/* Cloud Save Section */}
+      <CloudSavePanel />
+
       <div style={{ border:'1px solid var(--border)', borderRadius:8, padding:12, background:'var(--card-bg)' }}>
         <div style={{ fontWeight:600, marginBottom:8 }}>Session</div>
         <div style={{ display:'flex', gap:8, alignItems:'center' }}>

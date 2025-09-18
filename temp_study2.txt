@@ -6,7 +6,7 @@ import StudyClock from '../ui/StudyClock'
 import CoachRail from '../ui/CoachRail'
 import type { ConsumableItem } from '../../types/gameTypes'
 import consumablesData from '../../constants/consumables.json'
-import { isConsumableActive, getActiveMultiplier } from '../../services/consumableService'
+import { isConsumableActive, createActiveConsumable, consumeCurrency, getActiveMultiplier } from '../../services/consumableService'
 import { getTodayEarnings } from '../../services/currencyService'
 
 const CONSUMABLES = consumablesData as ConsumableItem[]
@@ -20,7 +20,8 @@ export default function StudyPage() {
   const canStart = !!activeGem && document.visibilityState === 'visible'
 
   const currency = state.currency || {}
-  
+  const totalCurrency = Object.values(currency).reduce((sum, val) => sum + (val || 0), 0)
+
   const [showConsumables, setShowConsumables] = React.useState(false)
   const [showSettings, setShowSettings] = React.useState(false)
 
@@ -29,14 +30,16 @@ export default function StudyPage() {
       alert(`${consumable.name} is already active!`)
       return
     }
-    // Use from owned Usables inventory (decrements uses and activates via reducer)
-    const usables = state.usables || []
-    const owned = usables.find(u => u.kind === 'consumable' && u.payload.consumableId === consumable.id && (u.usesLeft || 0) > 0)
-    if (!owned) {
-      alert(`You don't have any ${consumable.name}. Buy it in the Shop.`)
+    if (totalCurrency < consumable.cost) {
+      alert(`Not enough currency! Need ${consumable.cost}, have ${totalCurrency}`)
       return
     }
-    dispatch({ type: 'USE_USABLE', usableId: owned.id })
+    if (!consumeCurrency(currency, consumable.cost, dispatch)) {
+      alert('Failed to consume currency')
+      return
+    }
+    const activeConsumable = createActiveConsumable(consumable)
+    dispatch({ type: 'ACTIVATE_CONSUMABLE', consumable: activeConsumable })
   }
 
   const getTierColor = (tier: string) => {
@@ -91,12 +94,12 @@ export default function StudyPage() {
       </div>
       {warning && (
         <div style={{ fontSize:10, color:'#ef4444', marginTop:2, fontWeight:600 }}>
-          ⚠️ {warning}
+          âš ï¸ {warning}
         </div>
       )}
       {info && (
         <div style={{ fontSize:10, color:'#22c55e', marginTop:2, opacity:0.8 }}>
-          ℹ️ {info}
+          ðŸ’¡ {info}
         </div>
       )}
     </div>
@@ -228,7 +231,7 @@ export default function StudyPage() {
 
           {state.session.lockedGemId && (
             <div style={{ textAlign:'center', fontSize:12, opacity:0.8 }}>
-              Locked subject: {state.gems.find(g => g.id === state.session.lockedGemId)?.name || '—'}
+              Locked subject: {state.gems.find(g => g.id === state.session.lockedGemId)?.name || 'â€”'}
             </div>
           )}
 
@@ -239,7 +242,7 @@ export default function StudyPage() {
                 const end = new Date(c.endsAt).getTime()
                 return (
                   <span key={c.id} style={{ fontSize:11, padding:'4px 8px', border:'1px solid var(--border)', borderRadius:999, background:'var(--bg)' }}>
-                    {c.name} • {fmtRemaining(end)}
+                    {c.name} â€¢ {fmtRemaining(end)}
                   </span>
                 )
               })}
@@ -249,7 +252,7 @@ export default function StudyPage() {
                 const label = r.type === 'focus_freeze' ? 'Focus Freeze' : r.type === 'triple_loot' ? 'Triple Loot' : r.name
                 return (
                   <span key={r.id} style={{ fontSize:11, padding:'4px 8px', border:'1px solid var(--border)', borderRadius:999, background:'var(--bg)' }}>
-                    {label} • {fmtRemaining(end)}
+                    {label} â€¢ {fmtRemaining(end)}
                   </span>
                 )
               })}
@@ -290,9 +293,8 @@ export default function StudyPage() {
             <div style={{ display:'flex', flexWrap:'wrap', gap:10 }}>
               {CONSUMABLES.map(c => {
                 const alreadyActive = isConsumableActive(state.activeConsumables || [], c.id)
-                const ownedCount = (state.usables || []).filter(u => u.kind === "consumable" && u.payload.consumableId === c.id).reduce((s,u)=> s + (u.usesLeft || 0), 0)
-                const affordable = ownedCount > 0
-                const tooltip = `${c.name} • ${c.description}\nOwned: ${ownedCount} • Tier: ${c.tier}\nEffects: ${c.effects.map(e=>`${e.type.replace(/_/g,' ')} x${e.value}`).join(', ')}\n${alreadyActive ? '(already active)' : ''}${!affordable ? (alreadyActive ? ' • ' : '') + '(none owned)' : ''}`
+                const affordable = totalCurrency >= c.cost
+                const tooltip = `${c.name} â€” ${c.description}\nCost: ${c.cost} â€¢ Tier: ${c.tier}\nEffects: ${c.effects.map(e=>`${e.type.replace(/_/g,' ')} x${e.value}`).join(', ')}\n${alreadyActive ? '(already active)' : ''}${!affordable ? (alreadyActive ? ' â€¢ ' : '') + '(insufficient currency)' : ''}`
                 return (
                   <button
                     key={c.id}
@@ -312,20 +314,20 @@ export default function StudyPage() {
                       justifyContent: 'center',
                       opacity: alreadyActive ? 0.6 : 1
                     }}
-                    disabled={alreadyActive || ownedCount <= 0}
+                    disabled={alreadyActive}
                   >
-                    <span style={{ fontSize: 18, lineHeight: 1 }}>{(c as any).icon || '?'}</span>
+                    <span style={{ fontSize: 18, lineHeight: 1 }}>{(c as any).icon || 'â˜…'}</span>
                     <span style={{
                       position: 'absolute',
                       right: -6,
                       bottom: -6,
-                      background: ownedCount>0 ? 'rgba(34,197,94,0.15)' : 'rgba(239,68,68,0.15)',
-                      color: ownedCount>0 ? '#22c55e' : '#ef4444',
+                      background: affordable ? 'rgba(34,197,94,0.15)' : 'rgba(239,68,68,0.15)',
+                      color: affordable ? '#22c55e' : '#ef4444',
                       border: `1px solid ${affordable ? '#22c55e55' : '#ef444455'}`,
                       borderRadius: 999,
                       fontSize: 10,
                       padding: '2px 6px'
-                    }}>{`x${ownedCount}`}</span>
+                    }}>{c.cost}</span>
                   </button>
                 )
               })}
@@ -385,13 +387,13 @@ export default function StudyPage() {
           <div style={{ fontWeight:800, marginBottom:8 }}>Progress</div>
           <div style={{ display:'grid', gap:10 }}>
             <div>
-              <div style={{ fontSize:12, opacity:0.8, marginBottom:4 }}>Character • Lv {charLevel}</div>
+              <div style={{ fontSize:12, opacity:0.8, marginBottom:4 }}>Character â€¢ Lv {charLevel}</div>
               <div style={{ height:8, background:'var(--bg)', borderRadius:6, overflow:'hidden', border:'1px solid var(--border)' }}>
                 <div style={{ width:`${(charPct*100).toFixed(1)}%`, height:'100%', background:'#22c55e' }} />
               </div>
             </div>
             <div>
-              <div style={{ fontSize:12, opacity:0.8, marginBottom:4 }}>Active Gem • {gem ? `Lv ${gemLevel} • ${gem.name}` : 'None'}</div>
+              <div style={{ fontSize:12, opacity:0.8, marginBottom:4 }}>Active Gem â€¢ {gem ? `Lv ${gemLevel} â€¢ ${gem.name}` : 'None'}</div>
               <div style={{ height:8, background:'var(--bg)', borderRadius:6, overflow:'hidden', border:'1px solid var(--border)' }}>
                 <div style={{ width:`${(gemPct*100).toFixed(1)}%`, height:'100%', background:'#3b82f6' }} />
               </div>
@@ -405,8 +407,8 @@ export default function StudyPage() {
             <div style={{ display:'grid', gap:8 }}>
               <div style={{ fontWeight:700 }}>{activeGem.name}</div>
               <div style={{ fontSize:12, opacity:0.8 }}>Category nudge: {(nudge*100-100).toFixed(0)}%</div>
-              <div style={{ fontSize:12, opacity:0.8 }}>Level {activeGem.level} • XP {Math.round(activeGem.xp)}</div>
-              <div style={{ fontSize:12, opacity:0.8 }}>Topic: {state.session.topic || '—'}</div>
+              <div style={{ fontSize:12, opacity:0.8 }}>Level {activeGem.level} â€¢ XP {Math.round(activeGem.xp)}</div>
+              <div style={{ fontSize:12, opacity:0.8 }}>Topic: {state.session.topic || 'â€”'}</div>
             </div>
           ) : (
             <div style={{ fontSize:13, opacity:0.8 }}>Select a subject gem to start studying</div>
@@ -423,7 +425,3 @@ export default function StudyPage() {
     </div>
   )
 }
-
-
-
-

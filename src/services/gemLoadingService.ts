@@ -75,7 +75,6 @@ export async function loadGemsFromFile(): Promise<SubjectGem[]> {
 }
 
 export function shouldLoadGems(currentGems: SubjectGem[]): boolean {
-  // Always ensure our curated set is present; reload if count mismatches or names look corrupted
   const expectedCount =
     (TOPICS as any).Math.high.length + (TOPICS as any).Math.medium.length +
     (TOPICS as any).Science.Physics.high.length + (TOPICS as any).Science.Physics.medium.length +
@@ -89,6 +88,7 @@ export function shouldLoadGems(currentGems: SubjectGem[]): boolean {
     (TOPICS as any).Language.Literature.high.length + (TOPICS as any).Language.Literature.medium.length;
 
   if (currentGems.length !== expectedCount) return true;
-  // Basic corruption check: if any name contains replacement characters, reload
-  return currentGems.some(g => /�/.test(g.name));
+  // Reload if any gem name contains the Unicode replacement character (sign of encoding corruption)
+  return currentGems.some(g => /\uFFFD/.test(g.name));
 }
+

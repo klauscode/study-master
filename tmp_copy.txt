@@ -1,4 +1,4 @@
-import React from 'react'
+﻿import React from 'react'
 import { useGameState } from '../../context/GameStateContext'
 import type { ActiveReward } from '../../types/gameTypes'
 
@@ -6,6 +6,7 @@ export default function ActiveRewardsPanel() {
   const { state } = useGameState()
   const [currentTime, setCurrentTime] = React.useState(Date.now())
 
+  // Update current time every second for countdown
   React.useEffect(() => {
     const interval = setInterval(() => setCurrentTime(Date.now()), 1000)
     return () => clearInterval(interval)
@@ -30,9 +31,9 @@ export default function ActiveRewardsPanel() {
 
   const getRewardIcon = (type: string): string => {
     switch (type) {
-      case 'focus_freeze': return '❄️'
-      case 'triple_loot': return '💎'
-      default: return '✨'
+      case 'focus_freeze': return 'ðŸ§Š'
+      case 'triple_loot': return 'ðŸ’Ž'
+      default: return 'ðŸŽ'
     }
   }
 
@@ -53,7 +54,7 @@ export default function ActiveRewardsPanel() {
       marginBottom: 16
     }}>
       <h4 style={{ margin: '0 0 8px 0', fontSize: 14, opacity: 0.9 }}>
-        🎁 Active Rewards
+        ðŸŽ‰ Active Rewards
       </h4>
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
@@ -107,4 +108,3 @@ export default function ActiveRewardsPanel() {
     </div>
   )
 }
-

@@ -1,4 +1,3 @@
-
 interface StudyClockProps {
   seconds: number
   totalSeconds: number
@@ -7,16 +6,14 @@ interface StudyClockProps {
 }
 
 export default function StudyClock({ seconds, totalSeconds, isStudyMode, isActive }: StudyClockProps) {
-  // Round seconds to whole numbers to fix decimal display issue
   const cleanSeconds = Math.floor(seconds)
   const cleanTotalSeconds = Math.floor(totalSeconds)
 
   const progress = cleanTotalSeconds > 0 ? Math.min(1, cleanSeconds / cleanTotalSeconds) : 0
   const remainingSeconds = Math.max(0, cleanTotalSeconds - cleanSeconds)
 
-  // Convert seconds to time display
   const formatTime = (secs: number): string => {
-    const cleanSecs = Math.floor(secs) // Ensure we always use whole seconds
+    const cleanSecs = Math.floor(secs)
     const h = Math.floor(cleanSecs / 3600)
     const m = Math.floor((cleanSecs % 3600) / 60)
     const s = cleanSecs % 60
@@ -24,7 +21,6 @@ export default function StudyClock({ seconds, totalSeconds, isStudyMode, isActiv
     return `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`
   }
 
-  // Calculate circle properties for progress ring
   const size = 260
   const strokeWidth = 10
   const radius = (size - strokeWidth) / 2
@@ -158,7 +154,7 @@ export default function StudyClock({ seconds, totalSeconds, isStudyMode, isActiv
           textTransform: 'uppercase',
           letterSpacing: '1px'
         }}>
-          {isStudyMode ? '📚 Study Mode' : '☕ Rest Mode'}
+          {isStudyMode ? '📘 Study Mode' : '☕ Rest Mode'}
         </div>
 
         {/* Progress percentage */}
@@ -231,3 +227,4 @@ export default function StudyClock({ seconds, totalSeconds, isStudyMode, isActiv
     </div>
   )
 }
+

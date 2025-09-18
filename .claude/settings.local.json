@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run build:*)",
+      "Bash(npm run dev:*)",
+      "Bash(node:*)",
+      "Bash(npm run lint)",
+      "Bash(mkdir:*)",
+      "Bash(tree:*)",
+      "Bash(npm:*)",
+      "Bash(cat:*)",
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(git remote add:*)",
+      "Bash(git push:*)",
+      "Bash(npx vercel:*)",
+      "Bash(xxd:*)",
+      "Bash(sed:*)",
+      "Bash(bash:*)",
+      "Bash(find:*)",
+      "Bash(LC_ALL=C sed -i 's/\\xc3\\xa2\\xc2\\xb1\\xc3\\xaf\\xc2\\xb8/⏱️/g' \"C:\\Users\\klaus\\idle-rpg-final - Copy\\studyfall\\src\\components\\views\\AnalyticsView.tsx\")"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

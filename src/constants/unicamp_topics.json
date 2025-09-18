@@ -1,0 +1,153 @@
+{
+  "Math": {
+    "high": [
+      "Geometria Plana",
+      "Funções",
+      "Geometria Espacial",
+      "Geometria Analítica"
+    ],
+    "medium": [
+      "Equações Algébricas",
+      "Matrizes e Determinantes",
+      "Probabilidade",
+      "Polinômios",
+      "Sequências e Séries",
+      "Trigonometria",
+      "Matemática Financeira",
+      "Análise Combinatória",
+      "Estatística Descritiva",
+      "Números Complexos",
+      "Proporcionalidade"
+    ]
+  },
+  "Science": {
+    "Physics": {
+      "high": [
+        "Forças e Movimento",
+        "Calorimetria",
+        "Trabalho e Energia",
+        "Cinemática"
+      ],
+      "medium": [
+        "Movimento Circular",
+        "Termodinâmica",
+        "Corrente Elétrica",
+        "Hidrostática e Fluidos",
+        "Circuitos Simples",
+        "Colisões e Q de Movimento",
+        "Gravitação",
+        "Óptica Geométrica",
+        "Ondas"
+      ]
+    },
+    "Chemistry": {
+      "high": [
+        "Cinética Química",
+        "Ambiental e Sustentabilidade"
+      ],
+      "medium": [
+        "Estrutura Atômica",
+        "Estequiometria",
+        "Termoquímica",
+        "Equilíbrios Ácido-Base",
+        "Eletroquímica",
+        "Gases",
+        "Propriedades Físicas e Interações",
+        "Orgânica: funções e reações",
+        "Problemas Contextualizados"
+      ]
+    },
+    "Biology": {
+      "high": [
+        "Citologia",
+        "Genética",
+        "Ecologia",
+        "Evolução"
+      ],
+      "medium": [
+        "Fisiologia Humana",
+        "Botânica",
+        "Doenças Infecciosas",
+        "Saúde Pública / ISTs",
+        "Bioquímica Básica"
+      ]
+    }
+  },
+  "Humanities": {
+    "History": {
+      "high": [
+        "Brasil Colonial",
+        "Ditadura no Brasil",
+        "República do Brasil",
+        "História Contemporânea"
+      ],
+      "medium": [
+        "Antiguidade Clássica",
+        "Período Joanino e Independência",
+        "Abolição e Movimentos",
+        "Expansão Ultramarina",
+        "Historiografia"
+      ]
+    },
+    "Geography": {
+      "high": [
+        "Cartografia Aplicada",
+        "Globalização e Redes",
+        "Urbanização"
+      ],
+      "medium": [
+        "Climatologia",
+        "Geopolítica",
+        "Questões Ambientais",
+        "Agropecuária",
+        "Migrações e Demografia",
+        "Geoeconomia",
+        "Geologia / Geomorfologia",
+        "Paisagem e Trabalho"
+      ]
+    },
+    "Philosophy": {
+      "high": [
+        "Teoria e Sociedade",
+        "Cultura e Sociedade"
+      ],
+      "medium": []
+    },
+    "Sociology": {
+      "high": [
+        "Cidadania e Política",
+        "Desigualdades e Movimentos"
+      ],
+      "medium": [
+        "Teóricos Clássicos"
+      ]
+    }
+  },
+  "Language": {
+    "Portuguese": {
+      "high": [
+        "Interpretação de Textos",
+        "Leitura Crítica Multimodal"
+      ],
+      "medium": [
+        "Semântica",
+        "Comunicação",
+        "Gramática a serviço do sentido"
+      ]
+    },
+    "English": {
+      "high": [
+        "Interpretação em Inglês"
+      ],
+      "medium": []
+    },
+    "Literature": {
+      "high": [
+        "Leituras Obrigatórias"
+      ],
+      "medium": [
+        "Leitura Analítica e Repertório"
+      ]
+    }
+  }
+}

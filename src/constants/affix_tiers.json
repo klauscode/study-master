@@ -1,0 +1,13 @@
+[
+  { "stat": "gemXpGainPercent",      "t1Base": 6.0,  "scaling": 0.1 },
+  { "stat": "xpGainPercent",          "t1Base": 6.0,  "scaling": 0.1 },
+  { "stat": "lootQuantityPercent",    "t1Base": 9.0,  "scaling": 0.1 },
+  { "stat": "lootRarityPercent",      "t1Base": 9.0,  "scaling": 0.1 },
+  { "stat": "focusGainRatePercent",   "t1Base": 7.5,  "scaling": 0.1 },
+  
+  { "stat": "xpGainPercent",          "t1Base": 8.0,  "scaling": 0.08 },
+  { "stat": "gemXpGainPercent",      "t1Base": 7.0,  "scaling": 0.08 },
+  { "stat": "lootQuantityPercent",    "t1Base": 10.0, "scaling": 0.08 },
+  { "stat": "lootRarityPercent",      "t1Base": 12.0, "scaling": 0.06 },
+  { "stat": "focusGainRatePercent",   "t1Base": 5.0,  "scaling": 0.12 }
+]

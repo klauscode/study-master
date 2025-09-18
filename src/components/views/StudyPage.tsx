@@ -1,0 +1,428 @@
+﻿import React from 'react'
+import { useGameState } from '../../context/GameStateContext'
+import { calculateXpPerMinute, computeCategoryNudge, calculateXPForNextLevel } from '../../services/experienceService'
+import { calculateTotalStatBonus } from '../../services/characterService'
+import StudyClock from '../ui/StudyClock'
+import CoachRail from '../ui/CoachRail'
+import type { ConsumableItem } from '../../types/gameTypes'
+import consumablesData from '../../constants/consumables.json'
+import { isConsumableActive, getActiveMultiplier } from '../../services/consumableService'
+import { getTodayEarnings } from '../../services/currencyService'
+
+const CONSUMABLES = consumablesData as ConsumableItem[]
+
+export default function StudyPage() {
+  const { state, dispatch } = useGameState()
+  const xpPerMin = calculateXpPerMinute(state)
+  const nudge = computeCategoryNudge(state)
+  const activeGem = state.gems.find(g => g.id === state.activeGemId)
+  const inStudy = state.session.mode === 'study'
+  const canStart = !!activeGem && document.visibilityState === 'visible'
+
+  const currency = state.currency || {}
+  
+  const [showConsumables, setShowConsumables] = React.useState(false)
+  const [showSettings, setShowSettings] = React.useState(false)
+
+  const useConsumable = (consumable: ConsumableItem) => {
+    if (isConsumableActive(state.activeConsumables || [], consumable.id)) {
+      alert(`${consumable.name} is already active!`)
+      return
+    }
+    // Use from owned Usables inventory (decrements uses and activates via reducer)
+    const usables = state.usables || []
+    const owned = usables.find(u => u.kind === 'consumable' && u.payload.consumableId === consumable.id && (u.usesLeft || 0) > 0)
+    if (!owned) {
+      alert(`You don't have any ${consumable.name}. Buy it in the Shop.`)
+      return
+    }
+    dispatch({ type: 'USE_USABLE', usableId: owned.id })
+  }
+
+  const getTierColor = (tier: string) => {
+    switch (tier) {
+      case 'micro': return '#4CAF50'
+      case 'medium': return '#FF9800'
+      case 'premium': return '#9C27B0'
+      default: return '#666'
+    }
+  }
+
+  // Active multipliers
+  const activeXpMultiplier = getActiveMultiplier(state.activeConsumables || [], 'xp_multiplier')
+  const activeFocusMultiplier = getActiveMultiplier(state.activeConsumables || [], 'focus_multiplier')
+  const activeLootQuantityMultiplier = getActiveMultiplier(state.activeConsumables || [], 'loot_quantity')
+
+  // Loot estimate per cycle
+  const equippedItems = Object.values(state.character.equipped).filter(Boolean) as any[]
+  const qtyBonus = calculateTotalStatBonus(equippedItems as any, 'lootQuantityPercent') || 0
+  const baseCount = 3 + Math.floor(state.focus.multiplier * 2)
+  const momentumBonus = Math.min(2, Math.floor(((state.loot?.momentumSeconds || 0) as number) / 900))
+  const lootPerCycle = Math.max(3, Math.round((baseCount + momentumBonus) * (1 + qtyBonus / 100) * activeLootQuantityMultiplier))
+
+  // Progress values for compact bars
+  const charLevel = state.character.level || 1
+  const charXP = state.character.xp || 0
+  const charNext = Math.max(1, calculateXPForNextLevel(charLevel))
+  const charPct = Math.max(0, Math.min(1, charXP / charNext))
+  const gem = state.gems.find(g => g.id === state.activeGemId)
+  const gemLevel = gem?.level || 1
+  const gemXP = gem?.xp || 0
+  const gemNext = Math.max(1, calculateXPForNextLevel(gemLevel))
+  const gemPct = Math.max(0, Math.min(1, gemXP / gemNext))
+
+  // UI helpers
+  const StatCard = ({ label, value, hint, color }:{ label:string; value:string; hint?:string; color:string }) => (
+    <div style={{ border:'1px solid var(--border)', borderRadius:12, padding:12, background:'var(--card-bg)' }}>
+      <div style={{ fontSize:12, opacity:0.7 }}>{label}</div>
+      <div style={{ fontSize:18, fontWeight:800, color }}>{value}</div>
+      {hint && <div style={{ fontSize:11, opacity:0.6, marginTop:4 }}>{hint}</div>}
+    </div>
+  )
+
+  const Meter = ({ label, pct, color, warning, info }:{ label:string; pct:number; color:string; warning?:string; info?:string }) => (
+    <div>
+      <div style={{ display:'flex', justifyContent:'space-between', fontSize:12, opacity:0.75 }}>
+        <span>{label}</span>
+        <span>{Math.round(pct*100)}%</span>
+      </div>
+      <div style={{ height:10, background:'var(--bg)', borderRadius:8, overflow:'hidden', border:'1px solid var(--border)' }}>
+        <div style={{ width:`${Math.max(0, Math.min(100, pct*100)).toFixed(1)}%`, height:'100%', background:color }} />
+      </div>
+      {warning && (
+        <div style={{ fontSize:10, color:'#ef4444', marginTop:2, fontWeight:600 }}>
+          âš ï¸ {warning}
+        </div>
+      )}
+      {info && (
+        <div style={{ fontSize:10, color:'#22c55e', marginTop:2, opacity:0.8 }}>
+          ðŸ’¡ {info}
+        </div>
+      )}
+    </div>
+  )
+
+  const focusPct = Math.max(0, Math.min(1, (state.focus.multiplier - 1) / 0.5))
+  const staminaPct = Math.max(0, Math.min(1, (state.stamina.current || 0) / 100))
+
+  // Focus decay countdown logic
+  const focusDecayInfo = React.useMemo(() => {
+    if (state.isStudying || !state.focus.pausedAt) {
+      return { isDecaying: false, gracePeriodLeft: 120, timeToFullDecay: 0 }
+    }
+
+    const pausedAt = new Date(state.focus.pausedAt).getTime()
+    const elapsed = (Date.now() - pausedAt) / 1000
+    const gracePeriodLeft = Math.max(0, 120 - elapsed) // 2 minutes grace period (improved from 90s)
+
+    if (gracePeriodLeft > 0) {
+      return { isDecaying: false, gracePeriodLeft, timeToFullDecay: 0 }
+    }
+
+    const decayElapsed = elapsed - 120
+    const currentFocus = state.focus.multiplier
+    const focusToLose = currentFocus - 1.0
+    const decayRate = 0.05 // Reduced from 0.10 (gentler decay)
+    const timeToFullDecay = focusToLose / decayRate
+
+    return {
+      isDecaying: true,
+      gracePeriodLeft: 0,
+      timeToFullDecay: Math.max(0, timeToFullDecay - decayElapsed)
+    }
+  }, [state.isStudying, state.focus.pausedAt, state.focus.multiplier])
+
+  // Stamina recovery info
+  const staminaInfo = React.useMemo(() => {
+    const current = state.stamina.current
+    if (current >= 100) return { isRecovering: false, nextRecovery: 0, dailyResetIn: 0 }
+
+    // Recovery: +1 stamina per 10 minutes during rest periods
+    const baseRecoveryMinutes = 10
+    const nextRecoveryMs = baseRecoveryMinutes * 60 * 1000
+
+    // Daily reset calculation (06:00 America/Sao_Paulo)
+    const TZ = 'America/Sao_Paulo'
+    const fmt = new Intl.DateTimeFormat('en-CA', {
+      timeZone: TZ,
+      year: 'numeric', month: '2-digit', day: '2-digit',
+      hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false
+    })
+    const parts = fmt.formatToParts(new Date()).reduce<Record<string, string>>((acc, p) => {
+      if (p.type !== 'literal') acc[p.type] = p.value
+      return acc
+    }, {})
+    const h = parseInt(parts.hour || '0', 10)
+    const m = parseInt(parts.minute || '0', 10)
+    const s = parseInt(parts.second || '0', 10)
+    const nowSec = h * 3600 + m * 60 + s
+    const targetSec = 6 * 3600 // 06:00:00
+    const secondsUntil = ((targetSec - nowSec) % 86400 + 86400) % 86400
+    const dailyResetIn = secondsUntil
+
+    return {
+      isRecovering: current < 100,
+      nextRecovery: state.session.mode === 'rest' ? nextRecoveryMs / 1000 : 0,
+      dailyResetIn
+    }
+  }, [state.stamina.current, state.stamina.lastResetISO, state.session.mode])
+
+  const now = Date.now()
+  const activeConsumables = (state.activeConsumables || []).filter(c => new Date(c.endsAt).getTime() > now)
+  const activeRewards = (state.activeRewards || []).filter(r => {
+    const start = new Date(r.startedAt).getTime()
+    const end = start + r.durationMinutes * 60 * 1000
+    return now < end
+  })
+
+  const fmtRemaining = (endMs: number) => {
+    const ms = Math.max(0, endMs - now)
+    const m = Math.floor(ms / 60000)
+    const s = Math.floor((ms % 60000) / 1000)
+    return `${m}:${s.toString().padStart(2,'0')}`
+  }
+
+  return (
+    <div style={{
+      display:'grid',
+      gridTemplateColumns:'1.2fr 0.8fr',
+      gap:16,
+      alignItems:'start',
+      maxWidth:'1200px',
+      margin:'0 auto'
+    }}>
+      {/* Left: timer and actions */}
+      <div style={{ display:'grid', gap:16 }}>
+        {/* Stats row */}
+        <div style={{ display:'grid', gridTemplateColumns:'repeat(4,minmax(0,1fr))', gap:12 }}>
+          <StatCard label='XP/min' value={xpPerMin.toFixed(1)} color='#22c55e' hint={activeXpMultiplier>1 ? `x${activeXpMultiplier.toFixed(2)} buffs` : undefined} />
+          <StatCard label='Focus' value={`${state.focus.multiplier.toFixed(2)}x`} color='#f59e0b' hint={activeFocusMultiplier>1 ? `x${activeFocusMultiplier.toFixed(2)} buffs` : undefined} />
+          <StatCard label='Loot/cycle' value={`${lootPerCycle}`} color='#3b82f6' hint={qtyBonus ? `+${qtyBonus}% gear` : undefined} />
+          <StatCard label='Stamina' value={`${state.stamina.current}`} color={state.stamina.current<30?'#ef4444':'#22c55e'} hint='Fatigued < 30' />
+        </div>
+
+      {/* Timer card */}
+      <div style={{ border:'1px solid var(--border)', borderRadius:16, padding:20, background:'var(--card-bg)', display:'grid', gap:16 }}>
+          <StudyClock
+            seconds={inStudy ? state.session.elapsedSeconds : state.session.restElapsedSeconds}
+            totalSeconds={inStudy ? state.session.cycleLengthSeconds : state.session.restLengthSeconds}
+            isStudyMode={inStudy}
+            isActive={state.isStudying && inStudy}
+          />
+          <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:12 }}>
+            <Meter
+              label='Focus'
+              pct={focusPct}
+              color='#f59e0b'
+              warning={focusDecayInfo.isDecaying ? `Decaying! ${Math.ceil(focusDecayInfo.timeToFullDecay)}s left` : focusDecayInfo.gracePeriodLeft > 0 && focusDecayInfo.gracePeriodLeft < 60 ? `Grace period: ${Math.ceil(focusDecayInfo.gracePeriodLeft)}s` : undefined}
+              info={state.isStudying ? 'Building focus...' : undefined}
+            />
+            <Meter
+              label='Stamina'
+              pct={staminaPct}
+              color={state.stamina.current<30?'#ef4444':'#22c55e'}
+              warning={state.stamina.current < 30 ? 'Fatigued! -20% XP' : undefined}
+              info={staminaInfo.isRecovering && staminaInfo.nextRecovery > 0 ? `+1 in ${Math.ceil(staminaInfo.nextRecovery/60)}min (rest)` : staminaInfo.dailyResetIn > 0 ? `Daily reset: ${Math.floor(staminaInfo.dailyResetIn/3600)}h` : undefined}
+            />
+          </div>
+
+          {state.session.lockedGemId && (
+            <div style={{ textAlign:'center', fontSize:12, opacity:0.8 }}>
+              Locked subject: {state.gems.find(g => g.id === state.session.lockedGemId)?.name || 'â€”'}
+            </div>
+          )}
+
+          {/* Active buffs row */}
+          {(activeConsumables.length > 0 || activeRewards.length > 0) && (
+            <div style={{ display:'flex', flexWrap:'wrap', gap:8, justifyContent:'center', marginTop:4 }}>
+              {activeConsumables.map(c => {
+                const end = new Date(c.endsAt).getTime()
+                return (
+                  <span key={c.id} style={{ fontSize:11, padding:'4px 8px', border:'1px solid var(--border)', borderRadius:999, background:'var(--bg)' }}>
+                    {c.name} â€¢ {fmtRemaining(end)}
+                  </span>
+                )
+              })}
+              {activeRewards.map(r => {
+                const start = new Date(r.startedAt).getTime()
+                const end = start + r.durationMinutes * 60 * 1000
+                const label = r.type === 'focus_freeze' ? 'Focus Freeze' : r.type === 'triple_loot' ? 'Triple Loot' : r.name
+                return (
+                  <span key={r.id} style={{ fontSize:11, padding:'4px 8px', border:'1px solid var(--border)', borderRadius:999, background:'var(--bg)' }}>
+                    {label} â€¢ {fmtRemaining(end)}
+                  </span>
+                )
+              })}
+            </div>
+          )}
+
+          <div style={{ display:'flex', gap:12, justifyContent:'center', alignItems:'center', marginTop:8 }}>
+            <button
+              disabled={!inStudy || !canStart}
+              onClick={() => dispatch({ type:'TOGGLE_STUDY', studying: !state.isStudying })}
+              style={{
+                background: (inStudy && canStart)
+                  ? (state.isStudying ? '#ef4444' : '#22c55e')
+                  : 'var(--border)',
+                color: (inStudy && canStart) ? 'white' : 'var(--fg)'
+              }}
+            >
+              {state.isStudying ? 'Pause' : 'Start'}
+            </button>
+            {!inStudy && (
+              <button
+                disabled={!activeGem && !state.settings.autoSelectGemOnStart}
+                onClick={() => dispatch({ type:'START_STUDY' })}
+                style={{ background: (activeGem || state.settings.autoSelectGemOnStart) ? '#6366f1' : 'var(--border)', color:'#fff' }}
+              >
+                Skip Rest
+              </button>
+            )}
+            <button onClick={() => setShowConsumables(!showConsumables)}>Consumables</button>
+            <button onClick={() => setShowSettings(!showSettings)}>Settings</button>
+          </div>
+        </div>
+
+        {/* Collapsible Consumables */}
+        {showConsumables && (
+          <div style={{ border:'1px solid var(--accent)', borderRadius:12, padding:16, background:'var(--card-bg)' }}>
+            <h3 style={{ margin:'0 0 12px 0', color:'var(--accent)' }}>Quick Use Consumables</h3>
+            <div style={{ display:'flex', flexWrap:'wrap', gap:10 }}>
+              {CONSUMABLES.map(c => {
+                const alreadyActive = isConsumableActive(state.activeConsumables || [], c.id)
+                const ownedCount = (state.usables || []).filter(u => u.kind === "consumable" && u.payload.consumableId === c.id).reduce((s,u)=> s + (u.usesLeft || 0), 0)
+                const affordable = ownedCount > 0
+                const tooltip = `${c.name} • ${c.description}\nOwned: ${ownedCount} • Tier: ${c.tier}\nEffects: ${c.effects.map(e=>`${e.type.replace(/_/g,' ')} x${e.value}`).join(', ')}\n${alreadyActive ? '(already active)' : ''}${!affordable ? (alreadyActive ? ' • ' : '') + '(none owned)' : ''}`
+                return (
+                  <button
+                    key={c.id}
+                    onClick={() => useConsumable(c)}
+                    title={tooltip}
+                    aria-label={c.name}
+                    style={{
+                      width: 56,
+                      height: 56,
+                      borderRadius: 12,
+                      border: `2px solid ${getTierColor(c.tier)}`,
+                      background: 'var(--bg)',
+                      color: 'var(--fg)',
+                      position: 'relative',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      opacity: alreadyActive ? 0.6 : 1
+                    }}
+                    disabled={alreadyActive || ownedCount <= 0}
+                  >
+                    <span style={{ fontSize: 18, lineHeight: 1 }}>{(c as any).icon || '?'}</span>
+                    <span style={{
+                      position: 'absolute',
+                      right: -6,
+                      bottom: -6,
+                      background: ownedCount>0 ? 'rgba(34,197,94,0.15)' : 'rgba(239,68,68,0.15)',
+                      color: ownedCount>0 ? '#22c55e' : '#ef4444',
+                      border: `1px solid ${affordable ? '#22c55e55' : '#ef444455'}`,
+                      borderRadius: 999,
+                      fontSize: 10,
+                      padding: '2px 6px'
+                    }}>{`x${ownedCount}`}</span>
+                  </button>
+                )
+              })}
+            </div>
+          </div>
+        )}
+
+        {showSettings && (
+          <div style={{ border:'1px solid var(--border)', borderRadius:12, padding:16, background:'var(--card-bg)' }}>
+            <h3 style={{ margin:'0 0 12px 0' }}>Settings</h3>
+            <label style={{ display:'flex', alignItems:'center', gap:8, fontSize:13 }}>
+              <input
+                type='checkbox'
+                checked={!!state.settings.autoSelectGemOnStart}
+                onChange={(e)=>dispatch({ type:'SET_AUTO_SELECT_GEM', enabled: e.target.checked })}
+              />
+              Auto-select first gem on start if none selected
+            </label>
+          </div>
+        )}
+
+        {/* Currency overview */}
+        <div style={{ border:'1px solid var(--border)', borderRadius:12, padding:12, background:'var(--card-bg)' }}>
+          <div style={{ fontWeight:800, marginBottom:8 }}>Currencies</div>
+          <div style={{ display:'flex', flexWrap:'wrap', gap:8 }}>
+            {Object.entries(state.currency || {}).sort((a,b)=>a[0].localeCompare(b[0])).map(([type, amount]) => {
+              const today = getTodayEarnings(state.currencyLedger || undefined)[type] || 0
+              const delta = today === 0 ? '' : (today > 0 ? `+${today}` : `${today}`)
+              const color = today > 0 ? '#22c55e' : (today < 0 ? '#ef4444' : 'var(--fg)')
+              return (
+                <span key={type} style={{
+                  border:'1px solid var(--border)',
+                  borderRadius:999,
+                  padding:'6px 10px',
+                  background:'var(--bg)',
+                  fontSize:12,
+                  display:'inline-flex',
+                  gap:6,
+                  alignItems:'baseline'
+                }}>
+                  <strong style={{ fontWeight:700 }}>{type}:</strong> {amount}
+                  {delta && <span style={{ color, fontWeight:700 }}>{delta}</span>}
+                </span>
+              )
+            })}
+            {Object.keys(state.currency || {}).length === 0 && (
+              <span style={{ fontSize:12, opacity:0.7 }}>No currency yet</span>
+            )}
+          </div>
+        </div>
+      </div>
+
+      {/* Right: subject & coach */}
+      <div style={{ display:'grid', gap:16 }}>
+        {/* Progress card */}
+        <div style={{ border:'1px solid var(--border)', borderRadius:16, padding:16, background:'var(--card-bg)' }}>
+          <div style={{ fontWeight:800, marginBottom:8 }}>Progress</div>
+          <div style={{ display:'grid', gap:10 }}>
+            <div>
+              <div style={{ fontSize:12, opacity:0.8, marginBottom:4 }}>Character â€¢ Lv {charLevel}</div>
+              <div style={{ height:8, background:'var(--bg)', borderRadius:6, overflow:'hidden', border:'1px solid var(--border)' }}>
+                <div style={{ width:`${(charPct*100).toFixed(1)}%`, height:'100%', background:'#22c55e' }} />
+              </div>
+            </div>
+            <div>
+              <div style={{ fontSize:12, opacity:0.8, marginBottom:4 }}>Active Gem â€¢ {gem ? `Lv ${gemLevel} â€¢ ${gem.name}` : 'None'}</div>
+              <div style={{ height:8, background:'var(--bg)', borderRadius:6, overflow:'hidden', border:'1px solid var(--border)' }}>
+                <div style={{ width:`${(gemPct*100).toFixed(1)}%`, height:'100%', background:'#3b82f6' }} />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style={{ border:'1px solid var(--border)', borderRadius:16, padding:16, background:'var(--card-bg)' }}>
+          <div style={{ fontWeight:800, marginBottom:8 }}>Current Subject</div>
+          {activeGem ? (
+            <div style={{ display:'grid', gap:8 }}>
+              <div style={{ fontWeight:700 }}>{activeGem.name}</div>
+              <div style={{ fontSize:12, opacity:0.8 }}>Category nudge: {(nudge*100-100).toFixed(0)}%</div>
+              <div style={{ fontSize:12, opacity:0.8 }}>Level {activeGem.level} â€¢ XP {Math.round(activeGem.xp)}</div>
+              <div style={{ fontSize:12, opacity:0.8 }}>Topic: {state.session.topic || 'â€”'}</div>
+            </div>
+          ) : (
+            <div style={{ fontSize:13, opacity:0.8 }}>Select a subject gem to start studying</div>
+          )}
+        </div>
+
+        <div style={{ border:'1px solid var(--border)', borderRadius:16, padding:0, background:'var(--card-bg)', overflow:'hidden' }}>
+          <div style={{ padding:12, borderBottom:'1px solid var(--border)', fontWeight:800 }}>Coach</div>
+          <div style={{ padding:12 }}>
+            <CoachRail />
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+
+

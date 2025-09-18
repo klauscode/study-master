@@ -1,0 +1,14 @@
+{
+  "time_crunch": "Each question has 30% less time to complete",
+  "auto_skip": "Questions automatically skip after 2 minutes if not answered",
+  "low_level_only": "Only questions from gems level 3 and below appear",
+  "speed_run": "Must complete all questions in half the normal time",
+  "hard_mode": "Only questions from gems level 5 and above appear",
+  "no_hints": "No help text or hints available during questions",
+  "timed_pressure": "Visible countdown timer adds pressure to each question",
+  "focus_lock": "Cannot pause or switch away from study session once started",
+  "quick_fire": "Each question has only 45 seconds to complete",
+  "advanced_only": "Only questions from highest level gems in your collection",
+  "marathon": "Study session duration is doubled",
+  "precision": "Must get 90% accuracy or session fails"
+}

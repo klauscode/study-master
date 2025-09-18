@@ -1,0 +1,157 @@
+[
+  {
+    "id": "coffee",
+    "name": "Coffee",
+    "description": "+25% focus gain for 30 minutes",
+    "cost": 25,
+    "tier": "micro",
+    "icon": "☕",
+    "effects": [
+      {
+        "type": "focus_multiplier",
+        "value": 1.25,
+        "duration": 30
+      }
+    ]
+  },
+  {
+    "id": "energy_drink",
+    "name": "Energy Drink",
+    "description": "+40% focus gain for 20 minutes",
+    "cost": 75,
+    "tier": "medium",
+    "icon": "⚡",
+    "effects": [
+      {
+        "type": "focus_multiplier",
+        "value": 1.4,
+        "duration": 20
+      }
+    ]
+  },
+  {
+    "id": "study_boost",
+    "name": "Study Boost",
+    "description": "+50% XP gain for 25 minutes",
+    "cost": 35,
+    "tier": "micro",
+    "icon": "📚",
+    "effects": [
+      {
+        "type": "xp_multiplier",
+        "value": 1.5,
+        "duration": 25
+      }
+    ]
+  },
+  {
+    "id": "brain_pills",
+    "name": "Brain Pills",
+    "description": "+75% XP gain for 20 minutes",
+    "cost": 120,
+    "tier": "medium",
+    "icon": "💊",
+    "effects": [
+      {
+        "type": "xp_multiplier",
+        "value": 1.75,
+        "duration": 20
+      }
+    ]
+  },
+  {
+    "id": "lucky_charm",
+    "name": "Lucky Charm",
+    "description": "+30% loot quantity for 1 cycle",
+    "cost": 85,
+    "tier": "medium",
+    "icon": "🍀",
+    "effects": [
+      {
+        "type": "loot_quantity",
+        "value": 1.3,
+        "duration": 60
+      }
+    ]
+  },
+  {
+    "id": "golden_horseshoe",
+    "name": "Golden Horseshoe",
+    "description": "+50% rare item chance for 1 cycle",
+    "cost": 110,
+    "tier": "medium",
+    "icon": "🏆",
+    "effects": [
+      {
+        "type": "loot_rarity",
+        "value": 1.5,
+        "duration": 60
+      }
+    ]
+  },
+  {
+    "id": "ultimate_focus",
+    "name": "Ultimate Focus",
+    "description": "+60% focus gain for 45 minutes",
+    "cost": 200,
+    "tier": "premium",
+    "icon": "🧠",
+    "effects": [
+      {
+        "type": "focus_multiplier",
+        "value": 1.6,
+        "duration": 45
+      }
+    ]
+  },
+  {
+    "id": "genius_serum",
+    "name": "Genius Serum",
+    "description": "+100% XP gain for 30 minutes",
+    "cost": 250,
+    "tier": "premium",
+    "icon": "🧪",
+    "effects": [
+      {
+        "type": "xp_multiplier",
+        "value": 2.0,
+        "duration": 30
+      }
+    ]
+  },
+  {
+    "id": "treasure_hunter",
+    "name": "Treasure Hunter",
+    "description": "+50% loot quantity + +30% rarity for 1 cycle",
+    "cost": 300,
+    "tier": "premium",
+    "icon": "💎",
+    "effects": [
+      {
+        "type": "loot_quantity",
+        "value": 1.5,
+        "duration": 60
+      },
+      {
+        "type": "loot_rarity",
+        "value": 1.3,
+        "duration": 60
+      }
+    ]
+  },
+  {
+    "id": "currency_magnet",
+    "name": "Currency Magnet",
+    "description": "+100% currency from maps for 2 hours",
+    "cost": 180,
+    "tier": "premium",
+    "icon": "🧲",
+    "effects": [
+      {
+        "type": "currency_gain",
+        "value": 2.0,
+        "duration": 120
+      }
+    ]
+  }
+]

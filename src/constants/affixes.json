@@ -1,0 +1,8 @@
+[
+  { "name": "+% XP Gain", "stat": "xpGainPercent", "value": 5 },
+  { "name": "+% XP Gain", "stat": "xpGainPercent", "value": 10 },
+  { "name": "+% XP Gain", "stat": "xpGainPercent", "value": 15 },
+  { "name": "+% Focus Cap", "stat": "focusCapPercent", "value": 5 },
+  { "name": "+% Focus Gain Rate", "stat": "focusGainRatePercent", "value": 10 },
+  { "name": "+% Loot Rarity", "stat": "lootRarityPercent", "value": 10 }
+]

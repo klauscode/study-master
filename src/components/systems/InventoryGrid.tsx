@@ -1,0 +1,486 @@
+import React from 'react'
+import { useGameState } from '../../context/GameStateContext'
+import AffixDisplay from '../ui/AffixDisplay'
+
+const rarityColors: Record<string, string> = {
+  Common: '#c0c0c0',
+  Magic: '#6aa2ff',
+  Rare: '#ffcc33',
+  Epic: '#c280ff',
+}
+
+type StatKey = 'xpGainPercent' | 'gemXpGainPercent' | 'lootQuantityPercent' | 'lootRarityPercent' | 'focusGainRatePercent'
+const STAT_LABEL: Record<StatKey, string> = {
+  xpGainPercent: 'XP Gain',
+  gemXpGainPercent: 'Gem XP Gain',
+  lootQuantityPercent: 'Loot Quantity',
+  lootRarityPercent: 'Loot Rarity',
+  focusGainRatePercent: 'Focus Rate',
+}
+
+export default function InventoryGrid() {
+  const { state, dispatch } = useGameState()
+  const [query, setQuery] = React.useState('')
+  const [slot, setSlot] = React.useState('All')
+  const [rarity, setRarity] = React.useState('All')
+  const [sort, setSort] = React.useState<'new'|'ilvl'|'rarity'>('new')
+  const [selectedId, setSelectedId] = React.useState<string | null>(null)
+  const [windowWidth, setWindowWidth] = React.useState(window.innerWidth)
+
+  React.useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth)
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
+  const slots = ['All','Head','Chest','Legs','Feet','Weapon','Accessory']
+  const rarities = ['All','Common','Magic','Rare','Epic']
+
+  const items = React.useMemo(()=>{
+    let arr = [...state.inventory]
+    if (slot !== 'All') arr = arr.filter(i => i.slot === slot)
+    if (rarity !== 'All') arr = arr.filter(i => i.rarity === rarity)
+    if (query.trim()) {
+      const q = query.toLowerCase()
+      arr = arr.filter(i => i.name.toLowerCase().includes(q) || i.affixes.some(a => a.name.toLowerCase().includes(q)))
+    }
+    if (sort === 'ilvl') arr.sort((a,b)=> b.itemLevel - a.itemLevel)
+    if (sort === 'rarity') {
+      const order: any = { Epic:3, Rare:2, Magic:1, Common:0 }
+      arr.sort((a,b)=> (order[b.rarity]-order[a.rarity]) || (b.itemLevel-a.itemLevel))
+    }
+    return arr
+  }, [state.inventory, slot, rarity, query, sort])
+
+  const selected = items.find(i => i.id === selectedId) || items[0]
+
+  if (state.inventory.length === 0) {
+    return (
+      <div style={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 28,
+        maxWidth: '1400px',
+        margin: '0 auto',
+        padding: '0 20px'
+      }}>
+        {/* Header */}
+        <div style={{
+          textAlign: 'center',
+          padding: '24px 0',
+          borderBottom: '2px solid var(--border)',
+          background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(139, 92, 246, 0.05))',
+          borderRadius: '16px 16px 0 0'
+        }}>
+          <h1 style={{
+            fontSize: 32,
+            fontWeight: 800,
+            marginBottom: 12,
+            background: 'linear-gradient(45deg, #6366f1, #8b5cf6)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text'
+          }}>
+            🎒 Inventory
+          </h1>
+          <p style={{ fontSize: 16, opacity: 0.8, margin: 0, fontWeight: 500 }}>
+            Manage your equipment • Compare stats • Optimize your build
+          </p>
+        </div>
+
+        {/* Empty State */}
+        <div style={{
+          textAlign: 'center',
+          padding: '80px 40px',
+          background: 'var(--card-bg)',
+          borderRadius: 20,
+          border: '2px solid var(--border)',
+          boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)'
+        }}>
+          <div style={{ fontSize: 64, marginBottom: 24, opacity: 0.3 }}>🎒</div>
+          <div style={{ fontSize: 24, fontWeight: 700, marginBottom: 16, color: 'var(--accent)' }}>
+            No items yet
+          </div>
+          <div style={{ fontSize: 16, opacity: 0.7, maxWidth: 400, margin: '0 auto', lineHeight: 1.5 }}>
+            Complete study cycles to earn loot and build your character's power!
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  return (
+    <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 20px' }}>
+      <h2>🎒 Inventory</h2>
+      <p style={{ opacity: 0.8, marginBottom: 24 }}>
+        {items.length} item{items.length !== 1 ? 's' : ''} • Click items to equip or sell
+      </p>
+
+      {/* Usables Panel */}
+      {Boolean(state.usables && state.usables.length>0) && (
+        <div style={{ background:'var(--card-bg)', border:'1px solid var(--border)', borderRadius:8, padding:16, marginBottom:16 }}>
+          <h3>Usables</h3>
+          <div style={{ display:'grid', gap:8 }}>
+            {state.usables!.map(u => (
+              <div key={u.id} style={{ display:'flex', justifyContent:'space-between', alignItems:'center', border:'1px solid var(--border)', borderRadius:6, padding:'6px 8px' }}>
+                <div>
+                  <div style={{ fontWeight:600 }}>{u.name}</div>
+                  <div style={{ fontSize:12, opacity:0.7 }}>{u.description || (u.kind==='consumable'?'Consumable':'Reward')}</div>
+                </div>
+                <div style={{ display:'flex', alignItems:'center', gap:8 }}>
+                  <span style={{ fontSize:12, opacity:0.7 }}>x{u.usesLeft}</span>
+                  <button onClick={()=>dispatch({ type:'USE_USABLE', usableId: u.id })}
+                    style={{ background:'var(--accent)', color:'var(--accent-fg)', border:'1px solid var(--border)', borderRadius:6, padding:'6px 10px', fontSize:12 }}>Use</button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Search and Filters */}
+      <div style={{
+        background: 'var(--card-bg)',
+        border: '1px solid var(--border)',
+        borderRadius: 8,
+        padding: 16,
+        marginBottom: 16
+      }}>
+        <div style={{ display: 'grid', gap: 12, marginBottom: 12 }}>
+          <input
+            value={query}
+            onChange={e => setQuery(e.target.value)}
+            placeholder='Search by name or stat...'
+            style={{
+              width: '100%',
+              background: 'var(--bg)',
+              color: 'var(--fg)',
+              border: '1px solid var(--border)',
+              borderRadius: 6,
+              padding: '8px 12px',
+              fontSize: 14
+            }}
+          />
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(120px, 1fr))', gap: 12 }}>
+            <select
+              value={slot}
+              onChange={e => setSlot(e.target.value)}
+              style={{
+                background: 'var(--bg)',
+                color: 'var(--fg)',
+                border: '1px solid var(--border)',
+                borderRadius: 6,
+                padding: '8px 12px',
+                fontSize: 13
+              }}
+            >
+              {slots.map(s => <option key={s}>{s}</option>)}
+            </select>
+            <select
+              value={rarity}
+              onChange={e => setRarity(e.target.value)}
+              style={{
+                background: 'var(--bg)',
+                color: 'var(--fg)',
+                border: '1px solid var(--border)',
+                borderRadius: 6,
+                padding: '8px 12px',
+                fontSize: 13
+              }}
+            >
+              {rarities.map(r => <option key={r}>{r}</option>)}
+            </select>
+            <select
+              value={sort}
+              onChange={e => setSort(e.target.value as any)}
+              style={{
+                background: 'var(--bg)',
+                color: 'var(--fg)',
+                border: '1px solid var(--border)',
+                borderRadius: 6,
+                padding: '8px 12px',
+                fontSize: 13
+              }}
+            >
+              <option value='new'>Newest</option>
+              <option value='ilvl'>Item Level</option>
+              <option value='rarity'>Rarity</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      {/* Selected Item Details */}
+      {selected && (
+        <div style={{
+          background: 'var(--card-bg)',
+          border: `2px solid ${rarityColors[selected.rarity]}`,
+          borderRadius: 8,
+          padding: 16,
+          marginBottom: 16
+        }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
+            <div>
+              <div style={{
+                color: rarityColors[selected.rarity],
+                fontSize: 18,
+                fontWeight: 700,
+                marginBottom: 4
+              }}>
+                {selected.name}
+              </div>
+              <div style={{ fontSize: 13, opacity: 0.8 }}>
+                {selected.slot} • Item Level {selected.itemLevel} • {selected.rarity}
+              </div>
+            </div>
+            <div style={{ display: 'flex', gap: 8 }}>
+              <button
+                onClick={() => dispatch({ type: 'EQUIP_FROM_INVENTORY', itemId: selected.id })}
+                style={{
+                  background: 'var(--accent)',
+                  color: 'var(--accent-fg)',
+                  border: 'none',
+                  borderRadius: 6,
+                  padding: '8px 16px',
+                  fontSize: 13,
+                  fontWeight: 600,
+                  cursor: 'pointer'
+                }}
+              >
+                ⚔️ Equip
+              </button>
+              <button
+                onClick={() => {
+                  const baseByRarity:any = { Common:5, Magic:12, Rare:30, Epic:75 };
+                  const base = baseByRarity[selected.rarity] ?? 5;
+                  const ilv = Math.max(0, Math.floor(selected.itemLevel/5));
+                  const afx = Math.floor((selected.affixes?.length || 0) * 3);
+                  const value = base + ilv + afx;
+                  if (!window.confirm(`Sell "${selected.name}" for ${value} Transmute?`)) return;
+                  dispatch({ type: 'REMOVE_FROM_INVENTORY', itemId: selected.id });
+                  dispatch({ type: 'EARN_CURRENCY', currency: 'Transmute', count: value, source: 'loot', description: 'Sold equipment' });
+                }}
+                style={{
+                  background: 'var(--bg)',
+                  color: 'var(--fg)',
+                  border: '1px solid var(--border)',
+                  borderRadius: 6,
+                  padding: '8px 16px',
+                  fontSize: 13,
+                  fontWeight: 600,
+                  cursor: 'pointer'
+                }}
+              >
+                💰 Sell
+              </button>
+            </div>
+          </div>
+
+          {/* Affixes */}
+          <div style={{
+            background: 'var(--bg)',
+            border: '1px solid var(--border)',
+            borderRadius: 6,
+            padding: 12,
+            marginBottom: 12
+          }}>
+            <AffixDisplay affixes={selected.affixes || []} itemLevel={selected.itemLevel} />
+          </div>
+
+          {/* Comparison */}
+          <div style={{
+            background: 'var(--bg)',
+            border: '1px solid var(--border)',
+            borderRadius: 6,
+            padding: 12
+          }}>
+            <div style={{ fontSize: 14, fontWeight: 600, marginBottom: 8, color: 'var(--accent)' }}>
+              ⚖️ vs Equipped
+            </div>
+            <CompareBlock item={selected} equipped={(state.character.equipped as any)[selected.slot]} />
+          </div>
+        </div>
+      )}
+
+      {/* Items Grid */}
+      <div style={{
+        background: 'var(--card-bg)',
+        border: '1px solid var(--border)',
+        borderRadius: 8,
+        padding: 16
+      }}>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+          gap: 12
+        }}>
+          {items.map(it => (
+            <div
+              key={it.id}
+              onClick={() => setSelectedId(it.id)}
+              style={{
+                border: selected?.id === it.id
+                  ? `2px solid ${rarityColors[it.rarity]}`
+                  : '1px solid var(--border)',
+                borderRadius: 6,
+                padding: 12,
+                background: selected?.id === it.id
+                  ? `${rarityColors[it.rarity]}10`
+                  : 'var(--bg)',
+                cursor: 'pointer',
+                transition: 'all 0.2s ease'
+              }}
+            >
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
+                <div style={{
+                  color: rarityColors[it.rarity],
+                  fontWeight: 600,
+                  fontSize: 14,
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis',
+                  whiteSpace: 'nowrap',
+                  flex: 1
+                }}>
+                  {it.name}
+                </div>
+                <div style={{
+                  background: rarityColors[it.rarity],
+                  color: 'white',
+                  padding: '2px 6px',
+                  borderRadius: 4,
+                  fontSize: 10,
+                  fontWeight: 600
+                }}>
+                  {it.rarity}
+                </div>
+              </div>
+              <div style={{
+                fontSize: 12,
+                opacity: 0.8,
+                marginBottom: 8
+              }}>
+                {it.slot} • iLv{it.itemLevel}
+              </div>
+              <div style={{
+                display: 'flex',
+                gap: 4,
+                flexWrap: 'wrap'
+              }}>
+                {topPills(it).slice(0, 2).map((pill, i) => (
+                  <span
+                    key={i}
+                    style={{
+                      background: 'rgba(34, 197, 94, 0.1)',
+                      color: '#22c55e',
+                      padding: '2px 6px',
+                      borderRadius: 4,
+                      fontSize: 10,
+                      fontWeight: 600
+                    }}
+                  >
+                    {pill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function CompareBlock({ item, equipped }: { item: any; equipped: any }) {
+  const cur = sumStats(equipped)
+  const nxt = sumStats(item)
+  const keys: StatKey[] = ['xpGainPercent', 'gemXpGainPercent', 'lootQuantityPercent', 'lootRarityPercent', 'focusGainRatePercent']
+
+  const hasAnyStats = keys.some(k => cur[k] || nxt[k])
+
+  if (!hasAnyStats) {
+    return (
+      <div style={{
+        textAlign: 'center',
+        padding: '20px',
+        opacity: 0.6,
+        fontSize: 12
+      }}>
+        📊 No stats to compare
+      </div>
+    )
+  }
+
+  return (
+    <div style={{ display: 'grid', gap: 12 }}>
+      {keys.map(k => {
+        const delta = nxt[k] - cur[k]
+        if (!delta && !cur[k] && !nxt[k]) return null
+
+        const color = delta > 0 ? '#22c55e' : delta < 0 ? '#ef4444' : '#94a3b8'
+        const icon = delta > 0 ? '⬆️' : delta < 0 ? '⬇️' : '➡️'
+
+        return (
+          <div
+            key={k}
+            style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr auto',
+              gap: 12,
+              alignItems: 'center',
+              padding: '12px 16px',
+              background: delta !== 0 ? `${color}10` : 'var(--card-bg)',
+              border: `1px solid ${delta !== 0 ? `${color}30` : 'var(--border)'}`,
+              borderRadius: 8,
+              fontSize: 12,
+              fontWeight: 600
+            }}
+          >
+            <div style={{ opacity: 0.8 }}>{STAT_LABEL[k]}</div>
+            <div style={{
+              color,
+              display: 'flex',
+              alignItems: 'center',
+              gap: 6,
+              fontWeight: 700
+            }}>
+              {icon} {(cur[k] || 0)}% → {nxt[k]}%
+              {delta !== 0 && (
+                <span style={{
+                  background: color,
+                  color: 'white',
+                  padding: '2px 6px',
+                  borderRadius: 4,
+                  fontSize: 10,
+                  fontWeight: 700
+                }}>
+                  {delta > 0 ? '+' : ''}{delta}%
+                </span>
+              )}
+            </div>
+          </div>
+        )
+      })}
+    </div>
+  )
+}
+
+function sumStats(it: any): Record<StatKey, number> {
+  const stats: Record<StatKey, number> = {
+    xpGainPercent: 0,
+    gemXpGainPercent: 0,
+    lootQuantityPercent: 0,
+    lootRarityPercent: 0,
+    focusGainRatePercent: 0,
+  }
+  if (!it) return stats
+  for (const a of (it.affixes || [])) {
+    if (a.stat in stats) (stats as any)[a.stat] += a.value
+  }
+  return stats
+}
+
+function topPills(it:any): string[] {
+  const s = sumStats(it)
+  const entries = Object.entries(s).filter(([,v])=>v>0).sort((a,b)=>b[1]-a[1]).slice(0,3)
+  return entries.map(([k,v])=>`${STAT_LABEL[k as StatKey]} +${v}%`)
+}

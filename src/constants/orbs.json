@@ -1,0 +1,12 @@
+[
+  { "type": "Transmute", "weight": 35 },
+  { "type": "Scour",     "weight": 25 },
+  { "type": "Augment",   "weight": 30 },
+  { "type": "Alchemy",   "weight": 25 },
+  { "type": "Chaos",     "weight": 20 },
+  { "type": "Regal",     "weight": 15 },
+  { "type": "Exalted",   "weight": 5 },
+  { "type": "Map Fragment", "weight": 40 },
+  { "type": "Cartographer's Chisel", "weight": 20 },
+  { "type": "Vaal Orb", "weight": 8 }
+]

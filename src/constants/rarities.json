@@ -1,0 +1,6 @@
+[
+  { "rarity": "Common", "weight": 30, "affixRange": [0,1] },
+  { "rarity": "Magic",  "weight": 40, "affixRange": [1,3] },
+  { "rarity": "Rare",   "weight": 25, "affixRange": [2,5] },
+  { "rarity": "Epic",    "weight": 5,  "affixRange": [3,6] }
+]

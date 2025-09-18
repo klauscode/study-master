@@ -1,0 +1,38 @@
+{
+  "Head": {
+    "T1": ["Worn-out Beanie", "Simple Headband", "Reading Glasses"],
+    "T2": ["Scholar's Cap", "Focused Monocle", "Enhanced Glasses"],
+    "T3": ["Master's Mortarboard", "Circlet of Intellect", "All-Seeing Spectacles"],
+    "T4": ["Sage's Hood", "Crown of Knowledge", "Oracle's Lens"]
+  },
+  "Chest": {
+    "T1": ["Faded T-Shirt", "Simple Robe", "Comfy Sweater"],
+    "T2": ["Scholar's Robe", "Tailored Vest", "Superior Robe"],
+    "T3": ["Master's Gown", "Vestment of Insight", "Academic Regalia"],
+    "T4": ["Sage's Mantle", "Robe of the Archon", "Shroud of Enlightenment"]
+  },
+  "Legs": {
+    "T1": ["Worn Jeans", "Simple Trousers", "Study Slacks"],
+    "T2": ["Scholar's Trousers", "Reinforced Slacks", "Focused Leggings"],
+    "T3": ["Master's Breeches", "Leggings of Concentration", "Kilt of the Erudite"],
+    "T4": ["Sage's Britches", "Greaves of the Unwavering", "Legwraps of the Infinite"]
+  },
+  "Feet": {
+    "T1": ["Old Sneakers", "Worn-out Loafers", "Simple Shoes"],
+    "T2": ["Scholar's Shoes", "Sturdy Boots", "Comfortable Slippers"],
+    "T3": ["Master's Boots", "Footwear of the Tireless", "Waders of the Deep Thinker"],
+    "T4": ["Sage's Greaves", "Boots of Swift Knowledge", "Sandals of the Ascended"]
+  },
+  "Weapon": {
+    "T1": ["Chewed-on Bic Pen", "#2 Pencil", "Basic Fountain Pen"],
+    "T2": ["Superior Pencil", "Mechanical Pencil", "Scholar's Quill"],
+    "T3": ["Master's Fountain Pen", "Quill of the Scribe", "Stylus of Precision"],
+    "T4": ["Sage's Quill", "Pen of the Unending Scroll", "Rod of Syllogism"]
+  },
+  "Accessory": {
+    "T1": ["Simple Ring", "Worn Amulet", "Friendship Bracelet"],
+    "T2": ["Scholar's Amulet", "Ring of Focus", "Charm of Memory"],
+    "T3": ["Master's Signet", "Amulet of Deep Thought", "Talisman of a Thousand Pages"],
+    "T4": ["Sage's Seal", "Ring of Omniscience", "The Philosopher's Stone"]
+  }
+}

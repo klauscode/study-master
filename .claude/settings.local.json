@@ -18,7 +18,8 @@
       "Bash(sed:*)",
       "Bash(bash:*)",
       "Bash(find:*)",
-      "Bash(LC_ALL=C sed -i 's/\\xc3\\xa2\\xc2\\xb1\\xc3\\xaf\\xc2\\xb8/⏱️/g' \"C:\\Users\\klaus\\idle-rpg-final - Copy\\studyfall\\src\\components\\views\\AnalyticsView.tsx\")"
+      "Bash(LC_ALL=C sed -i 's/\\xc3\\xa2\\xc2\\xb1\\xc3\\xaf\\xc2\\xb8/⏱️/g' \"C:\\Users\\klaus\\idle-rpg-final - Copy\\studyfall\\src\\components\\views\\AnalyticsView.tsx\")",
+      "Bash(git commit:*)"
     ],
     "deny": [],
     "ask": []

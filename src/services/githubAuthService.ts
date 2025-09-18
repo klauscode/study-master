@@ -46,105 +46,38 @@ class GitHubAuthService {
     return { ...this.state };
   }
 
-  // Initiate GitHub Device Flow
+  // Personal Access Token login (CORS-free)
   async login() {
-    try {
-      // Start device flow
-      const deviceResponse = await fetch('https://github.com/login/device/code', {
-        method: 'POST',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          client_id: GITHUB_CLIENT_ID,
-          scope: GITHUB_SCOPES
-        })
-      });
+    const instructions = `To enable cloud saves, you need to create a GitHub Personal Access Token:
 
-      if (!deviceResponse.ok) {
-        throw new Error('Failed to start device flow');
-      }
+1. Go to: https://github.com/settings/tokens/new
+2. Token description: "StudyFall Cloud Saves"
+3. Expiration: Choose your preference (90 days or longer)
+4. Select scopes: ✅ Check "gist" only
+5. Click "Generate token"
+6. Copy the token (starts with ghp_...)
 
-      const deviceData = await deviceResponse.json();
+⚠️ Important: Keep this token safe! It's like a password.`;
 
-      // Open GitHub authorization page
-      window.open(deviceData.verification_uri, '_blank');
+    const token = prompt(instructions + '\n\nPaste your GitHub token here:');
 
-      // Show user the code they need to enter
-      const userCode = deviceData.user_code;
-
-      // Copy code to clipboard
-      try {
-        await navigator.clipboard.writeText(userCode);
-        alert(`GitHub authorization opened in new tab.\n\nYour code: ${userCode}\n(Already copied to clipboard!)\n\nPaste this code on GitHub and click "Authorize"`);
-      } catch {
-        alert(`GitHub authorization opened in new tab.\n\nYour code: ${userCode}\n\nPaste this code on GitHub and click "Authorize"`);
-      }
-
-      // Poll for authorization
-      this.pollForAuthorization(deviceData.device_code, deviceData.interval);
-
-    } catch (error) {
-      console.error('Device flow error:', error);
-      alert('Failed to start GitHub authorization. Please try again.');
+    if (!token) {
+      return; // User cancelled
     }
-  }
 
-  // Poll GitHub for device authorization
-  private async pollForAuthorization(deviceCode: string, interval: number) {
-    const poll = async () => {
-      try {
-        const response = await fetch('https://github.com/login/oauth/access_token', {
-          method: 'POST',
-          headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            client_id: GITHUB_CLIENT_ID,
-            device_code: deviceCode,
-            grant_type: 'urn:ietf:params:oauth:grant-type:device_code'
-          })
-        });
+    if (!token.startsWith('ghp_') && !token.startsWith('github_pat_')) {
+      alert('❌ Invalid token format. GitHub tokens start with "ghp_" or "github_pat_"');
+      return;
+    }
 
-        const data = await response.json();
-
-        if (data.access_token) {
-          // Success!
-          await this.setAccessToken(data.access_token);
-          alert('✅ Successfully connected to GitHub! Your saves are now backed up to the cloud.');
-          return true;
-        } else if (data.error === 'authorization_pending') {
-          // User hasn't authorized yet, continue polling
-          return false;
-        } else if (data.error === 'slow_down') {
-          // GitHub wants us to slow down polling
-          interval = interval * 2;
-          return false;
-        } else {
-          // Other error
-          throw new Error(data.error_description || data.error || 'Unknown error');
-        }
-      } catch (error) {
-        console.error('Polling error:', error);
-        alert('Authorization failed. Please try again.');
-        return true; // Stop polling
-      }
-    };
-
-    // Poll every interval seconds
-    const pollInterval = setInterval(async () => {
-      const shouldStop = await poll();
-      if (shouldStop) {
-        clearInterval(pollInterval);
-      }
-    }, interval * 1000);
-
-    // Stop polling after 10 minutes
-    setTimeout(() => {
-      clearInterval(pollInterval);
-    }, 600000);
+    try {
+      // Test the token by fetching user data
+      await this.setAccessToken(token);
+      alert('✅ Successfully connected to GitHub! Your saves are now backed up to the cloud.');
+    } catch (error) {
+      console.error('Token validation failed:', error);
+      alert('❌ Invalid token or insufficient permissions. Please make sure:\n- Token is valid\n- "gist" scope is enabled\n- Token is not expired');
+    }
   }
 
   // Logout and clear auth state

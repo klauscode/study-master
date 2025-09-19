@@ -39,6 +39,17 @@ interface CardInfo {
   lapses: number;
 }
 
+interface BulkCard {
+  front: string;
+  back: string;
+  tags?: string[];
+}
+
+interface ClozeCard {
+  text: string;
+  tags?: string[];
+}
+
 class AnkiService {
   private readonly baseUrl = 'http://127.0.0.1:8765';
 
@@ -227,7 +238,137 @@ class AnkiService {
     };
     await this.request('addNote', { note });
   }
+
+  // Bulk import multiple cards
+  async addMultipleCards(deckName: string, cards: BulkCard[]): Promise<{ success: number; failed: number; errors: string[] }> {
+    const results = { success: 0, failed: 0, errors: [] as string[] };
+
+    // Process cards in batches of 10 to avoid overwhelming AnkiConnect
+    const batchSize = 10;
+    for (let i = 0; i < cards.length; i += batchSize) {
+      const batch = cards.slice(i, i + batchSize);
+
+      const notes = batch.map(card => ({
+        deckName,
+        modelName: 'Basic',
+        fields: {
+          Front: card.front,
+          Back: card.back,
+        },
+        tags: card.tags || [],
+      }));
+
+      try {
+        const noteIds = await this.request('addNotes', { notes });
+
+        // Count successes and failures
+        for (let j = 0; j < noteIds.length; j++) {
+          if (noteIds[j] !== null) {
+            results.success++;
+          } else {
+            results.failed++;
+            results.errors.push(`Card ${i + j + 1}: Failed to create note`);
+          }
+        }
+      } catch (error) {
+        // If entire batch fails
+        results.failed += batch.length;
+        results.errors.push(`Batch ${Math.floor(i / batchSize) + 1}: ${error instanceof Error ? error.message : 'Unknown error'}`);
+      }
+    }
+
+    return results;
+  }
+
+  // Add cloze deletion card
+  async addClozeCard(deckName: string, clozeData: ClozeCard): Promise<void> {
+    const note = {
+      deckName,
+      modelName: 'Cloze',
+      fields: {
+        Text: clozeData.text,
+        'Back Extra': '', // Optional back extra field
+      },
+      tags: clozeData.tags || [],
+    };
+    await this.request('addNote', { note });
+  }
+
+  // Parse CSV text into cards
+  parseCsvText(csvText: string): BulkCard[] {
+    const lines = csvText.trim().split('\n');
+    const cards: BulkCard[] = [];
+
+    for (const line of lines) {
+      if (!line.trim()) continue;
+
+      // Simple CSV parsing (handles basic cases)
+      const fields = line.split(',').map(field => field.trim().replace(/^"|"$/g, ''));
+
+      if (fields.length >= 2) {
+        const card: BulkCard = {
+          front: fields[0],
+          back: fields[1],
+          tags: fields.length > 2 ? fields.slice(2).filter(tag => tag) : []
+        };
+        cards.push(card);
+      }
+    }
+
+    return cards;
+  }
+
+  // Parse tab-separated text into cards
+  parseTabText(tabText: string): BulkCard[] {
+    const lines = tabText.trim().split('\n');
+    const cards: BulkCard[] = [];
+
+    for (const line of lines) {
+      if (!line.trim()) continue;
+
+      const fields = line.split('\t').map(field => field.trim());
+
+      if (fields.length >= 2) {
+        const card: BulkCard = {
+          front: fields[0],
+          back: fields[1],
+          tags: fields.length > 2 ? fields.slice(2).filter(tag => tag) : []
+        };
+        cards.push(card);
+      }
+    }
+
+    return cards;
+  }
+
+  // Get available note types/models
+  async getModelNames(): Promise<string[]> {
+    return await this.request('modelNames');
+  }
+
+  // Create Cloze model if it doesn't exist
+  async ensureClozeModel(): Promise<void> {
+    const models = await this.getModelNames();
+
+    if (!models.includes('Cloze')) {
+      // Create basic cloze model
+      const modelData = {
+        modelName: 'Cloze',
+        inOrderFields: ['Text', 'Back Extra'],
+        css: '.card { font-family: arial; font-size: 20px; text-align: center; color: black; background-color: white; }',
+        cardTemplates: [
+          {
+            Name: 'Cloze',
+            Front: '{{cloze:Text}}',
+            Back: '{{cloze:Text}}<br>{{Back Extra}}'
+          }
+        ]
+      };
+
+      await this.request('createModel', modelData);
+    }
+  }
 }
 
 export const ankiService = new AnkiService();
-export type { DeckInfo, CardInfo };
+export type { DeckInfo, CardInfo, BulkCard, ClozeCard };

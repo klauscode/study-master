@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
-import { ankiService, type DeckInfo, type CardInfo } from '../../services/ankiService';
+import { ankiService, type DeckInfo, type CardInfo, type BulkCard, type ClozeCard } from '../../services/ankiService';
 import { AnkiConnect } from './anki/AnkiConnect';
 import { DeckList } from './anki/DeckList';
 import { AddDeck } from './anki/AddDeck';
 import { AddCard } from './anki/AddCard';
+import { BulkImport } from './anki/BulkImport';
+import { AddClozeCard } from './anki/AddClozeCard';
 
 export default function AnkiView() {
   const [connected, setConnected] = useState<boolean | null>(null);
@@ -16,6 +18,9 @@ export default function AnkiView() {
   const [error, setError] = useState<string | null>(null);
   const [showAddDeck, setShowAddDeck] = useState(false);
   const [showAddCard, setShowAddCard] = useState(false);
+  const [showBulkImport, setShowBulkImport] = useState(false);
+  const [showAddCloze, setShowAddCloze] = useState(false);
+  const [importResult, setImportResult] = useState<{success: number; failed: number; errors: string[]} | null>(null);
 
   useEffect(() => {
     checkConnection();
@@ -141,6 +146,44 @@ export default function AnkiView() {
     }
   };
 
+  const handleBulkImportComplete = (result: {success: number; failed: number; errors: string[]}) => {
+    setImportResult(result);
+    loadDecks(); // Refresh deck stats after import
+
+    // Show result alert
+    if (result.failed === 0) {
+      alert(`✅ Successfully imported ${result.success} cards!`);
+    } else {
+      const message = `Import completed:\n✅ ${result.success} cards added\n❌ ${result.failed} cards failed`;
+      if (result.errors.length > 0) {
+        alert(message + '\n\nErrors:\n' + result.errors.slice(0, 5).join('\n'));
+      } else {
+        alert(message);
+      }
+    }
+  };
+
+  const handleAddClozeCard = async (clozeData: ClozeCard) => {
+    if (!addCardDeck) return;
+    try {
+      await ankiService.addClozeCard(addCardDeck, clozeData);
+      await loadDecks(); // Refresh deck stats after adding card
+    } catch (err) {
+      const errorMessage = err instanceof Error ? err.message : 'Unknown error';
+      throw new Error(errorMessage);
+    }
+  };
+
+  const handleShowBulkImport = (deckName: string) => {
+    setAddCardDeck(deckName);
+    setShowBulkImport(true);
+  };
+
+  const handleShowAddCloze = (deckName: string) => {
+    setAddCardDeck(deckName);
+    setShowAddCloze(true);
+  };
+
   return (
     <div style={{
       display: 'flex',
@@ -193,13 +236,33 @@ export default function AnkiView() {
 
       {showAddDeck && <AddDeck onClose={() => setShowAddDeck(false)} onAddDeck={handleAddDeck} />}
       {showAddCard && addCardDeck && <AddCard deckName={addCardDeck} onClose={() => { setShowAddCard(false); setAddCardDeck(null); }} onAddCard={handleAddCard} />}
+      {showBulkImport && addCardDeck && (
+        <BulkImport
+          deckName={addCardDeck}
+          onClose={() => { setShowBulkImport(false); setAddCardDeck(null); }}
+          onImportComplete={handleBulkImportComplete}
+        />
+      )}
+      {showAddCloze && addCardDeck && (
+        <AddClozeCard
+          deckName={addCardDeck}
+          onClose={() => { setShowAddCloze(false); setAddCardDeck(null); }}
+          onAddCard={handleAddClozeCard}
+        />
+      )}
 
       {connected && !selectedDeck && (
         <>
           <div style={{ display: 'flex', justifyContent: 'center' }}>
             <button onClick={() => setShowAddDeck(true)}>Add Deck</button>
           </div>
-          <DeckList decks={decks} onSelectDeck={selectDeck} onAddCard={handleShowAddCard} />
+          <DeckList
+            decks={decks}
+            onSelectDeck={selectDeck}
+            onAddCard={handleShowAddCard}
+            onBulkImport={handleShowBulkImport}
+            onAddCloze={handleShowAddCloze}
+          />
         </>
       )}
 
@@ -349,7 +412,53 @@ function StudySession({ deckName, currentCard, showAnswer, onShowAnswer, onAnswe
           </div>
         </div>
 
-        <button onClick={onAddCard} style={{ width: '80px' }}>Add Card</button>
+        <div style={{ display: 'flex', gap: 8 }}>
+          <button
+            onClick={onAddCard}
+            style={{
+              background: '#22c55e',
+              color: 'white',
+              border: 'none',
+              borderRadius: 8,
+              padding: '6px 12px',
+              fontSize: 11,
+              fontWeight: 600,
+              cursor: 'pointer'
+            }}
+          >
+            ➕ Basic
+          </button>
+          <button
+            onClick={() => setShowAddCloze(true)}
+            style={{
+              background: '#8b5cf6',
+              color: 'white',
+              border: 'none',
+              borderRadius: 8,
+              padding: '6px 12px',
+              fontSize: 11,
+              fontWeight: 600,
+              cursor: 'pointer'
+            }}
+          >
+            🧩 Cloze
+          </button>
+          <button
+            onClick={() => setShowBulkImport(true)}
+            style={{
+              background: '#3b82f6',
+              color: 'white',
+              border: 'none',
+              borderRadius: 8,
+              padding: '6px 12px',
+              fontSize: 11,
+              fontWeight: 600,
+              cursor: 'pointer'
+            }}
+          >
+            📚 Bulk
+          </button>
+        </div>
       </div>
 
       {/* Card Display */}

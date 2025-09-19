@@ -60,6 +60,7 @@ function Main() {
               <button onClick={()=>{ setTab('inventory'); setShowAdvanced(false) }} disabled={tab==='inventory'}>Inventory</button>
               <button onClick={()=>{ setTab('maps'); setShowAdvanced(false) }} disabled={tab==='maps'}>Maps</button>
               <button onClick={()=>{ setTab('currency'); setShowAdvanced(false) }} disabled={tab==='currency'}>Crafting</button>
+              <button onClick={()=>{ setTab('anki'); setShowAdvanced(false) }} disabled={tab==='anki'}>Anki</button>
               <button onClick={()=>{ setTab('analytics'); setShowAdvanced(false) }} disabled={tab==='analytics'}>Analytics</button>
               <button onClick={()=>{ setTab('gems'); setShowAdvanced(false) }} disabled={tab==='gems'}>Gems</button>
               <button onClick={()=>{ setTab('settings'); setShowAdvanced(false) }} disabled={tab==='settings'}>Settings</button>
